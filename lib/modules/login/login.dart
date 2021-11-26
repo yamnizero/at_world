@@ -1,7 +1,7 @@
-import 'package:at_world/screen/sign.dart';
+import 'package:at_world/modules/resetPassword/reset_password.dart';
+import 'package:at_world/modules/signup/sign.dart';
 import 'package:at_world/share/components/componets.dart';
 import 'package:at_world/share/styles/theme.dart';
-import 'package:at_world/widgets/login_form.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -81,13 +81,24 @@ class _LogInScreenState extends State<LogInScreen> {
                   SizedBox(
                     height: 20,
                   ),
-                  Text(
-                    "Forgot password?",
-                    style: TextStyle(
-                      color: kForgotColor,
-                      fontSize: 14,
-                      decoration: TextDecoration.underline,
-                      decorationThickness: 1,
+
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ResetPassword(),
+                        ),
+                      );
+                    },
+                    child: Text(
+                      "Forgot password?",
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 14,
+                        decoration: TextDecoration.underline,
+                        decorationThickness: 1,
+                      ),
                     ),
                   ),
                   SizedBox(

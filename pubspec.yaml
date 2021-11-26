@@ -38,7 +38,7 @@ dev_dependencies:
 flutter_native_splash:
   android: true
   ios: true
-  color: "#FE6F4B"
+  color: "#000000"
   image: assets/images/@CLUB Gray.png
   android_gravity: center
   ios_content_mode: center

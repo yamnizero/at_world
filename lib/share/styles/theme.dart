@@ -10,6 +10,7 @@ const kForgotColor = Color(0xFF272726);
 
 
 
+
 const kDefaultPadding =EdgeInsets.symmetric(horizontal: 30);
 
 TextStyle titleText = TextStyle(color: kPrimaryColor,fontSize:32,fontWeight: FontWeight.w700);
