@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../theme.dart';
+import '../share/styles/theme.dart';
 
 class SignUpForm extends StatefulWidget {
   const SignUpForm({Key key}) : super(key: key);
@@ -53,13 +53,14 @@ class _SignUpFormState extends State<SignUpForm> {
     return Padding(
         padding: EdgeInsets.symmetric(vertical: 3),
         child: TextFormField(
+          style: TextStyle(color: Colors.white),
           controller: SignController,
           obscureText: pass ? _isObscure : false,
           decoration: InputDecoration(
               labelText: label,
            labelStyle: TextStyle(color: kTextFielColor),
           enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(5),
+          borderRadius: BorderRadius.circular(20),
           borderSide: BorderSide(color: kPrimaryColor)
       ),
       focusedBorder: OutlineInputBorder(

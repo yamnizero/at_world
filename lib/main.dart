@@ -1,4 +1,4 @@
-import 'package:at_world/screen/login.dart';
+import 'package:at_world/modules/login/login.dart';
 import 'package:flutter/material.dart';
 
 void main() {

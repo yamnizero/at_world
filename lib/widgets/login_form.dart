@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../theme.dart';
+import '../share/styles/theme.dart';
 
 class LogInForm extends StatefulWidget {
   const LogInForm({Key key}) : super(key: key);
@@ -19,7 +19,7 @@ class _LogInFormState extends State<LogInForm> {
       children: [
         buildEmail('Email',email),
         SizedBox(height: 5,),
-        buildPadding('Password',true,password),
+        buildPassword('Password',true,password),
       ],
     );
   }
@@ -30,6 +30,15 @@ class _LogInFormState extends State<LogInForm> {
       padding: EdgeInsets.symmetric(vertical: 5),
       child: TextFormField(
         controller: LoginController,
+        keyboardType: TextInputType.emailAddress,
+        validator: (String value)
+        {
+          if(value.isEmpty){
+            return 'email address must not be empty';
+          }
+          return null;
+        },
+        style: TextStyle(color: Colors.white),
         decoration: InputDecoration(
             prefixIcon: Icon(Icons.email,color: kPrimaryColor,),
             labelText: label,
@@ -46,13 +55,21 @@ class _LogInFormState extends State<LogInForm> {
       ),
     );
   }
-  Padding buildPadding(String label,bool pass,TextEditingController SignController,) {
+  Padding buildPassword(String label,bool pass,TextEditingController SignController,) {
 
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 5),
       child: TextFormField(
+        style: TextStyle(color: Colors.white),
         controller: SignController,
         obscureText: pass ? _isObscure : false,
+        validator: (String value)
+        {
+          if(value.isEmpty){
+            return 'password must not be empty';
+          }
+          return null;
+        },
         decoration: InputDecoration(
             prefixIcon:Icon(Icons.lock,color: kPrimaryColor,),
             labelText: label,
