@@ -17,6 +17,7 @@ TextStyle titleText = TextStyle(color: kPrimaryColor,fontSize:32,fontWeight: Fon
 TextStyle TitleSign = TextStyle(color: kPrimaryColor,fontSize:18,fontWeight: FontWeight.w700);
 TextStyle subTitle = TextStyle(color: kPrimaryColor,fontSize:18,fontWeight: FontWeight.w500);
 TextStyle textButton = TextStyle(color: kPrimaryColor,fontSize:18,fontWeight: FontWeight.w700);
+TextStyle textSee = TextStyle(color: Colors.blue,fontSize:12,fontWeight: FontWeight.bold);
 
 
 
