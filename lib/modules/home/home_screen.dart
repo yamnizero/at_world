@@ -1,6 +1,7 @@
 
 import 'package:at_world/modules/signup/sign.dart';
 import 'package:at_world/share/styles/theme.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 
@@ -23,7 +24,6 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-
                 //member
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -83,20 +83,67 @@ class _HomeScreenState extends State<HomeScreen> {
                 SizedBox(height: 10,),
                 Container(
                   height: 300,
-                  child: ListView.separated(
-                    physics: NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    itemBuilder: (context,index) => buildActivity(),
-                    separatorBuilder: (context,index) => SizedBox(height: 15,),
-                    itemCount: 5,
+                  child: SingleChildScrollView(
+                    child: ListView.separated(
+                      physics: NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      itemBuilder: (context,index) => buildActivity(),
+                      separatorBuilder: (context,index) => SizedBox(height: 15,),
+                      itemCount: 5,
+                    ),
                   ),
                 ),
                 Divider(color: Colors.black38,),
                 //Courses
+                Container(
+                  width: double.infinity,
+                  color: Colors.grey.withOpacity(0.2),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('Courses',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => SignUpScreen(),
+                                ),
+                              );
+                            },
+                            child: Text(
+                              "See all",
+                              style: textSee.copyWith(
+                                  decoration: TextDecoration.underline,
+                                  decorationThickness: 1),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 10,),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          height: 150,
+                          child: ListView.separated(
+                            scrollDirection: Axis.horizontal,
+                            itemBuilder: (context,index) => buildCourses(),
+                            separatorBuilder: (context,index) => SizedBox(width:8,),
+                            itemCount: 8,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Divider(color: Colors.black38,),
+                //Forums
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Courses',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                    Text('Forums',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
                     GestureDetector(
                       onTap: () {
                         Navigator.push(
@@ -118,14 +165,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 SizedBox(height: 10,),
                 Container(
                   height: 300,
-                  child: ListView.separated(
-                    physics: NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    itemBuilder: (context,index) => buildCourses(),
-                    separatorBuilder: (context,index) => SizedBox(height: 15,),
-                    itemCount: 5,
+                  child: SingleChildScrollView(
+                    child: ListView.separated(
+                      physics: NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      itemBuilder: (context,index) => buildForums(),
+                      separatorBuilder: (context,index) => SizedBox(height: 15,),
+                      itemCount: 5,
+                    ),
                   ),
                 ),
+
 
               ],
             ),
@@ -181,7 +231,7 @@ class _HomeScreenState extends State<HomeScreen> {
          crossAxisAlignment: CrossAxisAlignment.start,
          children: [
            Text('Mohammed posted an update',
-               maxLines: 1,
+               maxLines: 3,
                overflow: TextOverflow.ellipsis,
                style: postText),
            SizedBox(height: 5,),
@@ -193,7 +243,63 @@ class _HomeScreenState extends State<HomeScreen> {
    ],
  );
 
- Widget buildCourses() => Row(
+ Widget buildCourses() => Container(
+
+   width: 200,
+   child: Column(
+     crossAxisAlignment: CrossAxisAlignment.start,
+     children: [
+       Stack(
+         children: [
+           ClipRRect(
+             borderRadius: BorderRadius.circular(20.0),
+             child: Image.asset(
+               'assets/images/flutter.png',
+               fit: BoxFit.cover,
+               height: 100,
+               width: 180,
+             ),
+           ),
+           Positioned(
+             top: 7,
+             left: 0,
+             child: Container(
+               height: 25,
+               width: 80,
+               decoration: BoxDecoration(
+                 borderRadius: BorderRadius.only(
+                   topRight: Radius.circular(40),
+                   topLeft: Radius.circular(30),
+                   bottomRight: Radius.circular(40),
+                 ),
+                 color: Colors.blue,
+                 boxShadow: [
+                   BoxShadow(
+                     color: Colors.blue.withOpacity(0.3)
+                   )
+                 ]
+               ),
+               child: Center(
+                 child: Text(
+                    'Start',
+                   style: TextStyle(color: Colors.white),
+                 ),
+               ),
+             ),
+           ),
+         ],
+       ),
+       Text(
+         'How to build application How to build application How to build application',
+         overflow: TextOverflow.ellipsis,
+         style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 16),
+       ),
+       Text('Ahmed'),
+     ],
+   ),
+ );
+
+ Widget buildForums() => Row(
    children: [
      //here want button => make profile page ------**
      CircleAvatar(

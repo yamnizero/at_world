@@ -50,67 +50,73 @@ class _HomeLayoutState extends State<HomeLayout> {
           ),
         ),
       ),
-      body: CustomScrollView(
-        slivers: [
-          SliverAppBar(
-            expandedHeight: 25,
-            backgroundColor: Colors.white70,
-            title: Text(titles[currentIndex],style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Colors.black
-            ),
-            ),
-          ),
-          SliverFillRemaining(
-            child:  screen[currentIndex]),
-        ],
-          ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        currentIndex: currentIndex,
-        onTap: (index)
-        {
-          setState(() {
-            currentIndex = index;
 
-          });
-        },
-        items:
-        [
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home_outlined,
-              ),
-              label: 'Home'
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(
-                  Icons.assistant_navigation
-              ),
-              label: 'New Feed'
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(
-                  Icons.people
-              ),
-              label: 'Members'
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(
-                  Icons.group
-              ),
-              label: 'Groups'
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(
-                  Icons.more
-              ),
-              label: 'more'
-          ),
-        ],
-       ),
+      body:  screen[currentIndex],
+      bottomNavigationBar: BottomNavigationBar(
+      type: BottomNavigationBarType.fixed,
+      currentIndex: currentIndex,
+      onTap: (index)
+      {
+        setState(() {
+          currentIndex = index;
+
+        });
+      },
+      items:
+      [
+        BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home_outlined,
+            ),
+            label: 'Home'
+        ),
+        BottomNavigationBarItem(
+            icon: Icon(
+                Icons.assistant_navigation
+            ),
+            label: 'New Feed'
+        ),
+        BottomNavigationBarItem(
+            icon: Icon(
+                Icons.people
+            ),
+            label: 'Members'
+        ),
+        BottomNavigationBarItem(
+            icon: Icon(
+                Icons.group
+            ),
+            label: 'Groups'
+        ),
+        BottomNavigationBarItem(
+            icon: Icon(
+                Icons.more
+            ),
+            label: 'more'
+        ),
+      ],
+    ),
+
     );
+      // CustomScrollView(
+      //   slivers: [
+      //     SliverAppBar(
+      //       expandedHeight: 25,
+      //       floating: true,
+      //       pinned: true,
+      //       backgroundColor: Colors.white70,
+      //       title: Text(titles[currentIndex],style: TextStyle(
+      //           fontSize: 20,
+      //           fontWeight: FontWeight.bold,
+      //           color: Colors.black
+      //       ),
+      //       ),
+      //     ),
+      //     SliverFillRemaining(
+      //       child:  screen[currentIndex]),
+      //   ],
+      //     ),
+
   }
 
 }
