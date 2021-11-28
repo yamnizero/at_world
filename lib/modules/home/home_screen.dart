@@ -23,7 +23,8 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 10,),
+
+                //member
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -55,6 +56,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     itemCount: 8,
                   ),
                 ),
+                //Activity
+                Divider(color: Colors.black38,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -87,7 +90,43 @@ class _HomeScreenState extends State<HomeScreen> {
                     separatorBuilder: (context,index) => SizedBox(height: 15,),
                     itemCount: 5,
                   ),
-                )
+                ),
+                Divider(color: Colors.black38,),
+                //Courses
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text('Courses',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SignUpScreen(),
+                          ),
+                        );
+                      },
+                      child: Text(
+                        "See all",
+                        style: textSee.copyWith(
+                            decoration: TextDecoration.underline,
+                            decorationThickness: 1),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 10,),
+                Container(
+                  height: 300,
+                  child: ListView.separated(
+                    physics: NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    itemBuilder: (context,index) => buildCourses(),
+                    separatorBuilder: (context,index) => SizedBox(height: 15,),
+                    itemCount: 5,
+                  ),
+                ),
+
               ],
             ),
           ),
@@ -149,7 +188,38 @@ class _HomeScreenState extends State<HomeScreen> {
            Text('4 months ago',style: timeText,),
          ],
        ),
-     )
+     ),
+
+   ],
+ );
+
+ Widget buildCourses() => Row(
+   children: [
+     //here want button => make profile page ------**
+     CircleAvatar(
+       radius: 23.0,
+       backgroundImage:NetworkImage(
+         'https://img.republicworld.com/republic-prod/stories/promolarge/xhdpi/vyls0odog0r31lb2_1636510424.jpeg',
+       ),
+     ),
+     SizedBox(width: 15,),
+     //here want button => make posts page ------**
+     Expanded(
+       child: Column(
+         crossAxisAlignment: CrossAxisAlignment.start,
+         children: [
+           Text('Mobile Application',style: titleForums,),
+           SizedBox(height: 5,),
+           Text('Mohammed posted an  MohamMohammed posted an updateMohammed posted an updatemed posted an updateMohammed posted an update',
+               maxLines: 2,
+               overflow: TextOverflow.ellipsis,
+               style: postForums),
+           SizedBox(height: 5,),
+           Text('4 months ago',style: timeText,),
+         ],
+       ),
+     ),
+
    ],
  );
 }

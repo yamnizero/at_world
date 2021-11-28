@@ -20,6 +20,9 @@ TextStyle textButton = TextStyle(color: kPrimaryColor,fontSize:18,fontWeight: Fo
 TextStyle textSee = TextStyle(color: Colors.blue,fontSize:12,fontWeight: FontWeight.bold);
 TextStyle timeText = TextStyle(color: Colors.grey,fontSize:12,);
 TextStyle postText = TextStyle(color: Colors.black);
+TextStyle postForums = TextStyle(color: Colors.grey,fontSize:15,);
+TextStyle titleForums = TextStyle(color: Colors.black,fontSize:18,);
+
 
 
 

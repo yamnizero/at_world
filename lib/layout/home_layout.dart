@@ -27,21 +27,45 @@ class _HomeLayoutState extends State<HomeLayout> {
     MoreScreen(),
   ];
 
+  List<String> titles =
+  [
+    'Home',
+    'New Feeds',
+    'Members',
+    'Groups',
+    'More',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+     backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
+        elevation: .0,
         title: Center(
           child: Image.asset(
-            'assets/images/@CLUB Gray.png',
-            fit: BoxFit.contain,
+            'assets/images/atworld.png',
             height: 32,
           ),
         ),
       ),
-      body: screen[currentIndex],
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            expandedHeight: 25,
+            backgroundColor: Colors.white70,
+            title: Text(titles[currentIndex],style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.black
+            ),
+            ),
+          ),
+          SliverFillRemaining(
+            child:  screen[currentIndex]),
+        ],
+          ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: currentIndex,
@@ -85,7 +109,10 @@ class _HomeLayoutState extends State<HomeLayout> {
               label: 'more'
           ),
         ],
-      ),
+       ),
     );
   }
+
 }
+
+
