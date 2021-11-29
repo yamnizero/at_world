@@ -1,5 +1,7 @@
 
+import 'package:at_world/modules/home/home_screen_viewmodel.dart';
 import 'package:at_world/modules/signup/sign.dart';
+import 'package:at_world/share/components/UserForm.dart';
 import 'package:at_world/share/styles/theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +16,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
+  HomeScreenViewModel viewModel;
+  @override
+  void initState() {
+    viewModel = HomeScreenViewModel();
+    // TODO: implement initState
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -169,9 +177,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: ListView.separated(
                       physics: NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
-                      itemBuilder: (context,index) => buildForums(),
+                      itemBuilder: (context,index) => UserForm(viewModel.userForms[index],onTap: (){
+
+                      },),
                       separatorBuilder: (context,index) => SizedBox(height: 15,),
-                      itemCount: 5,
+                      itemCount: viewModel.userForms.length,
                     ),
                   ),
                 ),
@@ -299,35 +309,7 @@ class _HomeScreenState extends State<HomeScreen> {
    ),
  );
 
- Widget buildForums() => Row(
-   children: [
-     //here want button => make profile page ------**
-     CircleAvatar(
-       radius: 23.0,
-       backgroundImage:NetworkImage(
-         'https://img.republicworld.com/republic-prod/stories/promolarge/xhdpi/vyls0odog0r31lb2_1636510424.jpeg',
-       ),
-     ),
-     SizedBox(width: 15,),
-     //here want button => make posts page ------**
-     Expanded(
-       child: Column(
-         crossAxisAlignment: CrossAxisAlignment.start,
-         children: [
-           Text('Mobile Application',style: titleForums,),
-           SizedBox(height: 5,),
-           Text('Mohammed posted an  MohamMohammed posted an updateMohammed posted an updatemed posted an updateMohammed posted an update',
-               maxLines: 2,
-               overflow: TextOverflow.ellipsis,
-               style: postForums),
-           SizedBox(height: 5,),
-           Text('4 months ago',style: timeText,),
-         ],
-       ),
-     ),
 
-   ],
- );
 }
 
 
