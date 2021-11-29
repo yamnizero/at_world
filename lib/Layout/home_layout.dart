@@ -39,9 +39,10 @@ class _HomeLayoutState extends State<HomeLayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     backgroundColor: Colors.white,
+
       appBar: AppBar(
         backgroundColor: Colors.white,
+        shadowColor: Colors.black,
         elevation: .0,
         title: Center(
           child: Image.asset(

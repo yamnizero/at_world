@@ -17,7 +17,7 @@ class UserFormForums extends StatelessWidget {
           //here want button => make profile page ------**
           CircleAvatar(
             radius: 23.0,
-            backgroundImage: NetworkImage(userFormForumsModel.imageUrl),
+            backgroundImage: AssetImage(userFormForumsModel.imageUrl),
           ),
           SizedBox(
             width: 15,
@@ -45,6 +45,7 @@ class UserFormForums extends StatelessWidget {
                   userFormForumsModel.time,
                   style: timeText,
                 ),
+                Divider(color: Colors.grey.withOpacity(0.5),thickness: 0.9,),
               ],
             ),
           ),

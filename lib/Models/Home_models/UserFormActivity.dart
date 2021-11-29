@@ -32,7 +32,7 @@ class UserFormActivity  extends StatelessWidget {
          children: [
            CircleAvatar(
              radius: 23.0,
-             backgroundImage: NetworkImage(userFormActivityModel.imageUrl),
+             backgroundImage: AssetImage(userFormActivityModel.imageUrl),
            ),
            SizedBox(width: 15,),
            //here want button => make posts page ------**
@@ -46,6 +46,8 @@ class UserFormActivity  extends StatelessWidget {
                      style: postText),
                  SizedBox(height: 5,),
                  Text(userFormActivityModel.time,style: timeText,),
+                Divider(color: Colors.grey.withOpacity(0.5),thickness: 0.9,),
+
                ],
              ),
            ),

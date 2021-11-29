@@ -45,7 +45,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Email",style: TitleSign,),
+                    Text("Email",style: titleSign,),
                     SizedBox(height: 10,),
                     defaultFormField(
                         controller: email,
@@ -62,7 +62,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         }
                     ),
                     SizedBox(height: 20,),
-                    Text("Password",style: TitleSign,),
+                    Text("Password",style: titleSign,),
                     SizedBox(height: 10,),
                     defaultFormField(
                         controller: password,
@@ -87,7 +87,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         }
                     ),
                     SizedBox(height: 20,),
-                    Text("First Name",style: TitleSign,),
+                    Text("First Name",style: titleSign,),
                     SizedBox(height: 10,),
                     defaultFormField(
                         controller: firstN,
@@ -104,7 +104,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         }
                     ),
                     SizedBox(height: 20,),
-                    Text("Last Name",style: TitleSign,),
+                    Text("Last Name",style: titleSign,),
                     SizedBox(height: 10,),
                     defaultFormField(
                         controller: lostN,
@@ -121,7 +121,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         }
                     ),
                     SizedBox(height: 20,),
-                    Text("Enter nickname",style: TitleSign,),
+                    Text("Enter nickname",style: titleSign,),
                     SizedBox(height: 10,),
                     defaultFormField(
                         controller: nickname,

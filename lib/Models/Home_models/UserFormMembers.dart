@@ -24,7 +24,7 @@ class UserFormMembers extends StatelessWidget {
             children: [
               CircleAvatar(
                 radius: 25.0,
-                backgroundImage:NetworkImage(userFormMembersModel.imageUrl),
+                backgroundImage:AssetImage(userFormMembersModel.imageUrl),
               ),
               CircleAvatar(
                 radius: 10.0,

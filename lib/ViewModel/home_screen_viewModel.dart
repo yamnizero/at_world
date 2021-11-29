@@ -3,6 +3,7 @@ import 'package:at_world/Models/Home_models/Groups.dart';
 import 'package:at_world/Models/Home_models/UserFormActivity.dart';
 import 'package:at_world/Models/Home_models/UserFormForums.dart';
 import 'package:at_world/Models/Home_models/UserFormMembers.dart';
+import 'package:at_world/Models/Home_models/UserFormNotification.dart';
 
 
 class HomeScreenViewModel {
@@ -11,6 +12,7 @@ class HomeScreenViewModel {
   List<UserFormActivityModel> userActivity;
   List<CoursesModel> courses;
   List<GroupsModel> groups;
+  List<UserFormNotificationsModel> notification;
 
   HomeScreenViewModel() {
     setUserFormModel();
@@ -18,79 +20,63 @@ class HomeScreenViewModel {
     setUserFormActivityModel();
     setCoursesModel();
     setGroupsModel();
+    setUserFormNotificationsModel();
 
   }
 
   void setUserFormModel() {
     userForms = [
       UserFormForumsModel(
-        title: 'Yamani',
+        title: 'Mohammed',
         description: 'Description',
         imageUrl:
-            'https://img.republicworld.com/republic-prod/stories/promolarge/xhdpi/vyls0odog0r31lb2_1636510424.jpeg',
+            'assets/images/me.png',
         time: '4 min',
       ),
       UserFormForumsModel(
-        title: 'Yamani',
+        title: 'Mohammed',
         description: 'Description',
         imageUrl:
-            'https://img.republicworld.com/republic-prod/stories/promolarge/xhdpi/vyls0odog0r31lb2_1636510424.jpeg',
+        'assets/images/me2.png',
         time: '4 min',
       ),
       UserFormForumsModel(
-        title: 'Yamani',
+        title: 'Mohammed',
         description: 'Description',
         imageUrl:
-            'https://img.republicworld.com/republic-prod/stories/promolarge/xhdpi/vyls0odog0r31lb2_1636510424.jpeg',
+        'assets/images/me.png',
         time: '4 min',
       ),
       UserFormForumsModel(
-        title: 'Yamani',
+        title: 'Mohammed',
         description: 'Description',
         imageUrl:
-            'https://img.republicworld.com/republic-prod/stories/promolarge/xhdpi/vyls0odog0r31lb2_1636510424.jpeg',
+        'assets/images/me2.png',
         time: '4 min',
       ),
-      UserFormForumsModel(
-        title: 'Yamani',
-        description: 'Description',
-        imageUrl:
-            'https://img.republicworld.com/republic-prod/stories/promolarge/xhdpi/vyls0odog0r31lb2_1636510424.jpeg',
-        time: '4 min',
-      ),
-      UserFormForumsModel(
-        title: 'Yamani',
-        description: 'Description',
-        imageUrl:
-            'https://img.republicworld.com/republic-prod/stories/promolarge/xhdpi/vyls0odog0r31lb2_1636510424.jpeg',
-        time: '4 min',
-      ),
+
     ];
   }
 
   void setUserFormMembersModel() {
     userMembers = [
       UserFormMembersModel(
-          imageUrl:  'https://img.republicworld.com/republic-prod/stories/promolarge/xhdpi/vyls0odog0r31lb2_1636510424.jpeg',
+        imageUrl: 'assets/images/me3.png',
       ),
       UserFormMembersModel(
-          imageUrl:  'https://img.republicworld.com/republic-prod/stories/promolarge/xhdpi/vyls0odog0r31lb2_1636510424.jpeg',
+        imageUrl:
+        'assets/images/me2.png',
       ),
       UserFormMembersModel(
-        imageUrl:  'https://img.republicworld.com/republic-prod/stories/promolarge/xhdpi/vyls0odog0r31lb2_1636510424.jpeg',
+        imageUrl:
+        'assets/images/me3.png',
       ),
       UserFormMembersModel(
-        imageUrl:  'https://img.republicworld.com/republic-prod/stories/promolarge/xhdpi/vyls0odog0r31lb2_1636510424.jpeg',
+        imageUrl:
+        'assets/images/me.png',
       ),
-      UserFormMembersModel(
-        imageUrl:  'https://img.republicworld.com/republic-prod/stories/promolarge/xhdpi/vyls0odog0r31lb2_1636510424.jpeg',
-      ),
-      UserFormMembersModel(
-        imageUrl:  'https://img.republicworld.com/republic-prod/stories/promolarge/xhdpi/vyls0odog0r31lb2_1636510424.jpeg',
-      ),
-      UserFormMembersModel(
-        imageUrl:  'https://img.republicworld.com/republic-prod/stories/promolarge/xhdpi/vyls0odog0r31lb2_1636510424.jpeg',
-      ),
+
+
     ];
   }
 
@@ -99,38 +85,27 @@ class HomeScreenViewModel {
       UserFormActivityModel(
           title: 'Mohammed posted an update',
           time: '4 months ago',
-          imageUrl: "'https://img.republicworld.com/republic-prod/stories/promolarge/xhdpi/vyls0odog0r31lb2_1636510424.jpeg'",
-      ),
+        imageUrl: 'assets/images/me.png',      ),
       UserFormActivityModel(
           title: 'Ahmed posted an update',
           time: '7 months ago',
-          imageUrl: "'https://img.republicworld.com/republic-prod/stories/promolarge/xhdpi/vyls0odog0r31lb2_1636510424.jpeg'",
-      ),
+        imageUrl: 'assets/images/me3.png',      ),
       UserFormActivityModel(
         title: 'omer posted an update',
         time: '15 months ago',
-        imageUrl: "'https://img.republicworld.com/republic-prod/stories/promolarge/xhdpi/vyls0odog0r31lb2_1636510424.jpeg'",
+        imageUrl: 'assets/images/me1.png',
       ),
       UserFormActivityModel(
         title: 'Mohammed posted an update',
         time: '4 months ago',
-        imageUrl: "'https://img.republicworld.com/republic-prod/stories/promolarge/xhdpi/vyls0odog0r31lb2_1636510424.jpeg'",
+        imageUrl: 'assets/images/me3.png',
       ),
       UserFormActivityModel(
         title: 'Mohammed posted an update',
         time: '4 months ago',
-        imageUrl: "'https://img.republicworld.com/republic-prod/stories/promolarge/xhdpi/vyls0odog0r31lb2_1636510424.jpeg'",
+        imageUrl: 'assets/images/me2.png',
       ),
-      UserFormActivityModel(
-        title: 'Ali posted an update',
-        time: '4 months ago',
-        imageUrl: "'https://img.republicworld.com/republic-prod/stories/promolarge/xhdpi/vyls0odog0r31lb2_1636510424.jpeg'",
-      ),
-      UserFormActivityModel(
-        title: 'Mohammed posted an update',
-        time: '4 months ago',
-        imageUrl: "'https://img.republicworld.com/republic-prod/stories/promolarge/xhdpi/vyls0odog0r31lb2_1636510424.jpeg'",
-      ),
+
 
     ];
   }
@@ -190,6 +165,36 @@ class HomeScreenViewModel {
           title: 'Developers',
           type: 'Team',
         imageUrl: 'assets/images/d.png',
+      ),
+    ];
+  }
+
+  void setUserFormNotificationsModel() {
+    notification = [
+      UserFormNotificationsModel(
+        title: 'Ahmed commented on one of your updates',
+        imageUrl: 'assets/images/me1.png',
+        time: '4 months ago',
+      ),
+      UserFormNotificationsModel(
+        title: 'Mohammed commented on one of your updates',
+        imageUrl: 'assets/images/me.png',
+        time: 'a year ago',
+      ),
+      UserFormNotificationsModel(
+        title: 'omer commented on one of your updates',
+        imageUrl: 'assets/images/me.png',
+        time: 'a year ago',
+      ),
+      UserFormNotificationsModel(
+        title: 'Mohammed commented on one of your updates',
+        imageUrl: 'assets/images/me3.png',
+        time: 'a year ago',
+      ),
+      UserFormNotificationsModel(
+        title: 'Mohammed commented on one of your updates',
+        imageUrl: 'assets/images/me2.png',
+        time: 'a year ago',
       ),
     ];
   }
