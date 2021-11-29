@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:percent_indicator/linear_percent_indicator.dart';
 
 
 
@@ -31,26 +32,30 @@ class Courses extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 200,
+        width: 180,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Stack(
+
               children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(20.0),
+                Card(
+                  clipBehavior: Clip.antiAlias,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0),),
+                  elevation: 6.0,
+                  color: Colors.black,
                   child: Image.asset(
                     coursesModel.imageUrl,
-                    fit: BoxFit.cover,
+                    fit: BoxFit.fill,
                     height: 100,
                     width: 180,
                   ),
                 ),
                 Positioned(
-                  top: 7,
-                  left: 0,
+                  top: 11,
+                  left: 4,
                   child: Container(
-                    height: 25,
+                    height: 20,
                     width: 80,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(
@@ -73,6 +78,25 @@ class Courses extends StatelessWidget {
                     ),
                   ),
                 ),
+                Positioned(
+                  left: 6,
+                  bottom: 15,
+                  child: Container(
+                    child: LinearPercentIndicator(
+                      width: 120,
+                      lineHeight: 3,
+                      percent: 40/100,
+                      animation: true,
+                      animationDuration: 1500,
+                    ),
+                  ),
+                ),
+                Positioned(
+                  bottom: 10,
+                    right: 13,
+                    child: Icon(Icons.cloud_download_outlined,
+                    color: Colors.black,
+                    )),
               ],
             ),
             Text(
@@ -80,6 +104,7 @@ class Courses extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
               style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 16),
             ),
+            SizedBox(height: 5,),
             Text(coursesModel.name),
           ],
         ),

@@ -1,10 +1,11 @@
 
 import 'package:at_world/Models/Home_models/Courses.dart';
+import 'package:at_world/Models/Home_models/Groups.dart';
 import 'package:at_world/Models/Home_models/UserFormActivity.dart';
+import 'package:at_world/Models/Home_models/UserFormForums.dart';
 import 'package:at_world/Models/Home_models/UserFormMembers.dart';
 import 'package:at_world/ViewModel/home_screen_viewmodel.dart';
 import 'package:at_world/modules/signup/sign.dart';
-import 'package:at_world/models/UserFormForums.dart';
 import 'package:at_world/share/styles/theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -30,6 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+
         child: Padding(
           padding: EdgeInsets.all(15.0),
           child: SingleChildScrollView(
@@ -146,6 +148,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             scrollDirection: Axis.horizontal,
                             itemBuilder: (context,index) => Courses(viewModel.courses[index],
                             onTap: (){},
+
                             ),
                             separatorBuilder: (context,index) => SizedBox(width:8,),
                             itemCount: viewModel.courses.length,
@@ -186,14 +189,64 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: ListView.separated(
                       physics: NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
-                      itemBuilder: (context,index) => UserFormForums(viewModel.userForms[index],onTap: (){
-
-                      },),
+                      itemBuilder: (context,index) => UserFormForums(viewModel.userForms[index],
+                      onTap: (){},
+                      ),
                       separatorBuilder: (context,index) => SizedBox(height: 15,),
                       itemCount: viewModel.userForms.length,
                     ),
                   ),
                 ),
+                Divider(color: Colors.black38,),
+
+                //Groups
+                Container(
+                  width: double.infinity,
+                  color: Colors.grey.withOpacity(0.2),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('Groups',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => SignUpScreen(),
+                                ),
+                              );
+                            },
+                            child: Text(
+                              "See all",
+                              style: textSee.copyWith(
+                                  decoration: TextDecoration.underline,
+                                  decorationThickness: 1),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 10,),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          height: 150,
+                          child: ListView.separated(
+                            scrollDirection: Axis.horizontal,
+                            itemBuilder: (context,index) => Groups(viewModel.groups[index],
+                              onTap: (){},
+
+                            ),
+                            separatorBuilder: (context,index) => SizedBox(width:8,),
+                            itemCount: viewModel.groups.length,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
 
 
               ],

@@ -2,10 +2,10 @@ import 'package:at_world/share/styles/theme.dart';
 import 'package:flutter/material.dart';
 
 class UserFormForums extends StatelessWidget {
-  final UserFormModel userFormModel;
+  final UserFormForumsModel userFormForumsModel;
   final void Function() onTap;
 
-  const UserFormForums(this.userFormModel, {Key key, this.onTap})
+  const UserFormForums(this.userFormForumsModel, {Key key, this.onTap})
       : super(key: key);
 
   @override
@@ -17,7 +17,7 @@ class UserFormForums extends StatelessWidget {
           //here want button => make profile page ------**
           CircleAvatar(
             radius: 23.0,
-            backgroundImage: NetworkImage(userFormModel.imageUrl),
+            backgroundImage: NetworkImage(userFormForumsModel.imageUrl),
           ),
           SizedBox(
             width: 15,
@@ -28,13 +28,13 @@ class UserFormForums extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  userFormModel.title,
+                  userFormForumsModel.title,
                   style: titleForums,
                 ),
                 SizedBox(
                   height: 5,
                 ),
-                Text(userFormModel.description,
+                Text(userFormForumsModel.description,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: postForums),
@@ -42,7 +42,7 @@ class UserFormForums extends StatelessWidget {
                   height: 5,
                 ),
                 Text(
-                  userFormModel.time,
+                  userFormForumsModel.time,
                   style: timeText,
                 ),
               ],
@@ -54,13 +54,13 @@ class UserFormForums extends StatelessWidget {
   }
 }
 
-class UserFormModel {
+class UserFormForumsModel {
   String title;
   String description;
   String imageUrl;
   String time;
 
-  UserFormModel(
+  UserFormForumsModel(
       {@required this.title,
       @required this.description,
       @required this.imageUrl,
