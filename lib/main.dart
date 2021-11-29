@@ -1,7 +1,6 @@
 import 'package:at_world/modules/login/login.dart';
 import 'package:flutter/material.dart';
 import 'layout/home_layout.dart';
-import 'modules/home/home_screen.dart';
 
 void main() {
   runApp(MyApp());
