@@ -189,9 +189,6 @@ class DetailMembers extends StatelessWidget {
           ),
 
 
-
-
-
         ],
       ),
 

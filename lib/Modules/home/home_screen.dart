@@ -10,6 +10,7 @@ import 'package:at_world/Models/Home_models/my_progress.dart';
 import 'package:at_world/Modules/members/members_screen.dart';
 import 'package:at_world/ViewModel/home_screen_viewModel.dart';
 import 'package:at_world/modules/signup/sign.dart';
+import 'package:at_world/share/components/pro.dart';
 import 'package:at_world/share/styles/theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -75,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => DetailMembers(),
+                        builder: (context) => ProfileScreen(),
                       ),
                     );
                     },
