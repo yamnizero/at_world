@@ -4,6 +4,7 @@ import 'package:at_world/Models/Home_models/UserFormActivity.dart';
 import 'package:at_world/Models/Home_models/UserFormForums.dart';
 import 'package:at_world/Models/Home_models/UserFormMembers.dart';
 import 'package:at_world/Models/Home_models/UserFormNotification.dart';
+import 'package:at_world/Models/Home_models/my_progress.dart';
 
 
 class HomeScreenViewModel {
@@ -13,6 +14,7 @@ class HomeScreenViewModel {
   List<CoursesModel> courses;
   List<GroupsModel> groups;
   List<UserFormNotificationsModel> notification;
+  List<MyProgressModel> myprogress;
 
   HomeScreenViewModel() {
     setUserFormModel();
@@ -21,6 +23,7 @@ class HomeScreenViewModel {
     setCoursesModel();
     setGroupsModel();
     setUserFormNotificationsModel();
+    setMyProgressModel();
 
   }
 
@@ -198,6 +201,16 @@ class HomeScreenViewModel {
       ),
     ];
   }
+
+  void setMyProgressModel() {
+    myprogress = [
+      MyProgressModel(title: 'Courses'),
+      MyProgressModel(title: 'Achievements'),
+      MyProgressModel(title: 'Certificates'),
+    ];
+  }
+
+
 }
 
 
