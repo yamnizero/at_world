@@ -1,10 +1,14 @@
 import 'package:at_world/Models/Home_models/detail_member_models/setting_content.dart';
+
 import 'package:at_world/ViewModel/home_screen_viewModel.dart';
 import 'package:at_world/share/components/componets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+
+import 'chat_page.dart';
+
 
 
 class ContentPage extends StatefulWidget {
@@ -179,7 +183,15 @@ class _ContentPageState extends State<ContentPage> {
                                             ),
                                           ),
                                           GestureDetector(
-                                            onTap:(){},
+                                            onTap:()
+                                            {
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                  builder: (context) => ChatDetailPage(),
+                                                ),
+                                              );
+                                            },
                                             child: Column(
                                               children: [
                                                 CircleAvatar(

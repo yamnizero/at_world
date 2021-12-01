@@ -99,7 +99,7 @@ class HomeScreenViewModel {
       UserFormActivityModel(
         title: 'omer posted an update',
         time: '15 months ago',
-        imageUrl: 'assets/images/me1.png',
+        imageUrl: 'assets/images/me3.png',
       ),
       UserFormActivityModel(
         title: 'Mohammed posted an update',
