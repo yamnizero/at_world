@@ -5,12 +5,11 @@ import 'package:at_world/Models/Home_models/UserFormActivity.dart';
 import 'package:at_world/Models/Home_models/UserFormForums.dart';
 import 'package:at_world/Models/Home_models/UserFormMembers.dart';
 import 'package:at_world/Models/Home_models/UserFormNotification.dart';
-import 'package:at_world/Models/Home_models/detail_member_models/detail_members.dart';
 import 'package:at_world/Models/Home_models/my_progress.dart';
 import 'package:at_world/Modules/members/members_screen.dart';
 import 'package:at_world/ViewModel/home_screen_viewModel.dart';
 import 'package:at_world/modules/signup/sign.dart';
-import 'package:at_world/share/components/pro.dart';
+import 'package:at_world/Models/Home_models/detail_member_models/content_page.dart';
 import 'package:at_world/share/styles/theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -76,7 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => ProfileScreen(),
+                        builder: (context) => ContentPage(),
                       ),
                     );
                     },
@@ -158,7 +157,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Container(
-                            height: 150,
+                            height: 165,
                             child: ListView.separated(
                               scrollDirection: Axis.horizontal,
                               itemBuilder: (context,index) => Courses(viewModel.courses[index],
@@ -248,7 +247,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Container(
-                            height: 150,
+                            height: 165,
                             child: ListView.separated(
                               scrollDirection: Axis.horizontal,
                               itemBuilder: (context,index) => Groups(viewModel.groups[index],

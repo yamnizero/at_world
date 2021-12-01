@@ -1,5 +1,6 @@
 import 'package:at_world/share/styles/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 Widget defaultButton({
   double width = double.infinity,
@@ -71,4 +72,76 @@ Widget defaultFormField({
       ),
     );
 
+
+Widget buttomSheet(context)
+{
+  showModalBottomSheet(context: context, builder: (BuildContext c)
+  {
+    return Wrap(
+      children: [
+        Container(
+          color: Colors.white,
+          child: Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                 Row(
+                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                   children: [
+                     Row(
+                       children: [
+                         CircleAvatar(
+                           radius: 25.0,
+                           backgroundImage:AssetImage('assets/images/me2.png'),
+                         ),
+                         SizedBox(width: 15,),
+                         Center(child: Text('Mohammed',style: TextStyle(fontSize: 14),)),
+                       ],
+                     ),
+                     Row(
+                       children: [
+                         GestureDetector(
+                           onTap: () {
+                             Navigator.pop(context);
+                           },
+                           child: Icon(
+                             Icons.close,
+                             size: 15.0,
+                           ),
+                         ),
+
+                       ],
+                     ),
+                   ],
+                 ),
+                SizedBox(height: 5,),
+                Divider(height: 2.0,),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+  );
+}
+
+void showToast() =>
+    Fluttertoast.showToast(
+    msg: 'Connection request sent',
+  toastLength: Toast.LENGTH_SHORT,
+  backgroundColor: Colors.grey.withOpacity(0.5),
+  textColor: Colors.black,
+  // gravity: ToastGravity.BOTTOM,
+  fontSize: 12,
+);
+void showToastCanel() => Fluttertoast.showToast(
+    msg: 'Connection request sent',
+  toastLength: Toast.LENGTH_SHORT,
+  backgroundColor: Colors.grey.withOpacity(0.5),
+  textColor: Colors.black,
+  // gravity: ToastGravity.BOTTOM,
+  fontSize: 12,
+);
 

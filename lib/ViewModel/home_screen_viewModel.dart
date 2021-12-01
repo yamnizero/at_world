@@ -4,6 +4,7 @@ import 'package:at_world/Models/Home_models/UserFormActivity.dart';
 import 'package:at_world/Models/Home_models/UserFormForums.dart';
 import 'package:at_world/Models/Home_models/UserFormMembers.dart';
 import 'package:at_world/Models/Home_models/UserFormNotification.dart';
+import 'package:at_world/Models/Home_models/detail_member_models/setting_content.dart';
 import 'package:at_world/Models/Home_models/my_progress.dart';
 
 
@@ -15,6 +16,7 @@ class HomeScreenViewModel {
   List<GroupsModel> groups;
   List<UserFormNotificationsModel> notification;
   List<MyProgressModel> myprogress;
+  List<SettingContentModel> settingpage;
 
   HomeScreenViewModel() {
     setUserFormModel();
@@ -24,6 +26,7 @@ class HomeScreenViewModel {
     setGroupsModel();
     setUserFormNotificationsModel();
     setMyProgressModel();
+    setSettingContentModel();
 
   }
 
@@ -207,6 +210,40 @@ class HomeScreenViewModel {
       MyProgressModel(title: 'Courses'),
       MyProgressModel(title: 'Achievements'),
       MyProgressModel(title: 'Certificates'),
+    ];
+  }
+
+  void setSettingContentModel() {
+    settingpage =[
+      SettingContentModel(
+        title: 'Profile',
+        num: "1",
+      ),
+      SettingContentModel(
+        title: 'Profile',
+        num: "1",
+      ),
+      SettingContentModel(
+        title: 'Profile',
+        num: "1",
+      ),
+      SettingContentModel(
+        title: 'Profile',
+        num: "9",
+      ),
+      SettingContentModel(
+        title: 'Profile',
+        num: "1",
+      ),
+      SettingContentModel(
+        title: 'Profile',
+        num: "50",
+      ),
+      SettingContentModel(
+        title: 'Profile',
+        num: "1",
+      ),
+
     ];
   }
 

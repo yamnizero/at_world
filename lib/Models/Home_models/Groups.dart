@@ -30,7 +30,8 @@ class Groups extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 180,
+        width: MediaQuery.of(context).size.width*0.4,
+        height:100,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
