@@ -73,7 +73,7 @@ Widget defaultFormField({
     );
 
 
-Widget buttomSheet(context)
+Widget buttomSheetFollow(context)
 {
   showModalBottomSheet(context: context, builder: (BuildContext c)
   {
@@ -92,7 +92,7 @@ Widget buttomSheet(context)
                      Row(
                        children: [
                          CircleAvatar(
-                           radius: 25.0,
+                           radius: 15.0,
                            backgroundImage:AssetImage('assets/images/me2.png'),
                          ),
                          SizedBox(width: 15,),
@@ -116,7 +116,22 @@ Widget buttomSheet(context)
                    ],
                  ),
                 SizedBox(height: 5,),
-                Divider(height: 2.0,),
+                Divider(height: 10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                         Icon(Icons.close),
+                          SizedBox(width: 15,),
+                          Center(child: Text('Unfollow',style: TextStyle(fontSize: 14),)),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
@@ -144,4 +159,10 @@ void showToastCanel() => Fluttertoast.showToast(
   // gravity: ToastGravity.BOTTOM,
   fontSize: 12,
 );
+
+// ListTile(
+// leading: Icon(Icons.account_circle, size: 50),
+// title: Text('Title Text'),
+// subtitle: Text('Secondary Text'),
+// ),
 

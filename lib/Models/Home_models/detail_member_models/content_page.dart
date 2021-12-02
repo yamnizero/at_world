@@ -9,8 +9,6 @@ import 'package:fluttertoast/fluttertoast.dart';
 
 import 'chat_page.dart';
 
-
-
 class ContentPage extends StatefulWidget {
   @override
   State<ContentPage> createState() => _ContentPageState();
@@ -19,11 +17,14 @@ class ContentPage extends StatefulWidget {
 class _ContentPageState extends State<ContentPage> {
   HomeScreenViewModel viewModel;
   bool connection = true;
+  bool follow = false;
+
   void initState() {
     viewModel = HomeScreenViewModel();
     // TODO: implement initState
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -32,8 +33,7 @@ class _ContentPageState extends State<ContentPage> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         leading: GestureDetector(
-          onTap: ()
-          {
+          onTap: () {
             Navigator.pop(context);
           },
           child: Icon(
@@ -48,11 +48,11 @@ class _ContentPageState extends State<ContentPage> {
           children: [
             Container(
               width: width,
-              height: height/3.5,
+              height: height / 3.5,
               child: Image.asset(
-                  'assets/images/me3.png',
-                   fit: BoxFit.cover,
-                   width: MediaQuery.of(context).size.width,
+                'assets/images/me3.png',
+                fit: BoxFit.cover,
+                width: MediaQuery.of(context).size.width,
               ),
             ),
             Padding(
@@ -85,7 +85,7 @@ class _ContentPageState extends State<ContentPage> {
                                       height: 60,
                                     ),
                                     Text(
-                                     'Mohammed' ,
+                                      'Mohammed',
                                       style: TextStyle(
                                         color: Colors.black,
                                         fontWeight: FontWeight.bold,
@@ -113,33 +113,34 @@ class _ContentPageState extends State<ContentPage> {
                                             MainAxisAlignment.spaceAround,
                                         children: [
                                           TextButton(
-                                              onPressed:  ()
-                                              {
-                                                setState(() {
-                                                  connection =!connection;
-                                                  Fluttertoast.showToast(
-                                                    msg: connection ?'Connection request cancel':'Connection request sent' ,
-                                                    toastLength: Toast.LENGTH_SHORT,
-                                                    backgroundColor: Colors.grey.withOpacity(0.5),
-                                                    textColor: Colors.black,
-                                                    // gravity: ToastGravity.BOTTOM,
-                                                    fontSize: 12,
-                                                  );
-
-                                                });
-
-
-                                              },
+                                            onPressed: () {
+                                              setState(() {
+                                                connection = !connection;
+                                                Fluttertoast.showToast(
+                                                  msg: connection
+                                                      ? 'Connection request cancel'
+                                                      : 'Connection request sent',
+                                                  toastLength:
+                                                      Toast.LENGTH_SHORT,
+                                                  backgroundColor: Colors.grey
+                                                      .withOpacity(0.5),
+                                                  textColor: Colors.black,
+                                                  // gravity: ToastGravity.BOTTOM,
+                                                  fontSize: 12,
+                                                );
+                                              });
+                                            },
                                             style: ElevatedButton.styleFrom(
-                                                primary: Colors.white
-                                            ),
+                                                primary: Colors.white),
                                             child: Column(
                                               children: [
                                                 CircleAvatar(
                                                     radius: 25,
                                                     // isPassword ? Icons.visibility : Icons.visibility_off,
                                                     child: Icon(
-                                                    connection ?  AntDesign.user : Icons.close,
+                                                      connection
+                                                          ? AntDesign.user
+                                                          : Icons.close,
                                                       color: Colors.white,
                                                       size: 30,
                                                     )),
@@ -158,7 +159,22 @@ class _ContentPageState extends State<ContentPage> {
                                             ),
                                           ),
                                           TextButton(
-                                            onPressed:showToast,
+                                            onPressed: () {
+                                              setState(() {
+                                                follow = !follow;
+                                                follow ? Fluttertoast.showToast(
+                                                  msg:  'Connection request sent',
+                                                  toastLength:
+                                                      Toast.LENGTH_SHORT,
+                                                  backgroundColor: Colors.grey
+                                                      .withOpacity(0.5),
+                                                  textColor: Colors.black,
+                                                  // gravity: ToastGravity.BOTTOM,
+                                                  fontSize: 12,
+                                                ):buttomSheetFollow(context);
+                                              });
+
+                                            },
                                             child: Column(
                                               children: [
                                                 CircleAvatar(
@@ -167,14 +183,15 @@ class _ContentPageState extends State<ContentPage> {
                                                         .withOpacity(0.4),
                                                     child: Icon(
                                                       AntDesign.upcircleo,
-                                                      color: Colors.black.withOpacity(0.6),
+                                                      color: Colors.black
+                                                          .withOpacity(0.6),
                                                       size: 28,
                                                     )),
                                                 SizedBox(
                                                   height: 10,
                                                 ),
                                                 Text(
-                                                  'Following',
+                                                  follow ? 'Following' :'Follow' ,
                                                   style: TextStyle(
                                                       color: Colors.black87,
                                                       fontSize: 14),
@@ -183,12 +200,12 @@ class _ContentPageState extends State<ContentPage> {
                                             ),
                                           ),
                                           GestureDetector(
-                                            onTap:()
-                                            {
+                                            onTap: () {
                                               Navigator.push(
                                                 context,
                                                 MaterialPageRoute(
-                                                  builder: (context) => ChatDetailPage(),
+                                                  builder: (context) =>
+                                                      ChatDetailPage(),
                                                 ),
                                               );
                                             },
@@ -200,7 +217,8 @@ class _ContentPageState extends State<ContentPage> {
                                                         .withOpacity(0.4),
                                                     child: Icon(
                                                       AntDesign.message1,
-                                                      color: Colors.black.withOpacity(0.6),
+                                                      color: Colors.black
+                                                          .withOpacity(0.6),
                                                       size: 28,
                                                     )),
                                                 SizedBox(
@@ -216,7 +234,7 @@ class _ContentPageState extends State<ContentPage> {
                                             ),
                                           ),
                                           GestureDetector(
-                                            onTap:(){},
+                                            onTap: () {},
                                             child: Column(
                                               children: [
                                                 CircleAvatar(
@@ -225,7 +243,8 @@ class _ContentPageState extends State<ContentPage> {
                                                         .withOpacity(0.4),
                                                     child: Icon(
                                                       AntDesign.eye,
-                                                      color: Colors.black.withOpacity(0.6),
+                                                      color: Colors.black
+                                                          .withOpacity(0.6),
                                                       size: 28,
                                                     )),
                                                 SizedBox(
@@ -248,7 +267,6 @@ class _ContentPageState extends State<ContentPage> {
                                 ),
                               ),
                             ),
-
                             Positioned(
                               top: 15,
                               left: 0,
@@ -274,14 +292,12 @@ class _ContentPageState extends State<ContentPage> {
                   SizedBox(
                     height: 5,
                   ),
-                  Column(
-                      children: [
-                        SizedBox(
-                          height: 20,
-                        ),
-                        SettingContent(),
-                      ]
-                  ),
+                  Column(children: [
+                    SizedBox(
+                      height: 20,
+                    ),
+                    SettingContent(),
+                  ]),
                 ],
               ),
             ),

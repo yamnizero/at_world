@@ -179,7 +179,7 @@ class HomeScreenViewModel {
     notification = [
       UserFormNotificationsModel(
         title: 'Ahmed commented on one of your updates',
-        imageUrl: 'assets/images/me1.png',
+        imageUrl: 'assets/images/me3.png',
         time: '4 months ago',
       ),
       UserFormNotificationsModel(
