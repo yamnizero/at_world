@@ -22,6 +22,7 @@ TextStyle timeText = TextStyle(color: Colors.grey,fontSize:12,);
 TextStyle postText = TextStyle(color: Colors.black);
 TextStyle postForums = TextStyle(color: Colors.grey,fontSize:15,);
 TextStyle titleForums = TextStyle(color: Colors.black,fontSize:18,);
+TextStyle Info = TextStyle(color: Colors.black,fontSize:22,);
 
 
 

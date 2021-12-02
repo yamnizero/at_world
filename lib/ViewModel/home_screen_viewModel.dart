@@ -5,6 +5,7 @@ import 'package:at_world/Models/Home_models/UserFormForums.dart';
 import 'package:at_world/Models/Home_models/UserFormMembers.dart';
 import 'package:at_world/Models/Home_models/UserFormNotification.dart';
 import 'package:at_world/Models/Home_models/detail_member_models/setting_content.dart';
+import 'package:at_world/Models/Home_models/detail_member_models/widget_profile_det.dart';
 import 'package:at_world/Models/Home_models/my_progress.dart';
 
 
@@ -17,6 +18,7 @@ class HomeScreenViewModel {
   List<UserFormNotificationsModel> notification;
   List<MyProgressModel> myprogress;
   List<SettingContentModel> settingpage;
+  List<GeneralInformationModel> generalInformation;
 
   HomeScreenViewModel() {
     setUserFormModel();
@@ -27,6 +29,7 @@ class HomeScreenViewModel {
     setUserFormNotificationsModel();
     setMyProgressModel();
     setSettingContentModel();
+    setGeneralInformationModel();
 
   }
 
@@ -244,6 +247,19 @@ class HomeScreenViewModel {
         num: "1",
       ),
 
+    ];
+  }
+
+  void setGeneralInformationModel() {
+    generalInformation =[
+    GeneralInformationModel(
+      firstName: 'Mohammed',
+      lastName: 'Gamal',
+      nickname: 'yamni',
+      birthDate: '13/09/1996',
+      Gender: 'male',
+      phone: '+249907970206',
+    )
     ];
   }
 
