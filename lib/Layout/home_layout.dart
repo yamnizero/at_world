@@ -5,6 +5,7 @@ import 'package:at_world/modules/home/home_screen.dart';
 import 'package:at_world/modules/members/members_screen.dart';
 import 'package:at_world/modules/more/more_screen.dart';
 import 'package:at_world/modules/new_feed/new_feed_screen.dart';
+import 'package:at_world/share/styles/theme.dart';
 import 'package:flutter/material.dart';
 
 class HomeLayout extends StatefulWidget {
@@ -52,7 +53,28 @@ class _HomeLayoutState extends State<HomeLayout> {
         ),
       ),
 
-      body:  screen[currentIndex],
+
+
+      body: screen[currentIndex],
+      // CustomScrollView(
+      //   slivers: [
+      //      SliverAppBar(
+      //
+      //       backgroundColor: Colors.white,
+      //       expandedHeight: 100,
+      //       floating: true,
+      //       pinned: true,
+      //       flexibleSpace: FlexibleSpaceBar(
+      //         title: Text(titles[currentIndex],style: TextStyle(color: black),),
+      //       ),
+      //     ),
+      //     SliverFillRemaining(
+      //         child: screen[currentIndex]
+      //     )
+      //   ],
+      //
+      //
+      // ),
       bottomNavigationBar: BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
       currentIndex: currentIndex,

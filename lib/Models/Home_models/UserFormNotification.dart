@@ -44,7 +44,7 @@ class UserFormNotifications  extends StatelessWidget {
                     style: postText),
                 SizedBox(height: 5,),
                 Text(userFormNotificationsModel.time,style: timeText,),
-                Divider(color: Colors.grey.withOpacity(0.5),thickness: 0.9,),
+                 Divider(color: Colors.grey.withOpacity(0.5),thickness: 0.9,),
               ],
             ),
           ),

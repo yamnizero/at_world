@@ -4,6 +4,8 @@ import 'package:at_world/Models/Home_models/detail_member_models/profile_screen.
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
+import 'timeline.dart';
+
 
 class SettingContentModel{
   String title;
@@ -60,7 +62,16 @@ class SettingContent extends StatelessWidget {
           ),
         ),
         GestureDetector(
-          onTap: (){},
+          onTap: ()
+          {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>  TimeLinePage(),
+              ),
+            );
+
+          },
           child: Card(
             elevation: 26,
             shadowColor: Colors.black,

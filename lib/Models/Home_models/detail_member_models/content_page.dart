@@ -135,14 +135,14 @@ class _ContentPageState extends State<ContentPage> {
                                             child: Column(
                                               children: [
                                                 CircleAvatar(
-                                                    radius: 25,
+                                                    radius: 22,
                                                     // isPassword ? Icons.visibility : Icons.visibility_off,
                                                     child: Icon(
                                                       connection
                                                           ? AntDesign.user
                                                           : Icons.close,
                                                       color: Colors.white,
-                                                      size: 30,
+                                                      size: 22,
                                                     )),
                                                 SizedBox(
                                                   height: 10,
@@ -178,14 +178,14 @@ class _ContentPageState extends State<ContentPage> {
                                             child: Column(
                                               children: [
                                                 CircleAvatar(
-                                                    radius: 25,
+                                                    radius: 22,
                                                     backgroundColor: Colors.grey
                                                         .withOpacity(0.4),
                                                     child: Icon(
                                                       AntDesign.upcircleo,
                                                       color: Colors.black
                                                           .withOpacity(0.6),
-                                                      size: 28,
+                                                      size: 22,
                                                     )),
                                                 SizedBox(
                                                   height: 10,
@@ -212,14 +212,14 @@ class _ContentPageState extends State<ContentPage> {
                                             child: Column(
                                               children: [
                                                 CircleAvatar(
-                                                    radius: 25,
+                                                    radius: 22,
                                                     backgroundColor: Colors.grey
                                                         .withOpacity(0.4),
                                                     child: Icon(
                                                       AntDesign.message1,
                                                       color: Colors.black
                                                           .withOpacity(0.6),
-                                                      size: 28,
+                                                      size: 22,
                                                     )),
                                                 SizedBox(
                                                   height: 10,
@@ -238,14 +238,14 @@ class _ContentPageState extends State<ContentPage> {
                                             child: Column(
                                               children: [
                                                 CircleAvatar(
-                                                    radius: 25,
+                                                    radius: 22,
                                                     backgroundColor: Colors.grey
                                                         .withOpacity(0.4),
                                                     child: Icon(
                                                       AntDesign.eye,
                                                       color: Colors.black
                                                           .withOpacity(0.6),
-                                                      size: 28,
+                                                      size: 22,
                                                     )),
                                                 SizedBox(
                                                   height: 10,
