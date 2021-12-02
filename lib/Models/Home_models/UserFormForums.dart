@@ -37,7 +37,8 @@ class UserFormForums extends StatelessWidget {
                 Text(userFormForumsModel.description,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: postForums),
+                    style: postForums
+                ),
                 SizedBox(
                   height: 5,
                 ),

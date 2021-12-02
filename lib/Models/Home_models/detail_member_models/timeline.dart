@@ -1,4 +1,5 @@
 import 'package:at_world/share/styles/theme.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
@@ -57,18 +58,19 @@ class TimeLinePage extends StatelessWidget {
                           backgroundImage: AssetImage('assets/images/me3.png'),
                         ),
                         SizedBox(width: 15,),
-                        //here want button => make posts page ------**
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text('Adele joined the group Teaching Ideas',
-                                maxLines: 3,
-                                overflow: TextOverflow.ellipsis,
-                                style: postText),
-                            SizedBox(height: 5,),
-                            Text('a year ago',style: TextStyle(fontSize: 14,color: Colors.grey),),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('Adele joined the group Teaching Ideas',
+                                  maxLines: 3,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: postText),
+                              SizedBox(height: 5,),
+                              Text('a year ago',style: TextStyle(fontSize: 14,color: Colors.grey),),
 
-                          ],
+                            ],
+                          ),
                         ),
 
                       ],
@@ -90,8 +92,7 @@ class TimeLinePage extends StatelessWidget {
                         ),
                         Row(
                           children: [
-                            Icon(
-                              AntDesign.minus,
+                            Icon(MaterialIcons.more_horiz,
                               size: 15.0,color: Colors.grey,
                             ),
 
@@ -100,6 +101,7 @@ class TimeLinePage extends StatelessWidget {
 
                       ],
                     ),
+                    SizedBox(height: 15,),
                     Divider(height: 10,thickness: 1,)
                   ],
                 ),
@@ -110,7 +112,7 @@ class TimeLinePage extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                 // crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
                       children: [
@@ -119,38 +121,79 @@ class TimeLinePage extends StatelessWidget {
                           backgroundImage: AssetImage('assets/images/me3.png'),
                         ),
                         SizedBox(width: 15,),
-                        //here want button => make posts page ------**
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text('Adele joined the group Teaching Ideas',
-                                maxLines: 3,
-                                overflow: TextOverflow.ellipsis,
-                                style: postText),
-                            SizedBox(height: 5,),
-                            Text('a year ago',style: TextStyle(fontSize: 14,color: Colors.grey),),
 
-                          ],
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('Adele commented on the post, After Avengers:Endgame,Should Marvel take 2020 off?',
+                                  maxLines: 3,
+                                  overflow: TextOverflow.clip,
+                                  style: postText
+                              ),
+                              SizedBox(height: 5,),
+                              Text('a year ago',style: TextStyle(fontSize: 14,color: Colors.grey),),
+
+                            ],
+                          ),
                         ),
 
                       ],
                     ),
                     SizedBox(height: 20,),
-                    Container(
-                      child: Column(
-                        children: [
-                          Container(
-                            width: MediaQuery.of(context).size.width,
-                            height: 100,
-                            color: Colors.red,
+                    Column(
+                      children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width,
+                          height: 80,
+                          decoration: BoxDecoration(
+                             color: Colors.grey.shade300,
+
+                            borderRadius: BorderRadius.only(
+                                topLeft:Radius.circular(20),
+
+                              topRight:  Radius.circular(20),
+                            ),
                           ),
-                          Container(
-                            width: MediaQuery.of(context).size.width,
-                            height: 100,
-                            color: Colors.grey,
+                          child:  Padding(
+                            padding: const EdgeInsets.only(left: 30.0,right: 15.0),
+                            child: Center(
+                              child: Text('Adele commented on the post, After Avengers:Endgame,Should Marvel take 2020 off?',
+                                  maxLines: 3,
+                                  overflow: TextOverflow.clip,
+                                  style: postText
+                              ),
+                            ),
                           ),
-                        ],
-                      ),
+                        ),
+                        Container(
+                          width: MediaQuery.of(context).size.width,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: Colors.grey.withOpacity(0.1),
+                            borderRadius: BorderRadius.only(
+                              bottomLeft:Radius.circular(20),
+                              bottomRight:  Radius.circular(20),
+                            ),
+                          ),
+                          child:  Padding(
+                            padding: const EdgeInsets.only(left: 30.0,right: 15.0),
+                            child: Row(
+                              children: [
+                                Icon(Ionicons.arrow_forward_circle_outline,color: Colors.grey,),
+                               SizedBox(width: 5,),
+                                Center(
+                                  child: Text('View Post',
+                                      maxLines: 3,
+                                      overflow: TextOverflow.clip,
+                                      style: postText
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                     SizedBox(height: 20,),
                     Row(
@@ -161,24 +204,20 @@ class TimeLinePage extends StatelessWidget {
                             Icon(AntDesign.like1,size: 17.0,color: Colors.grey,),
                             SizedBox(width: 5,),
                             Text('0',style: TextStyle(color: Colors.grey,fontSize: 16,fontWeight: FontWeight.bold),),
-                            SizedBox(width: 15,),
-                            Icon(AntDesign.wechat,size: 17.0,color: Colors.grey,),
-                            SizedBox(width: 5,),
-                            Text('0',style: TextStyle(color: Colors.grey,fontSize: 16,fontWeight: FontWeight.bold),),
                           ],
                         ),
                         Row(
                           children: [
-                            Icon(
-                              AntDesign.minus,
-                              size: 15.0,color: Colors.grey,
-                            ),
+                             Icon(MaterialIcons.more_horiz,
+                               size: 15.0,color: Colors.grey,
+                             ),
 
                           ],
                         ),
 
                       ],
                     ),
+                    SizedBox(height: 15,),
                     Divider(height: 10,thickness: 1,)
                   ],
                 ),
