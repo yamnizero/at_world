@@ -1,3 +1,4 @@
+import 'package:at_world/Models/Home_models/Groups/widget_groups.dart';
 import 'package:at_world/Models/Home_models/Members/Connection/Componets_connection/recently_active.dart';
 import 'package:at_world/share/styles/theme.dart';
 import 'package:flutter/material.dart';
@@ -88,22 +89,11 @@ class GroupsMember extends StatelessWidget {
                           SizedBox(
                             height: 10,
                           ),
-                          SizedBox(
-                            width: 130,
-                            child: ElevatedButton(
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Icon(MaterialIcons.check),
-                                  Text("Organizer",style: TextStyle(fontSize: 16),),
-                                ],
-                              ),
-                              onPressed: () {},
-                              style: ElevatedButton.styleFrom(
-                                  primary: Colors.grey.shade300,
-                                  onPrimary: Colors.black,
-                                  shape: StadiumBorder()),
-                            ),
+                          buttonOrganizer(
+                            function: ()
+                            {
+                              buttomSheetOrganizer(context);
+                            }
                           ),
                         ],
                       ),
