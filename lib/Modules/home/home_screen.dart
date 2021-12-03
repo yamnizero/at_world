@@ -4,7 +4,7 @@ import 'package:at_world/Models/Home_models/Courses/Courses.dart';
 import 'package:at_world/Models/Home_models/Forums/UserFormForums.dart';
 import 'package:at_world/Models/Home_models/Groups/Groups.dart';
 import 'package:at_world/Models/Home_models/Members/UserFormMembers.dart';
-import 'package:at_world/Models/Home_models/Members/content_page.dart';
+import 'package:at_world/Models/Home_models/Members/MainMember/content_page.dart';
 import 'package:at_world/Models/Home_models/My_Progress/my_progress.dart';
 import 'package:at_world/Models/Home_models/Notification/UserFormNotification.dart';
 import 'package:at_world/Modules/members/members_screen.dart';

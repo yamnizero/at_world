@@ -1,5 +1,6 @@
 import 'package:at_world/share/styles/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 Widget defaultButton({
@@ -26,6 +27,26 @@ Widget defaultButton({
         color: background,
       ),
     );
+
+Widget dropButton({
+  @required Function function,
+  @required String text,
+}) => ElevatedButton(
+        child: Row(
+          children: [
+            Text(text),
+            Icon(MaterialIcons.arrow_drop_down),
+          ],
+        ),
+  onPressed: function,
+        style: ElevatedButton.styleFrom(
+          primary: Colors.white,
+        onPrimary: Colors.black,
+            shape: StadiumBorder()
+         ),
+);
+
+
 
 //-----
 

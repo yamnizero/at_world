@@ -1,4 +1,4 @@
-import 'package:at_world/Models/Home_models/Members/widget_profile_det.dart';
+import 'package:at_world/Models/Home_models/Members/profi_member/widget_profile_det.dart';
 import 'package:at_world/ViewModel/home_screen_viewModel.dart';
 import 'package:at_world/share/styles/theme.dart';
 import 'package:flutter/material.dart';

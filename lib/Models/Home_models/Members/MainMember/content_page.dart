@@ -1,4 +1,4 @@
-import 'package:at_world/Models/Home_models/Members/setting_content.dart';
+import 'package:at_world/Models/Home_models/Members/MainMember/setting_content.dart';
 
 import 'package:at_world/ViewModel/home_screen_viewModel.dart';
 import 'package:at_world/share/components/componets.dart';
@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-import 'chat_page.dart';
+import '../chat/chat_page.dart';
 
 class ContentPage extends StatefulWidget {
   @override

@@ -4,8 +4,8 @@ import 'package:at_world/Models/Home_models/Activity/UserFormActivity.dart';
 import 'package:at_world/Models/Home_models/Forums/UserFormForums.dart';
 import 'package:at_world/Models/Home_models/Members/UserFormMembers.dart';
 import 'package:at_world/Models/Home_models/Notification/UserFormNotification.dart';
-import 'package:at_world/Models/Home_models/Members/setting_content.dart';
-import 'package:at_world/Models/Home_models/Members/widget_profile_det.dart';
+import 'package:at_world/Models/Home_models/Members/MainMember/setting_content.dart';
+import 'package:at_world/Models/Home_models/Members/profi_member/widget_profile_det.dart';
 import 'package:at_world/Models/Home_models/My_Progress/my_progress.dart';
 
 
