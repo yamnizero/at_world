@@ -1,4 +1,4 @@
-import 'package:at_world/Models/Home_models/detail_member_models/widget_timeline.dart';
+import 'package:at_world/Models/Home_models/Members/widget_timeline.dart';
 import 'package:at_world/share/styles/theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

@@ -1,4 +1,4 @@
-import 'package:at_world/Models/Home_models/detail_member_models/setting_content.dart';
+import 'package:at_world/Models/Home_models/Members/setting_content.dart';
 
 import 'package:at_world/ViewModel/home_screen_viewModel.dart';
 import 'package:at_world/share/components/componets.dart';

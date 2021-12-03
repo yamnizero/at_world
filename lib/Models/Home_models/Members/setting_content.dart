@@ -1,6 +1,6 @@
 
 
-import 'package:at_world/Models/Home_models/detail_member_models/profile_screen.dart';
+import 'package:at_world/Models/Home_models/Members/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 

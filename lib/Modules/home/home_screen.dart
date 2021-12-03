@@ -1,15 +1,15 @@
 
-import 'package:at_world/Models/Home_models/Courses.dart';
-import 'package:at_world/Models/Home_models/Groups.dart';
-import 'package:at_world/Models/Home_models/UserFormActivity.dart';
-import 'package:at_world/Models/Home_models/UserFormForums.dart';
-import 'package:at_world/Models/Home_models/UserFormMembers.dart';
-import 'package:at_world/Models/Home_models/UserFormNotification.dart';
-import 'package:at_world/Models/Home_models/my_progress.dart';
+import 'package:at_world/Models/Home_models/Activity/UserFormActivity.dart';
+import 'package:at_world/Models/Home_models/Courses/Courses.dart';
+import 'package:at_world/Models/Home_models/Forums/UserFormForums.dart';
+import 'package:at_world/Models/Home_models/Groups/Groups.dart';
+import 'package:at_world/Models/Home_models/Members/UserFormMembers.dart';
+import 'package:at_world/Models/Home_models/Members/content_page.dart';
+import 'package:at_world/Models/Home_models/My_Progress/my_progress.dart';
+import 'package:at_world/Models/Home_models/Notification/UserFormNotification.dart';
 import 'package:at_world/Modules/members/members_screen.dart';
+import 'package:at_world/Modules/signup/sign.dart';
 import 'package:at_world/ViewModel/home_screen_viewModel.dart';
-import 'package:at_world/modules/signup/sign.dart';
-import 'package:at_world/Models/Home_models/detail_member_models/content_page.dart';
 import 'package:at_world/share/styles/theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

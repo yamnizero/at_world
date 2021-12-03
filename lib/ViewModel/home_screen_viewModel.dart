@@ -1,12 +1,12 @@
-import 'package:at_world/Models/Home_models/Courses.dart';
-import 'package:at_world/Models/Home_models/Groups.dart';
-import 'package:at_world/Models/Home_models/UserFormActivity.dart';
-import 'package:at_world/Models/Home_models/UserFormForums.dart';
-import 'package:at_world/Models/Home_models/UserFormMembers.dart';
-import 'package:at_world/Models/Home_models/UserFormNotification.dart';
-import 'package:at_world/Models/Home_models/detail_member_models/setting_content.dart';
-import 'package:at_world/Models/Home_models/detail_member_models/widget_profile_det.dart';
-import 'package:at_world/Models/Home_models/my_progress.dart';
+import 'package:at_world/Models/Home_models/Courses/Courses.dart';
+import 'package:at_world/Models/Home_models/Groups/Groups.dart';
+import 'package:at_world/Models/Home_models/Activity/UserFormActivity.dart';
+import 'package:at_world/Models/Home_models/Forums/UserFormForums.dart';
+import 'package:at_world/Models/Home_models/Members/UserFormMembers.dart';
+import 'package:at_world/Models/Home_models/Notification/UserFormNotification.dart';
+import 'package:at_world/Models/Home_models/Members/setting_content.dart';
+import 'package:at_world/Models/Home_models/Members/widget_profile_det.dart';
+import 'package:at_world/Models/Home_models/My_Progress/my_progress.dart';
 
 
 class HomeScreenViewModel {
