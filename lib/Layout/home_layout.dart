@@ -7,6 +7,7 @@ import 'package:at_world/modules/more/more_screen.dart';
 import 'package:at_world/modules/new_feed/new_feed_screen.dart';
 import 'package:at_world/share/styles/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
 class HomeLayout extends StatefulWidget {
   const HomeLayout({Key key}) : super(key: key);
@@ -31,9 +32,9 @@ class _HomeLayoutState extends State<HomeLayout> {
   List<String> titles =
   [
     'Home',
-    'New Feeds',
-    'Members',
-    'Groups',
+    'Courses',
+    'Categories',
+    'My Library',
     'More',
   ];
 
@@ -89,31 +90,32 @@ class _HomeLayoutState extends State<HomeLayout> {
       [
         BottomNavigationBarItem(
             icon: Icon(
-              Icons.home_outlined,
+              MaterialIcons.home,
             ),
             label: 'Home'
         ),
         BottomNavigationBarItem(
             icon: Icon(
-                Icons.assistant_navigation
+                Ionicons.ios_logo_electron
+
             ),
-            label: 'New Feed'
+            label: 'Courses'
         ),
         BottomNavigationBarItem(
             icon: Icon(
-                Icons.people
+              MaterialIcons.category,
             ),
-            label: 'Members'
+            label: 'Categories'
         ),
         BottomNavigationBarItem(
             icon: Icon(
-                Icons.group
+                Ionicons.ios_library_outline
             ),
-            label: 'Groups'
+            label: 'My Library'
         ),
         BottomNavigationBarItem(
             icon: Icon(
-                Icons.more
+                MaterialIcons.more
             ),
             label: 'more'
         ),

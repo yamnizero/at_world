@@ -94,8 +94,7 @@ Widget defaultFormField({
     );
 
 
-Widget buttomSheetFollow(context)
-{
+Widget buttomSheetFollow(context) {
   showModalBottomSheet(context: context, builder: (BuildContext c)
   {
     return Wrap(
@@ -162,6 +161,8 @@ Widget buttomSheetFollow(context)
   }
   );
 }
+
+
 
 void showToast() =>
     Fluttertoast.showToast(

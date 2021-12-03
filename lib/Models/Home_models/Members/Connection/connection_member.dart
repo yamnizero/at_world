@@ -3,9 +3,17 @@ import 'package:at_world/share/styles/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
-class ConnectionMember extends StatelessWidget {
+import 'Componets_connection/all_profile_type.dart';
+import 'Componets_connection/recently_active.dart';
+
+class ConnectionMember extends StatefulWidget {
   const ConnectionMember({Key key}) : super(key: key);
 
+  @override
+  State<ConnectionMember> createState() => _ConnectionMemberState();
+}
+
+class _ConnectionMemberState extends State<ConnectionMember> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +52,12 @@ class ConnectionMember extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: dropButton(
                     text: 'Recently Active',
-                    function: (){}
+                    function: ()
+                    {
+                      setState(() {
+                        buttomSheetRecentlyActive(context);
+                      });
+                    }
                   ),
 
                 ),
@@ -52,7 +65,12 @@ class ConnectionMember extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: dropButton(
                       text: 'All Profile Types',
-                      function: (){}
+                      function: ()
+                      {
+                        setState(() {
+                          buttomSheetAllProfileType(context);
+                        });
+                      }
                   ),
 
                 ),
@@ -61,10 +79,13 @@ class ConnectionMember extends StatelessWidget {
           ),
           Divider(height: 10,thickness: 1,),
           ListTile(
-            leading: Icon(Icons.account_circle, size: 50),
-            title: Text('Title Text'),
-            subtitle: Text('Secondary Text'),
-          ),
+             leading: CircleAvatar(
+           radius: 30.0,
+             backgroundImage: AssetImage('assets/images/me3.png'),
+            ),
+              title: Text('Ahmed', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16)),
+             subtitle: Text('Admin'),
+           ),
         ],
       )
 

@@ -1,6 +1,7 @@
 
 
 import 'package:at_world/Models/Home_models/Members/Connection/connection_member.dart';
+import 'package:at_world/Models/Home_models/Members/Groups/groups_member.dart';
 import 'package:at_world/Models/Home_models/Members/profi_member/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
@@ -22,7 +23,6 @@ class SettingContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Container(
-
       decoration: BoxDecoration(
           color: Colors.white,
         borderRadius: BorderRadius.circular(25)
@@ -147,7 +147,16 @@ class SettingContent extends StatelessWidget {
             ),
             Divider(height: 10,thickness: 1,),
             GestureDetector(
-              onTap: (){},
+              onTap: ()
+              {
+                Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) =>  GroupsMember(),
+                ),
+              );
+
+              },
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(

@@ -25,6 +25,8 @@ TextStyle titleForums = TextStyle(color: Colors.black,fontSize:18,);
 TextStyle Info = TextStyle(color: Colors.black,fontSize:22,);
 
 
+TextStyle subgroups = TextStyle(
+    color: Colors.grey,fontSize: 14);
 
 const primary = Color(0xFFF391A0);
 const grey = Color(0xFFe9eaec);
