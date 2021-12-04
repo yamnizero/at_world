@@ -1,27 +1,33 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
 Widget buttonOrganizer({
   @required Function function,
+  @required String text,
+  @required double width,
+  @required double height,
 }) =>
-    SizedBox(
-      width: 130,
-      child: ElevatedButton(
+    GestureDetector(
+      onTap: function,
+      child: Container(
+        width: width,
+        height: height,
+        decoration: BoxDecoration(
+            color: Colors.grey.shade200,
+            borderRadius: BorderRadius.circular(25)
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Icon(MaterialIcons.check),
             Text(
-              "Organizer",
+              text,
               style: TextStyle(fontSize: 16),
             ),
           ],
         ),
-        onPressed: function,
-        style: ElevatedButton.styleFrom(
-            primary: Colors.grey.shade300,
-            onPrimary: Colors.black,
-            shape: StadiumBorder()),
       ),
     );
 
@@ -100,12 +106,17 @@ Widget buttomSheetOrganizer(context) {
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(18.0),
-                        child: Row(
-                          children: [
-                            Icon(Ionicons.log_out_sharp,size: 30,),
-                            SizedBox(width: 10,),
-                            Text("Leave",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)
-                          ],
+                        child: GestureDetector(
+                          onTap: () {
+                            showAlertDialogGroups(context);
+                          },
+                          child: Row(
+                            children: [
+                              Icon(Ionicons.log_out_sharp,size: 30,),
+                              SizedBox(width: 10,),
+                              Text("Leave",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -119,5 +130,31 @@ Widget buttomSheetOrganizer(context) {
       ],
     );
   }
+  );
+}
+
+
+void showAlertDialogGroups(context)
+{
+  showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context)
+      {
+        return AlertDialog(
+          title: new Text('Error while leaving group'),
+          content: new Text('As you are the only organizer of this group.you cannot leave it.You can either delete the group or promote '
+              'another member to be an organizer first and then leave the group.',
+            maxLines: 5,
+            overflow: TextOverflow.clip,
+          ),
+          actions: <Widget>[
+            new TextButton (
+                onPressed: () => Navigator.of(context).pop(),
+                child: new Text('Ok')
+            )
+          ],
+        );
+      }
   );
 }
