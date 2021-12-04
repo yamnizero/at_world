@@ -158,3 +158,195 @@ void showAlertDialogGroups(context)
       }
   );
 }
+
+Widget ListButtonPageGoupe(context)
+{
+
+  return  Container(
+    decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(25)
+    ),
+    child: Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        children: [
+          GestureDetector(
+            onTap: ()
+            {
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(
+              //     builder: (context) => ProfileScreen(),
+              //   ),
+              // );
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Icon(MaterialIcons.timeline,size: 25.0,),
+                      SizedBox(width: 15,),
+                      Center(child: Text('Feed',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),)),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.arrow_forward_ios,
+                        size: 15.0,
+                      ),
+
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Divider(height: 10,thickness: 1,),
+          GestureDetector(
+            onTap: ()
+            {
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(
+              //     builder: (context) =>  TimeLinePage(),
+              //   ),
+              // );
+
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Icon(MaterialIcons.card_membership,size: 25.0,),
+                      SizedBox(width: 15,),
+                      Center(child: Text('Members',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),)),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.arrow_forward_ios,
+                        size: 15.0,
+                      ),
+
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Divider(height: 10,thickness: 1,),
+          GestureDetector(
+            onTap: ()
+            {
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(
+              //     builder: (context) =>  ConnectionMember(),
+              //   ),
+              // );
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Icon(AntDesign.adduser,size: 25.0,),
+                      SizedBox(width: 15,),
+                      Center(child: Text('Photos',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),)),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      CircleAvatar(
+                        radius: 13,
+                        backgroundColor: Colors.lightBlue.withOpacity(0.4),
+                        child: Center(child: Text('1',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 12),)),
+                      ),
+                      SizedBox(width: 5,),
+                      Icon(
+                        Icons.arrow_forward_ios,
+                        size: 15.0,
+                      ),
+
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Divider(height: 10,thickness: 1,),
+          GestureDetector(
+            onTap: (){},
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Icon(AntDesign.videocamera,size: 25.0,),
+                      SizedBox(width: 15,),
+                      Center(child: Text('Videos',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),)),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.arrow_forward_ios,
+                        size: 15.0,
+                      ),
+
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Divider(height: 10,thickness: 1,),
+          GestureDetector(
+            onTap: (){},
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Icon(AntDesign.paperclip,size: 25.0,),
+                      SizedBox(width: 15,),
+                      Center(child: Text('Documents',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),)),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.arrow_forward_ios,
+                        size: 15.0,
+                      ),
+
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+
+        ],
+      ),
+    ),
+  );
+}
+
+
+
