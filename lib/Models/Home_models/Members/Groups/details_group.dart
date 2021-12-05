@@ -27,31 +27,37 @@ class DetailsGroup extends StatelessWidget {
                   Positioned(
                       top: 45,
                       left: 25,
-                      child: Container(
-                        width: 30,
-                        height: 30,
-                        decoration: BoxDecoration(
-                            color: Colors.grey.shade400,
-                            borderRadius: BorderRadius.circular(30)
+                      child: GestureDetector(
+                        onTap: (){
+                          Navigator.of(context).pop();
+                        },
+                        child: Container(
+                          width: 30,
+                          height: 30,
+                          decoration: BoxDecoration(
+                              color: Colors.grey.shade400,
+                              borderRadius: BorderRadius.circular(30)
+                          ),
+                          child: Icon(Icons.arrow_back_ios,size: 16,color: Colors.white,),
                         ),
-                        child: GestureDetector(
-                            onTap: (){
-                              Navigator.of(context).pop();
-                            },
-                            child: Icon(Icons.arrow_back_ios,size: 16,color: Colors.white,)),
                       )
                   ),
                   Positioned(
                       top: 45,
                       right: 25,
-                      child: Container(
-                        width: 30,
-                        height: 30,
-                        decoration: BoxDecoration(
-                            color: Colors.grey.shade400,
-                          borderRadius: BorderRadius.circular(30)
+                      child: GestureDetector(
+                        onTap: (){
+                          buttomSheetOrganizer(context);
+                        },
+                        child: Container(
+                          width: 30,
+                          height: 30,
+                          decoration: BoxDecoration(
+                              color: Colors.grey.shade400,
+                            borderRadius: BorderRadius.circular(30)
+                          ),
+                          child: Icon(MaterialIcons.more_horiz,size: 18,color: Colors.white,),
                         ),
-                        child: Icon(MaterialIcons.more_horiz,size: 18,color: Colors.white,),
                       )
                   ),
                   Positioned(

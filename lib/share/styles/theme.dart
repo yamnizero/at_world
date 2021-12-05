@@ -37,4 +37,11 @@ const blue_story = Colors.blueAccent;
 
 
 
+TextStyle SettingListTile = TextStyle(fontSize: 16,fontWeight: FontWeight.normal);
+
+
+
+
+
+
 
