@@ -34,6 +34,7 @@ dependencies:
   flutter_vector_icons:
   animated_text_kit:
   readmore:
+  image_picker: ^0.8.3+1
 
 
 dev_dependencies:

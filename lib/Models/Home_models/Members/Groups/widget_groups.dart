@@ -6,6 +6,7 @@ import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
 import 'includ_setting_group/feed_seeting_groups.dart';
 import 'includ_setting_group/screen_member_d_groupa.dart';
+import 'includ_setting_group/screen_phote_group.dart';
 
 Widget buttonOrganizer({
   @required Function function,
@@ -218,8 +219,6 @@ Widget ListButtonPageGoupe(context)
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-
-
                       ScreenMemberDGroup(),
                 ),
               );
@@ -260,12 +259,12 @@ Widget ListButtonPageGoupe(context)
           GestureDetector(
             onTap: ()
             {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //     builder: (context) =>  ConnectionMember(),
-              //   ),
-              // );
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) =>  ScreenPhotosGroups(),
+                ),
+              );
             },
             child: Padding(
               padding: const EdgeInsets.all(8.0),
