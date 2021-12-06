@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
 import 'includ_setting_group/feed_seeting_groups.dart';
+import 'includ_setting_group/screen_member_d_groupa.dart';
 
 Widget buttonOrganizer({
   @required Function function,
@@ -174,7 +175,7 @@ Widget ListButtonPageGoupe(context)
       padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
-          GestureDetector(
+          InkWell(
             onTap: ()
             {
               Navigator.push(
@@ -210,15 +211,18 @@ Widget ListButtonPageGoupe(context)
             ),
           ),
           Divider(height: 10,thickness: 1,),
-          GestureDetector(
+          InkWell(
             onTap: ()
             {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //     builder: (context) =>  TimeLinePage(),
-              //   ),
-              // );
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) =>
+
+
+                      ScreenMemberDGroup(),
+                ),
+              );
 
             },
             child: Padding(

@@ -146,7 +146,7 @@ class SettingContent extends StatelessWidget {
               ),
             ),
             Divider(height: 10,thickness: 1,),
-            GestureDetector(
+            InkWell(
               onTap: ()
               {
                 Navigator.push(

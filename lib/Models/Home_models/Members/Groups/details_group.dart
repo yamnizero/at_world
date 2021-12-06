@@ -102,7 +102,7 @@ class DetailsGroup extends StatelessWidget {
                         SizedBox(
                           height: 5,
                         ),
-                        GestureDetector(
+                        InkWell(
                           onTap: ()
                           {
                             buttomSheetOrganizer(context);
