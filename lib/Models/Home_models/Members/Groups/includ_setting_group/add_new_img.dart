@@ -2,7 +2,7 @@
 import 'dart:io';
 
 import 'package:at_world/Models/Home_models/Members/Groups/includ_setting_group/widget_photo_screen.dart';
-import 'package:at_world/share/styles/theme.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
@@ -177,4 +177,51 @@ class _AddNewPhotoState extends State<AddNewPhoto> {
 
     );
   }
+
+
+  //wai
+
+  Future<ImageSource> showImageSource(BuildContext context) async
+  {
+    if (Platform.isIOS){
+      return showCupertinoModalPopup<ImageSource>(
+          context: context,
+          builder: (context) => CupertinoActionSheet(
+            actions: [
+              CupertinoActionSheetAction(
+                child: Text('Camera'),
+                onPressed: ()=>Navigator.of(context).pop(ImageSource.camera),
+              ),
+              CupertinoActionSheetAction(
+                child: Text('Gallery'),
+                onPressed: ()=>Navigator.of(context).pop(ImageSource.gallery),
+              ),
+            ],
+          )
+      );
+    } else {
+      return showModalBottomSheet(
+          context: context,
+          builder: (context) =>Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ListTile(
+                leading: Icon(Icons.camera_alt),
+                title: Text('Camera'),
+                onTap: ()=>Navigator.of(context).pop(ImageSource.camera),
+              ),
+              ListTile(
+                leading: Icon(Icons.camera_alt),
+                title: Text('Gallery'),
+                onTap: ()=>Navigator.of(context).pop(ImageSource.gallery),
+              ),
+            ],
+          )
+      );
+    }
+  }
+
+
+
+
 }

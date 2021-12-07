@@ -35,6 +35,8 @@ dependencies:
   animated_text_kit:
   readmore:
   image_picker: ^0.8.3+1
+  video_player:
+  chewie:
 
 
 dev_dependencies:
