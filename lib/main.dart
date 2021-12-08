@@ -20,3 +20,8 @@ class MyApp extends StatelessWidget {
   }
 }
 
+
+// plan tow
+// null safety and clean code
+// and start again
+

@@ -331,7 +331,10 @@ Widget ListButtonPageGoupe(context)
           ),
           Divider(height: 10,thickness: 1,),
           GestureDetector(
-            onTap: (){},
+            onTap: ()
+            {
+
+            },
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(

@@ -1,11 +1,10 @@
 
 
-import 'package:at_world/modules/groups/groups_screen.dart';
-import 'package:at_world/modules/home/home_screen.dart';
-import 'package:at_world/modules/members/members_screen.dart';
-import 'package:at_world/modules/more/more_screen.dart';
-import 'package:at_world/modules/new_feed/new_feed_screen.dart';
-import 'package:at_world/share/styles/theme.dart';
+import 'package:at_world/view/groups/groups_screen.dart';
+import 'package:at_world/view/home/home_screen.dart';
+import 'package:at_world/view/members/members_screen.dart';
+import 'package:at_world/view/more/more_screen.dart';
+import 'package:at_world/view/new_feed/new_feed_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 

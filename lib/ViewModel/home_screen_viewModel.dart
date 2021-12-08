@@ -2,11 +2,14 @@ import 'package:at_world/Models/Home_models/Courses/Courses.dart';
 import 'package:at_world/Models/Home_models/Groups/Groups.dart';
 import 'package:at_world/Models/Home_models/Activity/UserFormActivity.dart';
 import 'package:at_world/Models/Home_models/Forums/UserFormForums.dart';
+
 import 'package:at_world/Models/Home_models/Members/UserFormMembers.dart';
 import 'package:at_world/Models/Home_models/Notification/UserFormNotification.dart';
 import 'package:at_world/Models/Home_models/Members/MainMember/setting_content.dart';
 import 'package:at_world/Models/Home_models/Members/profi_member/widget_profile_det.dart';
 import 'package:at_world/Models/Home_models/My_Progress/my_progress.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
 
 class HomeScreenViewModel {
@@ -20,6 +23,7 @@ class HomeScreenViewModel {
   List<SettingContentModel> settingpage;
   List<GeneralInformationModel> generalInformation;
 
+
   HomeScreenViewModel() {
     setUserFormModel();
     setUserFormMembersModel();
@@ -30,6 +34,7 @@ class HomeScreenViewModel {
     setMyProgressModel();
     setSettingContentModel();
     setGeneralInformationModel();
+
 
   }
 
@@ -63,7 +68,6 @@ class HomeScreenViewModel {
         'assets/images/me2.png',
         time: '4 min',
       ),
-
     ];
   }
 
@@ -71,20 +75,27 @@ class HomeScreenViewModel {
     userMembers = [
       UserFormMembersModel(
         imageUrl: 'assets/images/me3.png',
-      ),
-      UserFormMembersModel(
-        imageUrl:
-        'assets/images/me2.png',
-      ),
-      UserFormMembersModel(
-        imageUrl:
-        'assets/images/me3.png',
-      ),
-      UserFormMembersModel(
-        imageUrl:
-        'assets/images/me.png',
-      ),
+                nameMem: 'Mohammed',
+                nickName: 'yamni',
 
+      ),
+      UserFormMembersModel(
+        imageUrl: 'assets/images/me.png',
+        nameMem: 'Ahmed',
+        nickName: '7mada',
+
+      ),
+      UserFormMembersModel(
+        imageUrl: 'assets/images/me2.png',
+        nameMem: 'Yasser',
+       nickName: 'ysoor',
+      ),
+      UserFormMembersModel(
+        imageUrl: 'assets/images/me3.png',
+        nameMem: 'Yasser',
+       nickName: 'ysoor',
+
+      ),
 
     ];
   }
@@ -220,32 +231,40 @@ class HomeScreenViewModel {
     settingpage =[
       SettingContentModel(
         title: 'Profile',
+        icon:  (AntDesign.user),
         num: "1",
       ),
       SettingContentModel(
-        title: 'Profile',
+        title: 'TimeLine',
+        icon: AntDesign.linechart,
+        num: "11",
+      ),
+      SettingContentModel(
+        title: 'Connection',
+        icon:  AntDesign.adduser,
         num: "1",
       ),
       SettingContentModel(
-        title: 'Profile',
-        num: "1",
-      ),
-      SettingContentModel(
-        title: 'Profile',
+        title: 'Groups',
+        icon: AntDesign.addusergroup,
         num: "9",
       ),
       SettingContentModel(
-        title: 'Profile',
+        title: 'Photos',
+        icon:  AntDesign.picture,
         num: "1",
       ),
       SettingContentModel(
-        title: 'Profile',
-        num: "50",
+        title: 'Documents',
+        icon: AntDesign.paperclip,
+        num: "5",
       ),
       SettingContentModel(
-        title: 'Profile',
+        title: 'Videos',
+        icon: AntDesign.videocamera,
         num: "1",
       ),
+
 
     ];
   }
@@ -262,6 +281,7 @@ class HomeScreenViewModel {
     )
     ];
   }
+
 
 
 }

@@ -9,6 +9,7 @@ class GeneralInformationModel {
   String Gender;
   String phone;
 
+
   GeneralInformationModel(
       {
         this.firstName,

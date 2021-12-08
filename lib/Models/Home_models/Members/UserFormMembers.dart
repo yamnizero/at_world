@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 
 class UserFormMembersModel {
   String imageUrl;
-  UserFormMembersModel({@required this.imageUrl});
+  String nameMem;
+  String nickName;
+  UserFormMembersModel({@required this.imageUrl,@required this.nameMem,@required this.nickName});
 }
 
 
@@ -37,7 +39,6 @@ class UserFormMembers extends StatelessWidget {
                 ),
                 child: CircleAvatar(
                   radius: 7.0,
-                  backgroundColor: Colors.green,
                 ),
               ),
             ],

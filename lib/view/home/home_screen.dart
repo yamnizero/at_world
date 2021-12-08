@@ -7,10 +7,10 @@ import 'package:at_world/Models/Home_models/Members/UserFormMembers.dart';
 import 'package:at_world/Models/Home_models/Members/MainMember/content_page.dart';
 import 'package:at_world/Models/Home_models/My_Progress/my_progress.dart';
 import 'package:at_world/Models/Home_models/Notification/UserFormNotification.dart';
-import 'package:at_world/Modules/members/members_screen.dart';
-import 'package:at_world/Modules/signup/sign.dart';
 import 'package:at_world/ViewModel/home_screen_viewModel.dart';
 import 'package:at_world/share/styles/theme.dart';
+import 'package:at_world/view/members/members_screen.dart';
+import 'package:at_world/view/signup/sign.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -26,6 +26,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   HomeScreenViewModel viewModel;
+ UserFormMembersModel userFormMembersModel;
   @override
   void initState() {
     viewModel = HomeScreenViewModel();
@@ -77,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => ContentPage(),
+                            builder: (context) => ContentPage(viewModel.userMembers[index],viewModel.settingpage[index]),
                           ),
                         );
                         },
@@ -334,4 +335,27 @@ class _HomeScreenState extends State<HomeScreen> {
 
 }
 
+
+
+class Header extends StatefulWidget {
+  final String title;
+  final void Function() onTap;
+  const Header({Key key,@required this.title,@required this.onTap}) : super(key: key);
+
+  @override
+  State<Header> createState() => _HeaderState();
+}
+
+class _HeaderState extends State<Header> {
+  List<String> paths = [];
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(itemBuilder: (context,index)=> Image.asset(paths[index]),itemCount: paths.length,);
+  }
+
+  void onaddPhoto(){
+    // paths.insert(0, element)
+  }
+}
 
