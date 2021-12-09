@@ -2,13 +2,12 @@ import 'package:at_world/Models/Home_models/Courses/Courses.dart';
 import 'package:at_world/Models/Home_models/Groups/Groups.dart';
 import 'package:at_world/Models/Home_models/Activity/UserFormActivity.dart';
 import 'package:at_world/Models/Home_models/Forums/UserFormForums.dart';
-
+import 'package:at_world/Models/Home_models/Members/Groups/groups_member.dart';
 import 'package:at_world/Models/Home_models/Members/UserFormMembers.dart';
 import 'package:at_world/Models/Home_models/Notification/UserFormNotification.dart';
 import 'package:at_world/Models/Home_models/Members/MainMember/setting_content.dart';
 import 'package:at_world/Models/Home_models/Members/profi_member/widget_profile_det.dart';
 import 'package:at_world/Models/Home_models/My_Progress/my_progress.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
 
@@ -22,6 +21,7 @@ class HomeScreenViewModel {
   List<MyProgressModel> myprogress;
   List<SettingContentModel> settingpage;
   List<GeneralInformationModel> generalInformation;
+  List<GroupsMembersModel> memebergroups;
 
 
   HomeScreenViewModel() {
@@ -34,8 +34,7 @@ class HomeScreenViewModel {
     setMyProgressModel();
     setSettingContentModel();
     setGeneralInformationModel();
-
-
+    setGroupsMembersModel();
   }
 
   void setUserFormModel() {
@@ -279,6 +278,34 @@ class HomeScreenViewModel {
       Gender: 'male',
       phone: '+249907970206',
     )
+    ];
+  }
+
+  void setGroupsMembersModel()
+  {
+    memebergroups =[
+      GroupsMembersModel(
+          image:'assets/images/me.png',
+          title: 'Business Meet',
+          publicType:'meet',
+          mange: 'Organizer',
+          numMem: '7',
+      ),
+      GroupsMembersModel(
+          image:'assets/images/me.png',
+          title: 'Teaching Ideas',
+          publicType:'Club',
+          mange: 'Organizer',
+          numMem: '8',
+
+      ),
+      GroupsMembersModel(
+          image:'assets/images/me.png',
+          title: 'y Meet',
+          publicType:'Club',
+          mange: 'Organizer',
+          numMem: '3',
+      ),
     ];
   }
 

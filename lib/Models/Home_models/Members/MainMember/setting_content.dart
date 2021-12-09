@@ -18,16 +18,17 @@ class SettingContentModel{
   IconData icon;
   String num;
 
+
   SettingContentModel({@required this.title,@required this.icon,@required this.num});
 }
 
 class SettingContent extends StatelessWidget {
 
-   // final void Function() onTap;
+   final void Function() onTap;
     final SettingContentModel settingContentModel;
 
 
-  const SettingContent(this.settingContentModel,{Key key}) : super(key: key);
+  const SettingContent(this.settingContentModel,{Key key,this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,15 +42,7 @@ class SettingContent extends StatelessWidget {
             child: Column(
               children: [
                 GestureDetector(
-                  onTap: ()
-                  {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) =>  ConnectionMember(),
-                      ),
-                    );
-                  },
+                  onTap:onTap,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Row(

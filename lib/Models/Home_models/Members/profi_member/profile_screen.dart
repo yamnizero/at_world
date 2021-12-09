@@ -1,3 +1,4 @@
+import 'package:at_world/Models/Home_models/Members/UserFormMembers.dart';
 import 'package:at_world/Models/Home_models/Members/profi_member/widget_profile_det.dart';
 import 'package:at_world/ViewModel/home_screen_viewModel.dart';
 import 'package:at_world/share/styles/theme.dart';
@@ -5,7 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
 class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({Key key}) : super(key: key);
+  const ProfileScreen(this.userFormMembersModel,{Key key}) : super(key: key);
+  final UserFormMembersModel userFormMembersModel;
 
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();
@@ -13,6 +15,8 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   HomeScreenViewModel viewModel;
+  UserFormMembersModel userFormMembersModel;
+
   @override
   void initState() {
     viewModel = HomeScreenViewModel();
@@ -68,7 +72,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         CircleAvatar(
                           radius: 45,
                           backgroundImage: AssetImage(
-                            'assets/images/me3.png',
+                              widget.userFormMembersModel.imageUrl,
                           ),
                         ),
                         Positioned(

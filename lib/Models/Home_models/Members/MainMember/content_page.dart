@@ -1,7 +1,12 @@
+import 'package:at_world/Models/Home_models/Members/Connection/connection_member.dart';
+import 'package:at_world/Models/Home_models/Members/Groups/groups_member.dart';
 import 'package:at_world/Models/Home_models/Members/MainMember/setting_content.dart';
+import 'package:at_world/Models/Home_models/Members/Timeline/timeline.dart';
+import 'package:at_world/Models/Home_models/Members/profi_member/profile_screen.dart';
 
 import 'package:at_world/ViewModel/home_screen_viewModel.dart';
 import 'package:at_world/share/components/componets.dart';
+import 'package:at_world/view/groups/groups_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
@@ -26,9 +31,11 @@ class ContentPage extends StatefulWidget {
 class _ContentPageState extends State<ContentPage> {
   UserFormMembersModel userFormMembersModel;
   HomeScreenViewModel viewModel;
+  GroupsMembersModel groupsMembersModel;
   SettingContentModel settingContentModel;
   bool connection = true;
   bool follow = false;
+
 
   void initState() {
     viewModel = HomeScreenViewModel();
@@ -312,7 +319,54 @@ class _ContentPageState extends State<ContentPage> {
                         shrinkWrap: true,
                         separatorBuilder: (context,index) => Divider(height: 10,thickness: 1,),
                       itemCount: viewModel.settingpage.length,
-                        itemBuilder:(context,index) => SettingContent(viewModel.settingpage[index])),
+                        itemBuilder:(context,index) => SettingContent(
+                          viewModel.settingpage[index],onTap: ()
+                        {
+                          switch(index){case 0: Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ProfileScreen(widget.userFormMembersModel),
+                              ),
+                            );break;}
+                          switch(index){case 1: Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => TimeLinePage(),
+                            ),
+                          );break;}
+                          switch(index){case 2: Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ConnectionMember(),
+                            ),
+                          );break;}
+                          switch(index){case 3: Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => GroupsMember(groupsMembersModel),
+                            ),
+                          );break;}
+                          switch(index){case 4: Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ProfileScreen(userFormMembersModel),
+                            ),
+                          );break;}
+                          switch(index){case 5: Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ProfileScreen(userFormMembersModel),
+                            ),
+                          );break;}
+                          switch(index){case 6: Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ProfileScreen(userFormMembersModel),
+                            ),
+                          );break;}
+                        }
+                        ),
+                    ),
                   ]),
                 ],
               ),

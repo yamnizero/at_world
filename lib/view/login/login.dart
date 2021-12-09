@@ -1,7 +1,8 @@
-import 'package:at_world/modules/resetPassword/reset_password.dart';
-import 'package:at_world/modules/signup/sign.dart';
+
 import 'package:at_world/share/components/componets.dart';
 import 'package:at_world/share/styles/theme.dart';
+import 'package:at_world/view/resetPassword/reset_password.dart';
+import 'package:at_world/view/signup/sign.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
