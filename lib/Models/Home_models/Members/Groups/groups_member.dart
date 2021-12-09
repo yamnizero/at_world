@@ -35,13 +35,7 @@ class _GroupsMemberState extends State<GroupsMember> {
   GroupsMembersModel groupsMembersModel;
   void initState() {
     viewModel = new HomeScreenViewModel();
-    groupsMembersModel = GroupsMembersModel(
-      // image:'assets/images/me.png',
-      // title: 'Teaching Ideas',
-      // publicType:'Club',
-      // mange: 'Organizer',
-      // numMem: '8',
-    );
+    groupsMembersModel = GroupsMembersModel();
     // TODO: implement initState
     super.initState();
   }
@@ -91,7 +85,7 @@ class _GroupsMemberState extends State<GroupsMember> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (BuildContext context) => DetailsGroup(),
+                      builder: (BuildContext context) => DetailsGroup(viewModel.memebergroups[index],viewModel.detailsGroup[index]),
                     ),
                   );
                 },

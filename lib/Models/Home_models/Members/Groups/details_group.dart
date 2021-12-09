@@ -1,10 +1,44 @@
 
 import 'package:at_world/Models/Home_models/Members/Groups/widget_groups.dart';
+import 'package:at_world/ViewModel/home_screen_viewModel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
-class DetailsGroup extends StatelessWidget {
-  const DetailsGroup({Key key}) : super(key: key);
+import 'groups_member.dart';
+import 'includ_setting_group/feed_seeting_groups.dart';
+import 'includ_setting_group/screen_member_d_groupa.dart';
+import 'includ_setting_group/screen_phote_group.dart';
+import 'includ_setting_group/screen_videos_groups.dart';
+import 'listBurronPageGroups.dart';
+
+
+
+class DetailsGroupModel{
+ String background;
+
+ DetailsGroupModel({@required this.background});
+}
+
+
+class DetailsGroup extends StatefulWidget {
+  final DetailsGroupModel detailsGroupModel;
+  final GroupsMembersModel groupsMembersModel;
+  const DetailsGroup(this.groupsMembersModel,this.detailsGroupModel,{Key key}) : super(key: key);
+
+  @override
+  State<DetailsGroup> createState() => _DetailsGroupState();
+}
+
+class _DetailsGroupState extends State<DetailsGroup> {
+  GroupsMembersModel groupsMembersModel;
+  DetailsGroupModel detailsGroupModel;
+  HomeScreenViewModel viewModel;
+  void initState() {
+    viewModel = HomeScreenViewModel();
+    detailsGroupModel = DetailsGroupModel();
+    // TODO: implement initState
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +54,9 @@ class DetailsGroup extends StatelessWidget {
                       Container(
                         height: MediaQuery.of(context).size.height*0.50,
                         color: Colors.red,
-                        child: Image.asset('assets/images/bu2.png',fit: BoxFit.cover,),
+                        child: Image.asset(
+                        widget.detailsGroupModel.background,
+                        fit: BoxFit.cover,),
                       ),
                     ],
                   ),
@@ -73,14 +109,14 @@ class DetailsGroup extends StatelessWidget {
                             borderRadius: BorderRadius.circular(15),
                           ),
                           child: Image.asset(
-                            'assets/images/b.png',
+                            widget.groupsMembersModel.image,
                             fit: BoxFit.cover,
                           ),
                         ),
                         SizedBox(
                           height: 10,
                         ),
-                        Text('Business Meet',
+                        Text(widget.groupsMembersModel.title,
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 20,
@@ -90,12 +126,12 @@ class DetailsGroup extends StatelessWidget {
                         ),
                         Row(
                           children: [
-                            Text('Public / Club -',
+                            Text('Public / ${widget.groupsMembersModel.publicType} -',
                                 style: TextStyle(color: Colors.grey, fontSize: 16)),
                             SizedBox(
                               width: 4,
                             ),
-                            Text('13 members',
+                            Text('${widget.groupsMembersModel.numMem} members',
                                 style: TextStyle(color: Colors.grey, fontSize: 16)),
                           ],
                         ),
@@ -126,8 +162,7 @@ class DetailsGroup extends StatelessWidget {
                         GestureDetector(
                           onTap: ()
                           {
-                            buttomSheetOrganizer(context);
-                          },
+                            buttomSheetOrganizer(context);                          },
                           child: Container(
                             width: MediaQuery.of(context).size.width/3.3,
                             height: 35,
@@ -160,7 +195,79 @@ class DetailsGroup extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.all(10.0),
-                child: ListButtonPageGoupe(context),
+                child: ListView.separated(
+                  physics: NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  separatorBuilder: (context,index) => Divider(height: 10,thickness: 1,),
+                  itemCount: viewModel.listButtonPage.length,
+                  itemBuilder: (context,index) => ListButtonPageGroups(
+                    viewModel.listButtonPage[index],onTap: ()
+                  {
+                    switch(index){case 0:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => FeedSettingGroups(),
+                      ),
+                    );
+                    break;}
+                    switch(index){case 1:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            ScreenMemberDGroup(),
+                      ),
+                    );
+                      break;}
+                    switch(index){case 2:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>  ScreenPhotosGroups(),
+                      ),
+                    );break;}
+                    switch(index){case 3:
+                      Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>  ScreenVideosGroups(),
+                      ),
+                    );break;}
+                    switch(index){case 4:
+                      Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ScreenVideosGroups(),
+                      ),
+                    );break;}
+                    // switch(index){case 5: Navigator.push(
+                    //   context,
+                    //   //
+                    // );break;}
+                    // switch(index){case 6: Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (context) => ProfileScreen(userFormMembersModel),
+                    //   ),
+                    // );break;}
+                    // switch(index){case 7: Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (context) => ProfileScreen(userFormMembersModel),
+                    //   ),
+                    // );break;}
+                    // switch(index){case 8: Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (context) => ProfileScreen(userFormMembersModel),
+                    //   ),
+                    // );break;}
+
+                  },
+                  ),
+
+                ),
               )
             ],
           ),

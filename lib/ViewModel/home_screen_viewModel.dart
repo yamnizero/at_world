@@ -2,7 +2,9 @@ import 'package:at_world/Models/Home_models/Courses/Courses.dart';
 import 'package:at_world/Models/Home_models/Groups/Groups.dart';
 import 'package:at_world/Models/Home_models/Activity/UserFormActivity.dart';
 import 'package:at_world/Models/Home_models/Forums/UserFormForums.dart';
+import 'package:at_world/Models/Home_models/Members/Groups/details_group.dart';
 import 'package:at_world/Models/Home_models/Members/Groups/groups_member.dart';
+import 'package:at_world/Models/Home_models/Members/Groups/listBurronPageGroups.dart';
 import 'package:at_world/Models/Home_models/Members/UserFormMembers.dart';
 import 'package:at_world/Models/Home_models/Notification/UserFormNotification.dart';
 import 'package:at_world/Models/Home_models/Members/MainMember/setting_content.dart';
@@ -22,6 +24,8 @@ class HomeScreenViewModel {
   List<SettingContentModel> settingpage;
   List<GeneralInformationModel> generalInformation;
   List<GroupsMembersModel> memebergroups;
+  List<DetailsGroupModel> detailsGroup;
+  List<ListButtonPageGroupsModel> listButtonPage;
 
 
   HomeScreenViewModel() {
@@ -35,6 +39,8 @@ class HomeScreenViewModel {
     setSettingContentModel();
     setGeneralInformationModel();
     setGroupsMembersModel();
+    setDetailsGroupModel();
+    setListButtonPageGroupsModel();
   }
 
   void setUserFormModel() {
@@ -285,14 +291,14 @@ class HomeScreenViewModel {
   {
     memebergroups =[
       GroupsMembersModel(
-          image:'assets/images/me.png',
+          image:'assets/images/flutter.png',
           title: 'Business Meet',
           publicType:'meet',
           mange: 'Organizer',
           numMem: '7',
       ),
       GroupsMembersModel(
-          image:'assets/images/me.png',
+          image:'assets/images/p.png',
           title: 'Teaching Ideas',
           publicType:'Club',
           mange: 'Organizer',
@@ -300,12 +306,81 @@ class HomeScreenViewModel {
 
       ),
       GroupsMembersModel(
-          image:'assets/images/me.png',
+          image:'assets/images/d.png',
           title: 'y Meet',
           publicType:'Club',
           mange: 'Organizer',
           numMem: '3',
       ),
+    ];
+  }
+
+  void setDetailsGroupModel() {
+    detailsGroup = [
+      DetailsGroupModel(
+          background: 'assets/images/me.png',
+      ),
+      DetailsGroupModel(
+          background: 'assets/images/bu2.png',
+      ),
+
+      DetailsGroupModel(
+        background: 'assets/images/blue.png',
+      ),
+    ];
+  }
+
+  void setListButtonPageGroupsModel() {
+    listButtonPage =[
+      ListButtonPageGroupsModel(
+        title: 'feed',
+        icon:  (MaterialIcons.timeline),
+        num: "0",
+
+      ),
+      ListButtonPageGroupsModel(
+        title: 'Members',
+        icon:  (MaterialIcons.card_membership),
+        num: "1",
+
+      ),
+      ListButtonPageGroupsModel(
+        title: 'Photos',
+        icon:  (AntDesign.adduser),
+        num: "1",
+
+      ),
+      ListButtonPageGroupsModel(
+        title: 'Videos',
+        icon:  (AntDesign.videocamera),
+        num: "1",
+
+      ),
+      ListButtonPageGroupsModel(
+        title: 'Documents',
+        icon:  (AntDesign.paperclip),
+        num: "1",
+      ),
+      // ListButtonPageGroupsModel(
+      //   title: 'Discussions',
+      //   icon:  (AntDesign.wechat),
+      //   num: "1",
+      // ),
+      // ListButtonPageGroupsModel(
+      //   title: 'Send Invites',
+      //   icon:  (AntDesign.adduser),
+      //   num: "1",
+      // ),
+      // ListButtonPageGroupsModel(
+      //   title: 'Send Messages',
+      //   icon:  (AntDesign.inbox),
+      //   num: "1",
+      // ),
+      // ListButtonPageGroupsModel(
+      //   title: 'Manage',
+      //   icon:  (AntDesign.setting),
+      //   num: "1",
+      // ),
     ];
   }
 
