@@ -8,8 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
 class WidgetFeedSettingGroup extends StatefulWidget {
-  final UserFormMembersModel userFormMembersModel;
-  const WidgetFeedSettingGroup(this.userFormMembersModel,{Key? key}) : super(key: key);
+  // final UserFormMembersModel userFormMembersModel;
+  const WidgetFeedSettingGroup({Key? key}) : super(key: key);
 
 
 
@@ -19,14 +19,14 @@ class WidgetFeedSettingGroup extends StatefulWidget {
 
 class _WidgetFeedSettingGroupState extends State<WidgetFeedSettingGroup> {
 
-  late UserFormMembersModel userFormMembersModel;
+  // late UserFormMembersModel userFormMembersModel;
   HomeScreenViewModel? viewModel;
 
-  void initState() {
-    viewModel = HomeScreenViewModel();
-    // TODO: implement initState
-    super.initState();
-  }
+  // void initState() {
+  //   viewModel = HomeScreenViewModel();
+  //   // TODO: implement initState
+  //   super.initState();
+  // }
 
 
 

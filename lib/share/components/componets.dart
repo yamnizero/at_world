@@ -29,8 +29,8 @@ Widget defaultButton({
     );
 
 Widget dropButton({
-  @required Function()? function,
-  @required String? text,
+  required Function()? function,
+  required String? text,
 }) => ElevatedButton(
         child: Row(
           children: [

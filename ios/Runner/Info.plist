@@ -56,8 +56,8 @@
 		<key>NSMicrophoneUsageDescription</key>
 		<string>Used to capture audio for image picker plugin</string>
 
-
-
+		<key>NSMicrophoneUsageDescription</key>
+        <string>Explain why your app uses photo library</string>
 
 
 	</dict>

@@ -1,13 +1,13 @@
-import 'package:at_world/Models/Home_models/Members/Groups/includ_setting_group/widget_feed_setting_group.dart';
+import 'package:at_world/Models/Home_models/Members/Groups/includ_setting_group/feed/widget_feed_setting_group.dart';
 import 'package:at_world/ViewModel/home_screen_viewModel.dart';
 import 'package:flutter/material.dart';
 
-import '../../UserFormMembers.dart';
+import '../../../UserFormMembers.dart';
 import 'create_post_group.dart';
 
 class FeedSettingGroups extends StatefulWidget {
-  const FeedSettingGroups(this.userFormMembersModel,{Key? key}) : super(key: key);
- final  UserFormMembersModel userFormMembersModel;
+  const FeedSettingGroups({Key? key}) : super(key: key);
+
 
   @override
   State<FeedSettingGroups> createState() => _FeedSettingGroupsState();
@@ -15,15 +15,15 @@ class FeedSettingGroups extends StatefulWidget {
 
 class _FeedSettingGroupsState extends State<FeedSettingGroups> {
   TextEditingController createPost = TextEditingController();
-  late UserFormMembersModel userFormMembersModel;
+  // late UserFormMembersModel userFormMembersModel;
   var formKey = GlobalKey<FormState>();
 
-  late HomeScreenViewModel viewModel;
-  void initState() {
-    viewModel = HomeScreenViewModel();
-    // TODO: implement initState
-    super.initState();
-  }
+  // late HomeScreenViewModel viewModel;
+  // void initState() {
+  //   viewModel = HomeScreenViewModel();
+  //   // TODO: implement initState
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -85,7 +85,7 @@ class _FeedSettingGroupsState extends State<FeedSettingGroups> {
         ),
       ),
       body: SingleChildScrollView(
-        child: WidgetFeedSettingGroup(widget.userFormMembersModel),
+        child: WidgetFeedSettingGroup(),
       ),
     );
   }

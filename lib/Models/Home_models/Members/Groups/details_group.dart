@@ -5,10 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
 import 'groups_member.dart';
-import 'includ_setting_group/feed_seeting_groups.dart';
-import 'includ_setting_group/screen_member_d_groupa.dart';
-import 'includ_setting_group/screen_phote_group.dart';
-import 'includ_setting_group/screen_videos_groups.dart';
+import 'includ_setting_group/document/screen_documents.dart';
+import 'includ_setting_group/feed/feed_seeting_groups.dart';
+import 'includ_setting_group/member/screen_member_d_groupa.dart';
+import 'includ_setting_group/Photo/screen_phote_group.dart';
+import 'includ_setting_group/video/screen_videos_groups.dart';
 import 'listBurronPageGroups.dart';
 
 
@@ -118,7 +119,7 @@ class _DetailsGroupState extends State<DetailsGroup> {
                         SizedBox(
                           height: 10,
                         ),
-                        Text(widget.groupsMembersModel!.title,
+                        Text(widget.groupsMembersModel.title,
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 20,
@@ -128,12 +129,12 @@ class _DetailsGroupState extends State<DetailsGroup> {
                         ),
                         Row(
                           children: [
-                            Text('Public / ${widget.groupsMembersModel!.publicType} -',
+                            Text('Public / ${widget.groupsMembersModel.publicType} -',
                                 style: TextStyle(color: Colors.grey, fontSize: 16)),
                             SizedBox(
                               width: 4,
                             ),
-                            Text('${widget.groupsMembersModel!.numMem} members',
+                            Text('${widget.groupsMembersModel.numMem} members',
                                 style: TextStyle(color: Colors.grey, fontSize: 16)),
                           ],
                         ),
@@ -206,12 +207,12 @@ class _DetailsGroupState extends State<DetailsGroup> {
                     viewModel.listButtonPage[index],onTap: ()
                   {
                     switch(index){case 0:
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) => FeedSettingGroups(),
-                    //   ),
-                    // );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => FeedSettingGroups(),
+                      ),
+                    );
                     break;}
                     switch(index){case 1:
                     Navigator.push(
@@ -240,7 +241,7 @@ class _DetailsGroupState extends State<DetailsGroup> {
                       Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => ScreenVideosGroups(),
+                        builder: (context) => ScreenDocument(),
                       ),
                     );break;}
                     // switch(index){case 5: Navigator.push(

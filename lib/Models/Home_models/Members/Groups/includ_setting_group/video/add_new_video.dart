@@ -1,7 +1,7 @@
 
 
 
-import 'package:at_world/Models/Home_models/Members/Groups/includ_setting_group/widget_photo_screen.dart';
+import 'package:at_world/Models/Home_models/Members/Groups/includ_setting_group/Photo/widget_photo_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
@@ -123,7 +123,7 @@ class _AddNewVideosState extends State<AddNewVideos> {
                   child: InkWell(
                     onTap: ()
                     {
-                      buttomSheetPupbliPhoto(context);
+                      bottomSheetPupbliPhoto(context);
                     },
                     child: Container(
                       width: MediaQuery.of(context).size.width/3.5,

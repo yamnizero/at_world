@@ -1,7 +1,7 @@
 
 import 'dart:io';
 
-import 'package:at_world/Models/Home_models/Members/Groups/includ_setting_group/widget_photo_screen.dart';
+import 'package:at_world/Models/Home_models/Members/Groups/includ_setting_group/Photo/widget_photo_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -124,7 +124,7 @@ class _AddNewPhotoState extends State<AddNewPhoto> {
                                       pickImageCamera(ImageSource.camera);
                                     },
                                     child: Text('Camera')),
-                                content: InkWell(
+                                 content: InkWell(
                                     onTap: ()
                                     {
                                       pickImageGellery();
@@ -150,7 +150,7 @@ class _AddNewPhotoState extends State<AddNewPhoto> {
                   child: InkWell(
                     onTap: ()
                     {
-                      buttomSheetPupbliPhoto(context);
+                      bottomSheetPupbliPhoto(context);
                     },
                     child: Container(
                       width: MediaQuery.of(context).size.width/3.5,
