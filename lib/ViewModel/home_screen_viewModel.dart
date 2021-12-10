@@ -14,21 +14,21 @@ import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
 
 class HomeScreenViewModel {
-  List<UserFormForumsModel> userForms;
-  List<UserFormMembersModel> userMembers;
-  List<UserFormActivityModel> userActivity;
-  List<CoursesModel> courses;
-  List<GroupsModel> groups;
-  List<UserFormNotificationsModel> notification;
-  List<MyProgressModel> myprogress;
-  List<SettingContentModel> settingpage;
-  List<GeneralInformationModel> generalInformation;
-  List<GroupsMembersModel> memebergroups;
-  List<DetailsGroupModel> detailsGroup;
-  List<ListButtonPageGroupsModel> listButtonPage;
+  late List<UserFormForumsModel> userForms;
+  late List<UserFormMembersModel> userMembers;
+  late List<UserFormActivityModel> userActivity;
+  late List<CoursesModel> courses;
+  late  List<GroupsModel> groups;
+  late List<UserFormNotificationsModel> notification;
+  late List<MyProgressModel> myprogress;
+  late List<SettingContentModel> settingpage;
+  late List<GeneralInformationModel> generalInformation;
+  late List<GroupsMembersModel> memebergroups;
+  // late List<DetailsGroupModel> detailsGroup;
+  late List<ListButtonPageGroupsModel> listButtonPage;
 
 
-  HomeScreenViewModel() {
+   HomeScreenViewModel() {
     setUserFormModel();
     setUserFormMembersModel();
     setUserFormActivityModel();
@@ -39,11 +39,11 @@ class HomeScreenViewModel {
     setSettingContentModel();
     setGeneralInformationModel();
     setGroupsMembersModel();
-    setDetailsGroupModel();
+    // setDetailsGroupModel();
     setListButtonPageGroupsModel();
   }
 
-  void setUserFormModel() {
+   void setUserFormModel() {
     userForms = [
       UserFormForumsModel(
         title: 'Mohammed',
@@ -315,20 +315,20 @@ class HomeScreenViewModel {
     ];
   }
 
-  void setDetailsGroupModel() {
-    detailsGroup = [
-      DetailsGroupModel(
-          background: 'assets/images/me.png',
-      ),
-      DetailsGroupModel(
-          background: 'assets/images/bu2.png',
-      ),
-
-      DetailsGroupModel(
-        background: 'assets/images/blue.png',
-      ),
-    ];
-  }
+  // void setDetailsGroupModel() {
+  //   detailsGroup = [
+  //     DetailsGroupModel(
+  //         background: 'assets/images/me.png',
+  //     ),
+  //     DetailsGroupModel(
+  //         background: 'assets/images/bu2.png',
+  //     ),
+  //
+  //     DetailsGroupModel(
+  //       background: 'assets/images/blue.png',
+  //     ),
+  //   ];
+  // }
 
   void setListButtonPageGroupsModel() {
     listButtonPage =[

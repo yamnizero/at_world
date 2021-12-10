@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
-Widget buttomSheetRecentlyActive(context) {
+Widget? buttomSheetRecentlyActive(context) {
   showModalBottomSheet(context: context, builder: (BuildContext c)
   {
     return Wrap(

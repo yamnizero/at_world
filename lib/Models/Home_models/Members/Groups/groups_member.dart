@@ -6,24 +6,24 @@ import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'details_group.dart';
 
 class GroupsMembersModel {
-  String image;
-  String title;
-  String publicType;
-  String mange;
-  String numMem;
+  String? image;
+  String? title;
+  String? publicType;
+  String? mange;
+  String? numMem;
 
   GroupsMembersModel(
-      {@required this.image,
-      @required this.title,
-      @required this.publicType,
-      @required this.mange,
-      @required this.numMem});
+      {required this.image,
+      required this.title,
+      required this.publicType,
+      required this.mange,
+      required this.numMem});
 }
 
 class GroupsMember extends StatefulWidget {
   final GroupsMembersModel groupsMembersModel;
-  final void Function() onTap;
-  const GroupsMember(this.groupsMembersModel,{Key key,this.onTap}) : super(key: key);
+  final void Function()? onTap;
+  const GroupsMember(this.groupsMembersModel,{Key? key,this.onTap}) : super(key: key);
 
   @override
   State<GroupsMember> createState() => _GroupsMemberState();
@@ -31,11 +31,10 @@ class GroupsMember extends StatefulWidget {
 
 class _GroupsMemberState extends State<GroupsMember> {
 
-  HomeScreenViewModel viewModel;
-  GroupsMembersModel groupsMembersModel;
+  late HomeScreenViewModel viewModel;
+  late GroupsMembersModel groupsMembersModel;
   void initState() {
     viewModel = new HomeScreenViewModel();
-    groupsMembersModel = GroupsMembersModel();
     // TODO: implement initState
     super.initState();
   }
@@ -82,12 +81,12 @@ class _GroupsMemberState extends State<GroupsMember> {
               itemBuilder:(context,index)=> GestureDetector(
 
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (BuildContext context) => DetailsGroup(viewModel.memebergroups[index],viewModel.detailsGroup[index]),
-                    ),
-                  );
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //     // builder: (BuildContext context) => DetailsGroup(viewModel.memebergroups[index]),
+                  //   ),
+                  // );
                 },
                 child: Column(
                   children: [
@@ -103,7 +102,7 @@ class _GroupsMemberState extends State<GroupsMember> {
                               borderRadius: BorderRadius.circular(15),
                             ),
                             child: Image.asset(
-                              viewModel.memebergroups[index].image,
+                              viewModel.memebergroups[index].image!,
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -118,7 +117,7 @@ class _GroupsMemberState extends State<GroupsMember> {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text(viewModel.memebergroups[index].title,
+                                    Text(viewModel.memebergroups[index].title!,
                                         style: TextStyle(
                                             color: Colors.black,
                                             fontSize: 20,

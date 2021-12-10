@@ -4,15 +4,15 @@ import 'package:video_player/video_player.dart';
 
 class VideoItem extends StatefulWidget {
 
-  final VideoPlayerController videoPlayerController;
-  final bool looping;
-  final bool autoplay;
+  final VideoPlayerController? videoPlayerController;
+  final bool? looping;
+  final bool? autoplay;
 
   VideoItem({
     this.videoPlayerController,
     this.looping,
     this.autoplay,
-    Key key
+    Key? key
   }) : super(key: key);
 
   @override
@@ -20,17 +20,17 @@ class VideoItem extends StatefulWidget {
 }
 
 class _VideoItemState extends State<VideoItem> {
-  ChewieController _chewieController;
+  late ChewieController _chewieController;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    _chewieController = ChewieController(videoPlayerController: widget.videoPlayerController,
+    _chewieController = ChewieController(videoPlayerController: widget.videoPlayerController!,
     aspectRatio: 5/8,
       autoInitialize: true,
-      autoPlay: widget.autoplay,
-      looping: widget.looping,
+      autoPlay: widget.autoplay!,
+      looping: widget.looping!,
       errorBuilder: (context,errorMessage)
       {
         return  Center(

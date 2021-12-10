@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
 class HomeLayout extends StatefulWidget {
-  const HomeLayout({Key key}) : super(key: key);
+  const HomeLayout({Key? key}) : super(key: key);
 
   @override
   _HomeLayoutState createState() => _HomeLayoutState();

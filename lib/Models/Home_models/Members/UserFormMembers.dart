@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 
 
 class UserFormMembersModel {
-  String imageUrl;
-  String nameMem;
-  String nickName;
+  String? imageUrl;
+  String? nameMem;
+  String? nickName;
   UserFormMembersModel({@required this.imageUrl,@required this.nameMem,@required this.nickName});
 }
 
 
 class UserFormMembers extends StatelessWidget {
   final UserFormMembersModel userFormMembersModel;
-  final void Function() onTap;
-  const UserFormMembers(this.userFormMembersModel,{Key key,this.onTap}) : super(key: key);
+  final void Function()? onTap;
+  const UserFormMembers(this.userFormMembersModel,{Key? key,this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class UserFormMembers extends StatelessWidget {
             children: [
               CircleAvatar(
                 radius: 25.0,
-                backgroundImage:AssetImage(userFormMembersModel.imageUrl),
+                backgroundImage:AssetImage(userFormMembersModel.imageUrl!),
               ),
               CircleAvatar(
                 radius: 10.0,

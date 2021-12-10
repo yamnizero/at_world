@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
 class TimeLinePage extends StatelessWidget {
-  const TimeLinePage({Key key}) : super(key: key);
+  const TimeLinePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

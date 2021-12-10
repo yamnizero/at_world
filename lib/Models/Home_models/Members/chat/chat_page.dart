@@ -114,16 +114,16 @@ class _ChatDetailPageState extends State<ChatDetailPage>{
 }
 
 class ChatBubble extends StatelessWidget {
-  final bool isMe;
-  final String message;
-  final int messageType;
+  final bool? isMe;
+  final String? message;
+  final int? messageType;
   const ChatBubble({
-    Key key, this.isMe, this.message, this.messageType,
+    Key? key, this.isMe, this.message, this.messageType,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    if(isMe){
+    if(isMe!){
       return Padding(
         padding: const EdgeInsets.all(1.0),
         child: Row(
@@ -138,7 +138,7 @@ class ChatBubble extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(13.0),
                   child: Text(
-                    message,
+                    message!,
                     style: TextStyle(
                         color: white,
                         fontSize: 17
@@ -165,7 +165,7 @@ class ChatBubble extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(13.0),
                   child: Text(
-                    message,
+                    message!,
                     style: TextStyle(
                         color: black,
                         fontSize: 17
@@ -181,7 +181,7 @@ class ChatBubble extends StatelessWidget {
 
   }
   getMessageType(messageType){
-    if(isMe){
+    if(isMe!){
       // start message
       if(messageType == 1){
         return BorderRadius.only(

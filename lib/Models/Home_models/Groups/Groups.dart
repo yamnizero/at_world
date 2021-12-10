@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 
 
 class GroupsModel{
-  String title;
-  String type;
-  String imageUrl;
+  String? title;
+  String? type;
+  String? imageUrl;
   GroupsModel(
       {
         @required this.title,
@@ -22,8 +22,8 @@ class GroupsModel{
 
 class Groups extends StatelessWidget {
   final GroupsModel groupsModel;
-  final void Function() onTap;
-  const Groups(this.groupsModel,{Key key,this.onTap}) : super(key: key);
+  final void Function()? onTap;
+  const Groups(this.groupsModel,{Key? key,this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,14 +41,14 @@ class Groups extends StatelessWidget {
               elevation: 6.0,
               color: Colors.black,
               child: Image.asset(
-                groupsModel.imageUrl,
+                groupsModel.imageUrl!,
                 fit: BoxFit.fill,
                 height: 100,
                 width: 180,
               ),
             ),
             Text(
-              groupsModel.title,
+              groupsModel.title!,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 16),
             ),

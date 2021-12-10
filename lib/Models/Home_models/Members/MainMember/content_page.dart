@@ -23,22 +23,24 @@ class ContentPage extends StatefulWidget {
    final UserFormMembersModel userFormMembersModel;
    final SettingContentModel settingContentModel;
 
-  const ContentPage(this.userFormMembersModel,this.settingContentModel,{Key key}) : super(key: key);
+  const ContentPage(this.userFormMembersModel,this.settingContentModel,{Key? key}) : super(key: key);
   @override
   State<ContentPage> createState() => _ContentPageState();
 }
 
 class _ContentPageState extends State<ContentPage> {
-  UserFormMembersModel userFormMembersModel;
-  HomeScreenViewModel viewModel;
-  GroupsMembersModel groupsMembersModel;
-  SettingContentModel settingContentModel;
+  UserFormMembersModel? userFormMembersModel;
+   HomeScreenViewModel? viewModel;
+  GroupsMembersModel? groupsMembersModel;
+   SettingContentModel? settingContentModel;
   bool connection = true;
   bool follow = false;
 
 
   void initState() {
     viewModel = HomeScreenViewModel();
+    settingContentModel =SettingContentModel ();
+
     // TODO: implement initState
     super.initState();
   }
@@ -68,7 +70,7 @@ class _ContentPageState extends State<ContentPage> {
               width: width,
               height: height / 3.5,
               child: Image.asset(
-                widget.userFormMembersModel.imageUrl,
+                widget.userFormMembersModel.imageUrl!,
                 fit: BoxFit.cover,
                 width: MediaQuery.of(context).size.width,
               ),
@@ -103,7 +105,7 @@ class _ContentPageState extends State<ContentPage> {
                                       height: 60,
                                     ),
                                     Text(
-                                    widget.userFormMembersModel.nameMem
+                                    widget.userFormMembersModel.nameMem!
                                      , style: TextStyle(
                                         color: Colors.black,
                                         fontWeight: FontWeight.bold,
@@ -114,7 +116,7 @@ class _ContentPageState extends State<ContentPage> {
                                       height: 5,
                                     ),
                                     Text(
-                                        widget.userFormMembersModel.nickName,
+                                        widget.userFormMembersModel.nickName!,
                                       style: TextStyle(
                                         color: Colors.black.withOpacity(0.3),
                                         fontWeight: FontWeight.bold,
@@ -296,7 +298,7 @@ class _ContentPageState extends State<ContentPage> {
                                   child: CircleAvatar(
                                     radius: 65,
                                     backgroundImage: AssetImage(
-                                      widget.userFormMembersModel.imageUrl,
+                                      widget.userFormMembersModel.imageUrl!,
                                     ),
                                   ),
                                 ),
@@ -318,9 +320,9 @@ class _ContentPageState extends State<ContentPage> {
                         physics: NeverScrollableScrollPhysics(),
                         shrinkWrap: true,
                         separatorBuilder: (context,index) => Divider(height: 10,thickness: 1,),
-                      itemCount: viewModel.settingpage.length,
+                      itemCount: viewModel!.settingpage.length,
                         itemBuilder:(context,index) => SettingContent(
-                          viewModel.settingpage[index],onTap: ()
+                          viewModel!.settingpage[index],onTap: ()
                         {
                           switch(index){case 0: Navigator.push(
                               context,
@@ -343,25 +345,25 @@ class _ContentPageState extends State<ContentPage> {
                           switch(index){case 3: Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => GroupsMember(groupsMembersModel),
+                              builder: (context) => GroupsMember(groupsMembersModel!),
                             ),
                           );break;}
                           switch(index){case 4: Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => ProfileScreen(userFormMembersModel),
+                              builder: (context) => ProfileScreen(userFormMembersModel!),
                             ),
                           );break;}
                           switch(index){case 5: Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => ProfileScreen(userFormMembersModel),
+                              builder: (context) => ProfileScreen(userFormMembersModel!),
                             ),
                           );break;}
                           switch(index){case 6: Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => ProfileScreen(userFormMembersModel),
+                              builder: (context) => ProfileScreen(userFormMembersModel!),
                             ),
                           );break;}
                         }

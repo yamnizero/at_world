@@ -1,15 +1,13 @@
 
-import 'dart:io';
 
-import 'package:at_world/Models/Home_models/Members/Groups/includ_setting_group/video_item.dart';
+
 import 'package:at_world/Models/Home_models/Members/Groups/includ_setting_group/widget_photo_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:video_player/video_player.dart';
+
 
 class AddNewVideos extends StatefulWidget {
-  const AddNewVideos({Key key}) : super(key: key);
+  const AddNewVideos({Key? key}) : super(key: key);
 
 
   @override
@@ -47,6 +45,7 @@ class _AddNewVideosState extends State<AddNewVideos> {
                 //
               },
               child: TextButton(
+                  onPressed: () {  },
                   child: Text('Upload',style: TextStyle(color: Colors.deepOrange),)
               ),
             ),

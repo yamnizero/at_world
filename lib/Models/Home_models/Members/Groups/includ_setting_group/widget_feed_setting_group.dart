@@ -1,12 +1,34 @@
 
 
 
+import 'package:at_world/Models/Home_models/Members/UserFormMembers.dart';
+import 'package:at_world/ViewModel/home_screen_viewModel.dart';
 import 'package:at_world/share/styles/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
-class WidgetFeedSettingGroup extends StatelessWidget {
-  const WidgetFeedSettingGroup({Key key}) : super(key: key);
+class WidgetFeedSettingGroup extends StatefulWidget {
+  final UserFormMembersModel userFormMembersModel;
+  const WidgetFeedSettingGroup(this.userFormMembersModel,{Key? key}) : super(key: key);
+
+
+
+  @override
+  State<WidgetFeedSettingGroup> createState() => _WidgetFeedSettingGroupState();
+}
+
+class _WidgetFeedSettingGroupState extends State<WidgetFeedSettingGroup> {
+
+  late UserFormMembersModel userFormMembersModel;
+  HomeScreenViewModel? viewModel;
+
+  void initState() {
+    viewModel = HomeScreenViewModel();
+    // TODO: implement initState
+    super.initState();
+  }
+
+
 
   @override
   Widget build(BuildContext context) {

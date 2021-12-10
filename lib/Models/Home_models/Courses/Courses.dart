@@ -5,10 +5,10 @@ import 'package:percent_indicator/linear_percent_indicator.dart';
 
 
 class CoursesModel{
-  String title;
-  String name;
-  String imageUrl;
-  String tag;
+  String? title;
+  String? name;
+  String? imageUrl;
+  String? tag;
 
   CoursesModel({
    @required this.title,
@@ -23,8 +23,8 @@ class CoursesModel{
 
 class Courses extends StatelessWidget {
   final CoursesModel coursesModel;
-  final void Function() onTap;
-  const Courses(this.coursesModel,{Key key,this.onTap}) : super(key: key);
+  final void Function()? onTap;
+  const Courses(this.coursesModel,{Key? key,this.onTap}) : super(key: key);
 
 
   @override
@@ -46,7 +46,7 @@ class Courses extends StatelessWidget {
                   elevation: 6.0,
                   color: Colors.black,
                   child: Image.asset(
-                    coursesModel.imageUrl,
+                    coursesModel.imageUrl!,
                     fit: BoxFit.fill,
                     height: 100,
                     width: 180,
@@ -73,7 +73,7 @@ class Courses extends StatelessWidget {
                     ),
                     child: Center(
                       child: Text(
-                        coursesModel.tag,
+                        coursesModel.tag!,
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
@@ -101,12 +101,12 @@ class Courses extends StatelessWidget {
               ],
             ),
             Text(
-             coursesModel.title,
+             coursesModel.title!,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 16),
             ),
             SizedBox(height: 5,),
-            Text(coursesModel.name),
+            Text(coursesModel.name!),
           ],
         ),
       ),

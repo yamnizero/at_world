@@ -4,19 +4,19 @@ import 'package:at_world/share/styles/theme.dart';
 import 'package:flutter/material.dart';
 
 class ListButtonPageGroupsModel{
-  String title;
-  IconData icon;
-  String num;
+  String? title;
+  IconData? icon;
+  String? num;
 
 
-  ListButtonPageGroupsModel({@required this.title,@required this.icon,@required this.num});
+  ListButtonPageGroupsModel({required this.title,required this.icon,required this.num});
 }
 
 
 class ListButtonPageGroups extends StatelessWidget {
-  final void Function() onTap;
+  final void Function()? onTap;
   final ListButtonPageGroupsModel listButtonPageGroupsModel;
-  const ListButtonPageGroups(this.listButtonPageGroupsModel,{Key key,this.onTap}) : super(key: key);
+  const ListButtonPageGroups(this.listButtonPageGroupsModel,{Key? key,this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class ListButtonPageGroups extends StatelessWidget {
                       children: [
                         Icon(listButtonPageGroupsModel.icon,size: 25.0,),
                         SizedBox(width: 15,),
-                        Center(child: Text(listButtonPageGroupsModel.title,style: SettingListTile)),
+                        Center(child: Text(listButtonPageGroupsModel.title!,style: SettingListTile)),
                       ],
                     ),
                     Row(
@@ -48,7 +48,7 @@ class ListButtonPageGroups extends StatelessWidget {
                         CircleAvatar(
                           radius: 13,
                           backgroundColor: Colors.lightBlue.withOpacity(0.4),
-                          child: Center(child: Text(listButtonPageGroupsModel.num,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 12),)),
+                          child: Center(child: Text(listButtonPageGroupsModel.num!,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 12),)),
                         ),
                         SizedBox(width: 5,),
                         Icon(

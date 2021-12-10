@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 class MyProgressModel{
  // Icon icon1;
-  String title;
+  String? title;
   //IconData icon2;
 
   MyProgressModel({ //@required this.icon1,
@@ -17,8 +17,8 @@ class MyProgressModel{
 
 class MyProgress extends StatelessWidget {
   final MyProgressModel myProgressModel;
-  final void Function() onTap;
-  const MyProgress(this.myProgressModel,{Key key,this.onTap}) : super(key: key);
+  final void Function()? onTap;
+  const MyProgress(this.myProgressModel,{Key? key,this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class MyProgress extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Icon(Icons.book,size: 25.0,),
-              Center(child: Text(myProgressModel.title,style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),)),
+              Center(child: Text(myProgressModel.title!,style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),)),
               SizedBox(width:150),
               Icon(
                 Icons.arrow_forward_ios,

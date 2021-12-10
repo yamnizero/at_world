@@ -1,10 +1,12 @@
 import 'package:at_world/Models/Home_models/Members/Groups/includ_setting_group/widget_feed_setting_group.dart';
 import 'package:flutter/material.dart';
 
+import '../../UserFormMembers.dart';
 import 'create_post_group.dart';
 
 class FeedSettingGroups extends StatefulWidget {
-  const FeedSettingGroups({Key key}) : super(key: key);
+  const FeedSettingGroups(this.userFormMembersModel,{Key? key}) : super(key: key);
+ final  UserFormMembersModel userFormMembersModel;
 
   @override
   State<FeedSettingGroups> createState() => _FeedSettingGroupsState();
@@ -12,6 +14,7 @@ class FeedSettingGroups extends StatefulWidget {
 
 class _FeedSettingGroupsState extends State<FeedSettingGroups> {
   TextEditingController createPost = TextEditingController();
+  late UserFormMembersModel userFormMembersModel;
   var formKey = GlobalKey<FormState>();
 
   @override
@@ -74,7 +77,7 @@ class _FeedSettingGroupsState extends State<FeedSettingGroups> {
         ),
       ),
       body: SingleChildScrollView(
-        child: WidgetFeedSettingGroup(),
+        child: WidgetFeedSettingGroup(widget.userFormMembersModel),
       ),
     );
   }

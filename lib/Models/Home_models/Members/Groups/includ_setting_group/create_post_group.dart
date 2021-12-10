@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
 class CreatePostGroups extends StatefulWidget {
-  const CreatePostGroups({Key key}) : super(key: key);
+  const CreatePostGroups({Key? key}) : super(key: key);
 
   @override
   State<CreatePostGroups> createState() => _CreatePostGroupsState();

@@ -9,7 +9,7 @@ import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:image_picker/image_picker.dart';
 
 class AddNewPhoto extends StatefulWidget {
-  const AddNewPhoto({Key key}) : super(key: key);
+  const AddNewPhoto({Key? key}) : super(key: key);
 
   @override
   State<AddNewPhoto> createState() => _AddNewPhotoState();
@@ -18,7 +18,7 @@ class AddNewPhoto extends StatefulWidget {
 class _AddNewPhotoState extends State<AddNewPhoto> {
   TextEditingController TextWithImage = TextEditingController();
   var formKey = GlobalKey<FormState>();
-  File image;
+  File? image;
 
 
   Future pickImageGellery() async {
@@ -69,6 +69,7 @@ class _AddNewPhotoState extends State<AddNewPhoto> {
                 //
               },
               child: TextButton(
+                onPressed: () {  },
                 child: Text('Upload',style: TextStyle(color: Colors.deepOrange),)
               ),
             ),
@@ -106,7 +107,7 @@ class _AddNewPhotoState extends State<AddNewPhoto> {
                   child:
                       Row(
                         children: [
-                          image != null? Image.file(image,
+                          image != null? Image.file(image!,
                             width: 80,
                             height: 80,
                             fit: BoxFit.cover,
@@ -181,7 +182,7 @@ class _AddNewPhotoState extends State<AddNewPhoto> {
 
   //wai
 
-  Future<ImageSource> showImageSource(BuildContext context) async
+  Future<ImageSource?> showImageSource(BuildContext context) async
   {
     if (Platform.isIOS){
       return showCupertinoModalPopup<ImageSource>(

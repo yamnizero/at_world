@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
 class ProfileScreen extends StatefulWidget {
-  const ProfileScreen(this.userFormMembersModel,{Key key}) : super(key: key);
+  const ProfileScreen(this.userFormMembersModel,{Key? key}) : super(key: key);
   final UserFormMembersModel userFormMembersModel;
 
   @override
@@ -14,8 +14,8 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  HomeScreenViewModel viewModel;
-  UserFormMembersModel userFormMembersModel;
+  late HomeScreenViewModel viewModel;
+  late UserFormMembersModel userFormMembersModel;
 
   @override
   void initState() {
@@ -72,7 +72,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         CircleAvatar(
                           radius: 45,
                           backgroundImage: AssetImage(
-                              widget.userFormMembersModel.imageUrl,
+                              widget.userFormMembersModel.imageUrl!,
                           ),
                         ),
                         Positioned(

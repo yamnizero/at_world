@@ -1,20 +1,14 @@
 
-
-import 'package:at_world/Models/Home_models/Members/UserFormMembers.dart';
-import 'package:at_world/share/styles/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
-import 'includ_setting_group/feed_seeting_groups.dart';
-import 'includ_setting_group/screen_member_d_groupa.dart';
-import 'includ_setting_group/screen_phote_group.dart';
-import 'includ_setting_group/screen_videos_groups.dart';
+
 
 Widget buttonOrganizer({
-  @required Function function,
-  @required String text,
-  @required double width,
-  @required double height,
+  @required Function()? function,
+  @required String? text,
+  @required double? width,
+  @required double? height,
 }) =>
     GestureDetector(
       onTap: function,
@@ -30,7 +24,7 @@ Widget buttonOrganizer({
           children: [
             Icon(MaterialIcons.check),
             Text(
-              text,
+              text!,
               style: TextStyle(fontSize: 16),
             ),
           ],
@@ -50,7 +44,7 @@ Widget buttonOrganizer({
 
 
 
-Widget buttomSheetOrganizer(context) {
+Widget? buttomSheetOrganizer(context) {
   showModalBottomSheet(context: context, builder: (BuildContext c)
   {
     return Wrap(

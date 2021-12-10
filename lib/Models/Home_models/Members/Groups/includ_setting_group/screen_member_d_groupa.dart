@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
 class ScreenMemberDGroup extends StatelessWidget {
-  const ScreenMemberDGroup({Key key}) : super(key: key);
+  const ScreenMemberDGroup({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

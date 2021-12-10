@@ -18,15 +18,15 @@ import 'package:flutter/material.dart';
 
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key key}) : super(key: key);
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  HomeScreenViewModel viewModel;
- UserFormMembersModel userFormMembersModel;
+  late HomeScreenViewModel viewModel;
+ late UserFormMembersModel userFormMembersModel;
   @override
   void initState() {
     viewModel = HomeScreenViewModel();
@@ -78,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => ContentPage(viewModel.userMembers[index],viewModel.settingpage[index]),
+                            builder: (context) => ContentPage(viewModel.userMembers[index],viewModel.settingpage[index],),
                           ),
                         );
                         },
@@ -338,9 +338,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
 
 class Header extends StatefulWidget {
-  final String title;
-  final void Function() onTap;
-  const Header({Key key,@required this.title,@required this.onTap}) : super(key: key);
+  final String? title;
+  final void Function()? onTap;
+  const Header({Key? key,required this.title,required this.onTap}) : super(key: key);
 
   @override
   State<Header> createState() => _HeaderState();

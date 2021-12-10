@@ -14,9 +14,9 @@ import '../UserFormMembers.dart';
 
 
 class SettingContentModel{
-  String title;
-  IconData icon;
-  String num;
+  String? title;
+  IconData? icon;
+  String? num;
 
 
   SettingContentModel({@required this.title,@required this.icon,@required this.num});
@@ -24,11 +24,11 @@ class SettingContentModel{
 
 class SettingContent extends StatelessWidget {
 
-   final void Function() onTap;
+   final void Function()? onTap;
     final SettingContentModel settingContentModel;
 
 
-  const SettingContent(this.settingContentModel,{Key key,this.onTap}) : super(key: key);
+  const SettingContent(this.settingContentModel,{Key? key,this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +52,7 @@ class SettingContent extends StatelessWidget {
                           children: [
                             Icon(settingContentModel.icon),
                             SizedBox(width: 15,),
-                            Center(child: Text(settingContentModel.title,style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),)),
+                            Center(child: Text(settingContentModel.title!,style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),)),
                           ],
                         ),
                         Row(
@@ -60,7 +60,7 @@ class SettingContent extends StatelessWidget {
                             CircleAvatar(
                               radius: 13,
                               backgroundColor: Colors.lightBlue.withOpacity(0.4),
-                              child: Center(child: Text(settingContentModel.num,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 12),)),
+                              child: Center(child: Text(settingContentModel.num!,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 12),)),
                             ),
                             SizedBox(width: 5,),
                             Icon(

@@ -113,7 +113,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     background: kClub,
                     function: ()
                     {
-                      if(formKey.currentState.validate())
+                      if(formKey.currentState!.validate())
                       {
                         print(email.text);
                         print(password.text);

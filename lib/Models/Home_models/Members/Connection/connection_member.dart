@@ -7,7 +7,7 @@ import 'Componets_connection/all_profile_type.dart';
 import 'Componets_connection/recently_active.dart';
 
 class ConnectionMember extends StatefulWidget {
-  const ConnectionMember({Key key}) : super(key: key);
+  const ConnectionMember({Key? key}) : super(key: key);
 
   @override
   State<ConnectionMember> createState() => _ConnectionMemberState();

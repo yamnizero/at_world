@@ -7,8 +7,8 @@ Widget defaultButton({
   double width = double.infinity,
   Color background = kClub,
   double radius = 10.0,
-  @required Function function,
-  @required String text,
+  @required Function()? function,
+  @required String? text,
 }) =>
     Container(
       width: width,
@@ -16,7 +16,7 @@ Widget defaultButton({
       child: MaterialButton(
         onPressed: function,
         child: Text(
-          text.toUpperCase(),
+          text!.toUpperCase(),
           style: TextStyle(color: Colors.white),
         ),
       ),
@@ -29,12 +29,12 @@ Widget defaultButton({
     );
 
 Widget dropButton({
-  @required Function function,
-  @required String text,
+  @required Function()? function,
+  @required String? text,
 }) => ElevatedButton(
         child: Row(
           children: [
-            Text(text),
+            Text(text!),
             Icon(MaterialIcons.arrow_drop_down),
           ],
         ),
@@ -51,20 +51,22 @@ Widget dropButton({
 //-----
 
 Widget defaultFormField({
-  @required TextEditingController controller,
-  @required TextInputType type,
-  @required Function validate,
+  required TextEditingController? controller,
+  required TextInputType? type,
+  required Function? validate,
   bool isPassword = false,
-  @required String label,
-  @required IconData prefix,
-  IconData suffix,
-  Function suffixPressed,
+  required String? label,
+  required IconData? prefix,
+  IconData? suffix,
+  Function()? suffixPressed,
 }) =>
     TextFormField(
       controller: controller,
       keyboardType: type,
       obscureText: isPassword,
-      validator: validate,
+      validator:(v){
+        validate!(v);
+      },
       style: TextStyle(color: Colors.white),
       decoration: InputDecoration(
         prefixIcon: Icon(
@@ -94,7 +96,7 @@ Widget defaultFormField({
     );
 
 
-Widget buttomSheetFollow(context) {
+Widget? buttomSheetFollow(context) {
   showModalBottomSheet(context: context, builder: (BuildContext c)
   {
     return Wrap(
