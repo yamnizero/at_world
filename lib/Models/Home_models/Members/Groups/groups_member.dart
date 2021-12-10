@@ -6,11 +6,11 @@ import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'details_group.dart';
 
 class GroupsMembersModel {
-  String? image;
-  String? title;
-  String? publicType;
-  String? mange;
-  String? numMem;
+  String image;
+  String title;
+  String publicType;
+  String mange;
+  String numMem;
 
   GroupsMembersModel(
       {required this.image,
@@ -32,9 +32,17 @@ class GroupsMember extends StatefulWidget {
 class _GroupsMemberState extends State<GroupsMember> {
 
   late HomeScreenViewModel viewModel;
-  late GroupsMembersModel groupsMembersModel;
+   late GroupsMembersModel groupsMembersModel;
+   DetailsGroupModel? detailsGroupModel;
   void initState() {
     viewModel = new HomeScreenViewModel();
+    groupsMembersModel =GroupsMembersModel(
+      image:'assets/images/d.png',
+      title: 'y Meet',
+      publicType:'Club',
+      mange: 'Organizer',
+      numMem: '3',
+    );
     // TODO: implement initState
     super.initState();
   }
@@ -81,12 +89,12 @@ class _GroupsMemberState extends State<GroupsMember> {
               itemBuilder:(context,index)=> GestureDetector(
 
                 onTap: () {
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(
-                  //     // builder: (BuildContext context) => DetailsGroup(viewModel.memebergroups[index]),
-                  //   ),
-                  // );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                     builder: (BuildContext context) => DetailsGroup(groupsMembersModel,viewModel.detailsGroup[index]),
+                    ),
+                  );
                 },
                 child: Column(
                   children: [
@@ -102,7 +110,7 @@ class _GroupsMemberState extends State<GroupsMember> {
                               borderRadius: BorderRadius.circular(15),
                             ),
                             child: Image.asset(
-                              viewModel.memebergroups[index].image!,
+                              viewModel.memebergroups[index].image,
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -117,7 +125,7 @@ class _GroupsMemberState extends State<GroupsMember> {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text(viewModel.memebergroups[index].title!,
+                                    Text(viewModel.memebergroups[index].title,
                                         style: TextStyle(
                                             color: Colors.black,
                                             fontSize: 20,

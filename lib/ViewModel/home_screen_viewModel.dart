@@ -24,7 +24,7 @@ class HomeScreenViewModel {
   late List<SettingContentModel> settingpage;
   late List<GeneralInformationModel> generalInformation;
   late List<GroupsMembersModel> memebergroups;
-  // late List<DetailsGroupModel> detailsGroup;
+  late List<DetailsGroupModel> detailsGroup;
   late List<ListButtonPageGroupsModel> listButtonPage;
 
 
@@ -39,7 +39,7 @@ class HomeScreenViewModel {
     setSettingContentModel();
     setGeneralInformationModel();
     setGroupsMembersModel();
-    // setDetailsGroupModel();
+    setDetailsGroupModel();
     setListButtonPageGroupsModel();
   }
 
@@ -315,20 +315,20 @@ class HomeScreenViewModel {
     ];
   }
 
-  // void setDetailsGroupModel() {
-  //   detailsGroup = [
-  //     DetailsGroupModel(
-  //         background: 'assets/images/me.png',
-  //     ),
-  //     DetailsGroupModel(
-  //         background: 'assets/images/bu2.png',
-  //     ),
-  //
-  //     DetailsGroupModel(
-  //       background: 'assets/images/blue.png',
-  //     ),
-  //   ];
-  // }
+  void setDetailsGroupModel() {
+    detailsGroup = [
+      DetailsGroupModel(
+          background: 'assets/images/me.png',
+      ),
+      DetailsGroupModel(
+          background: 'assets/images/bu2.png',
+      ),
+
+      DetailsGroupModel(
+        background: 'assets/images/blue.png',
+      ),
+    ];
+  }
 
   void setListButtonPageGroupsModel() {
     listButtonPage =[

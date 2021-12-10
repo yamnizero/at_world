@@ -19,7 +19,7 @@ class SettingContentModel{
   String? num;
 
 
-  SettingContentModel({@required this.title,@required this.icon,@required this.num});
+  SettingContentModel({required this.title,required this.icon,required this.num});
 }
 
 class SettingContent extends StatelessWidget {

@@ -78,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => ContentPage(viewModel.userMembers[index],viewModel.settingpage[index],),
+                            builder: (context) => ContentPage(viewModel.userMembers[index],viewModel.settingpage[index]),
                           ),
                         );
                         },

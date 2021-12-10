@@ -6,7 +6,6 @@ import 'package:at_world/Models/Home_models/Members/profi_member/profile_screen.
 
 import 'package:at_world/ViewModel/home_screen_viewModel.dart';
 import 'package:at_world/share/components/componets.dart';
-import 'package:at_world/view/groups/groups_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
@@ -29,18 +28,23 @@ class ContentPage extends StatefulWidget {
 }
 
 class _ContentPageState extends State<ContentPage> {
-  UserFormMembersModel? userFormMembersModel;
-   HomeScreenViewModel? viewModel;
+ late UserFormMembersModel userFormMembersModel;
+   late HomeScreenViewModel viewModel;
   GroupsMembersModel? groupsMembersModel;
-   SettingContentModel? settingContentModel;
+  late SettingContentModel settingContentModel;
   bool connection = true;
   bool follow = false;
 
 
   void initState() {
     viewModel = HomeScreenViewModel();
-    settingContentModel =SettingContentModel ();
-
+    groupsMembersModel =GroupsMembersModel(
+      image:'assets/images/d.png',
+      title: 'y Meet',
+      publicType:'Club',
+      mange: 'Organizer',
+      numMem: '3',
+    );
     // TODO: implement initState
     super.initState();
   }
@@ -320,9 +324,9 @@ class _ContentPageState extends State<ContentPage> {
                         physics: NeverScrollableScrollPhysics(),
                         shrinkWrap: true,
                         separatorBuilder: (context,index) => Divider(height: 10,thickness: 1,),
-                      itemCount: viewModel!.settingpage.length,
+                      itemCount: viewModel.settingpage.length,
                         itemBuilder:(context,index) => SettingContent(
-                          viewModel!.settingpage[index],onTap: ()
+                          viewModel.settingpage[index],onTap: ()
                         {
                           switch(index){case 0: Navigator.push(
                               context,
@@ -351,19 +355,19 @@ class _ContentPageState extends State<ContentPage> {
                           switch(index){case 4: Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => ProfileScreen(userFormMembersModel!),
+                              builder: (context) => ProfileScreen(userFormMembersModel),
                             ),
                           );break;}
                           switch(index){case 5: Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => ProfileScreen(userFormMembersModel!),
+                              builder: (context) => ProfileScreen(userFormMembersModel),
                             ),
                           );break;}
                           switch(index){case 6: Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => ProfileScreen(userFormMembersModel!),
+                              builder: (context) => ProfileScreen(userFormMembersModel),
                             ),
                           );break;}
                         }

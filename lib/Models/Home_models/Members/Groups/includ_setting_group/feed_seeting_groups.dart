@@ -1,4 +1,5 @@
 import 'package:at_world/Models/Home_models/Members/Groups/includ_setting_group/widget_feed_setting_group.dart';
+import 'package:at_world/ViewModel/home_screen_viewModel.dart';
 import 'package:flutter/material.dart';
 
 import '../../UserFormMembers.dart';
@@ -16,6 +17,13 @@ class _FeedSettingGroupsState extends State<FeedSettingGroups> {
   TextEditingController createPost = TextEditingController();
   late UserFormMembersModel userFormMembersModel;
   var formKey = GlobalKey<FormState>();
+
+  late HomeScreenViewModel viewModel;
+  void initState() {
+    viewModel = HomeScreenViewModel();
+    // TODO: implement initState
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
