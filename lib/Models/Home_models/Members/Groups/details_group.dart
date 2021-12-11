@@ -1,10 +1,12 @@
 
+import 'package:at_world/Models/Home_models/Members/Groups/includ_setting_group/Discussion/widget_screen_discussion.dart';
 import 'package:at_world/Models/Home_models/Members/Groups/widget_groups.dart';
 import 'package:at_world/ViewModel/home_screen_viewModel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
 import 'groups_member.dart';
+import 'includ_setting_group/Discussion/discussions_screen.dart';
 import 'includ_setting_group/document/screen_documents.dart';
 import 'includ_setting_group/feed/feed_seeting_groups.dart';
 import 'includ_setting_group/member/screen_member_d_groupa.dart';
@@ -22,6 +24,7 @@ class DetailsGroupModel{
 
 
 class DetailsGroup extends StatefulWidget {
+
   final DetailsGroupModel detailsGroupModel;
   final GroupsMembersModel groupsMembersModel;
   const DetailsGroup(this.groupsMembersModel,this.detailsGroupModel,{Key? key}) : super(key: key);
@@ -31,8 +34,9 @@ class DetailsGroup extends StatefulWidget {
 }
 
 class _DetailsGroupState extends State<DetailsGroup> {
-  GroupsMembersModel? groupsMembersModel;
-  DetailsGroupModel? detailsGroupModel;
+
+   GroupsMembersModel? groupsMembersModel;
+   DetailsGroupModel? detailsGroupModel;
  late HomeScreenViewModel viewModel;
   void initState() {
     viewModel = HomeScreenViewModel();
@@ -244,26 +248,29 @@ class _DetailsGroupState extends State<DetailsGroup> {
                         builder: (context) => ScreenDocument(),
                       ),
                     );break;}
-                    // switch(index){case 5: Navigator.push(
-                    //   context,
-                    //   //
-                    // );break;}
+                    switch(index){case 5:
+                      Navigator.push(
+                     context,
+                      MaterialPageRoute(
+                     builder: (context) => DiscussionsScreen(),
+                      ),
+                    );break;}
                     // switch(index){case 6: Navigator.push(
                     //   context,
                     //   MaterialPageRoute(
-                    //     builder: (context) => ProfileScreen(userFormMembersModel),
+                    //     builder: (context) => ScreenDocument(),
                     //   ),
                     // );break;}
                     // switch(index){case 7: Navigator.push(
                     //   context,
                     //   MaterialPageRoute(
-                    //     builder: (context) => ProfileScreen(userFormMembersModel),
+                    //     builder: (context) => ScreenDocument(),
                     //   ),
                     // );break;}
                     // switch(index){case 8: Navigator.push(
                     //   context,
                     //   MaterialPageRoute(
-                    //     builder: (context) => ProfileScreen(userFormMembersModel),
+                    //     builder: (context) => ScreenDocument(),
                     //   ),
                     // );break;}
 

@@ -4,6 +4,7 @@ import 'package:at_world/Models/Home_models/Activity/UserFormActivity.dart';
 import 'package:at_world/Models/Home_models/Forums/UserFormForums.dart';
 import 'package:at_world/Models/Home_models/Members/Groups/details_group.dart';
 import 'package:at_world/Models/Home_models/Members/Groups/groups_member.dart';
+import 'package:at_world/Models/Home_models/Members/Groups/includ_setting_group/Discussion/widget_screen_discussion.dart';
 import 'package:at_world/Models/Home_models/Members/Groups/listBurronPageGroups.dart';
 import 'package:at_world/Models/Home_models/Members/UserFormMembers.dart';
 import 'package:at_world/Models/Home_models/Notification/UserFormNotification.dart';
@@ -26,6 +27,7 @@ class HomeScreenViewModel {
   late List<GroupsMembersModel> memebergroups;
   late List<DetailsGroupModel> detailsGroup;
   late List<ListButtonPageGroupsModel> listButtonPage;
+  late List<WidgetScreenDiscussionModel> listDiscussion;
 
 
    HomeScreenViewModel() {
@@ -41,6 +43,7 @@ class HomeScreenViewModel {
     setGroupsMembersModel();
     setDetailsGroupModel();
     setListButtonPageGroupsModel();
+    setWidgetScreenDiscussionModel();
   }
 
    void setUserFormModel() {
@@ -361,11 +364,11 @@ class HomeScreenViewModel {
         icon:  (AntDesign.paperclip),
         num: "1",
       ),
-      // ListButtonPageGroupsModel(
-      //   title: 'Discussions',
-      //   icon:  (AntDesign.wechat),
-      //   num: "1",
-      // ),
+      ListButtonPageGroupsModel(
+        title: 'Discussions',
+        icon:  (AntDesign.wechat),
+        num: "1",
+      ),
       // ListButtonPageGroupsModel(
       //   title: 'Send Invites',
       //   icon:  (AntDesign.adduser),
@@ -382,6 +385,32 @@ class HomeScreenViewModel {
       //   num: "1",
       // ),
     ];
+  }
+
+  void setWidgetScreenDiscussionModel() {
+     listDiscussion = [
+       WidgetScreenDiscussionModel(
+           titleDiscussion: 'Cyber Security for Beginners',
+           numMemDis: '2',
+           numReplies: '2',
+           time: '2',
+           imageDis: 'assets/images/me3.png',
+       ),
+       WidgetScreenDiscussionModel(
+           titleDiscussion: 'Flutter for Beginners',
+           numMemDis: '24',
+           numReplies: '25',
+           time: '7',
+           imageDis: 'assets/images/flutter.png',
+       ),
+       WidgetScreenDiscussionModel(
+         titleDiscussion: 'Cyber Security for Beginners',
+         numMemDis: '2',
+         numReplies: '2',
+         time: '2',
+         imageDis: 'assets/images/me3.png',
+       ),
+     ];
   }
 
 

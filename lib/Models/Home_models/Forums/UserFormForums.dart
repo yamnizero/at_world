@@ -63,8 +63,8 @@ class UserFormForumsModel {
   String? time;
 
   UserFormForumsModel(
-      {@required this.title,
-      @required this.description,
-      @required this.imageUrl,
-      @required this.time});
+      {required this.title,
+      required this.description,
+      required this.imageUrl,
+      required this.time});
 }

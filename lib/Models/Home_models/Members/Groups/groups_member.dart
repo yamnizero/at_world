@@ -1,3 +1,4 @@
+import 'package:at_world/Models/Home_models/Members/Groups/includ_setting_group/Discussion/widget_screen_discussion.dart';
 import 'package:at_world/Models/Home_models/Members/Groups/widget_groups.dart';
 import 'package:at_world/ViewModel/home_screen_viewModel.dart';
 import 'package:at_world/share/styles/theme.dart';
@@ -21,6 +22,7 @@ class GroupsMembersModel {
 }
 
 class GroupsMember extends StatefulWidget {
+
   final GroupsMembersModel groupsMembersModel;
   final void Function()? onTap;
   const GroupsMember(this.groupsMembersModel,{Key? key,this.onTap}) : super(key: key);
@@ -92,7 +94,7 @@ class _GroupsMemberState extends State<GroupsMember> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                     builder: (BuildContext context) => DetailsGroup(groupsMembersModel,viewModel.detailsGroup[index]),
+                     builder: (BuildContext context) => DetailsGroup(groupsMembersModel,viewModel.detailsGroup![index]),
                     ),
                   );
                 },
