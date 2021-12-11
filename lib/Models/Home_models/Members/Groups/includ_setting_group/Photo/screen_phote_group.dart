@@ -66,7 +66,7 @@ class _ScreenPhotosGroupsState extends State<ScreenPhotosGroups> {
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Container(
                   color: Colors.grey.shade200.withOpacity(0.5),
-                  height: 50,
+                  height: 40,
                   child: Padding(
                     padding: const EdgeInsets.all(7.0),
                     child: TabBar(

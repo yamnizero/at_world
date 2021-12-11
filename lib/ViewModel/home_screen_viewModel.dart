@@ -369,16 +369,16 @@ class HomeScreenViewModel {
         icon:  (AntDesign.wechat),
         num: "1",
       ),
-      // ListButtonPageGroupsModel(
-      //   title: 'Send Invites',
-      //   icon:  (AntDesign.adduser),
-      //   num: "1",
-      // ),
-      // ListButtonPageGroupsModel(
-      //   title: 'Send Messages',
-      //   icon:  (AntDesign.inbox),
-      //   num: "1",
-      // ),
+      ListButtonPageGroupsModel(
+        title: 'Send Invites',
+        icon:  (AntDesign.adduser),
+        num: "1",
+      ),
+      ListButtonPageGroupsModel(
+        title: 'Send Messages',
+        icon:  (AntDesign.inbox),
+        num: "1",
+      ),
       // ListButtonPageGroupsModel(
       //   title: 'Manage',
       //   icon:  (AntDesign.setting),
