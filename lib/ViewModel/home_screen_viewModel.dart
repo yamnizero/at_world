@@ -379,11 +379,11 @@ class HomeScreenViewModel {
         icon:  (AntDesign.inbox),
         num: "1",
       ),
-      // ListButtonPageGroupsModel(
-      //   title: 'Manage',
-      //   icon:  (AntDesign.setting),
-      //   num: "1",
-      // ),
+      ListButtonPageGroupsModel(
+        title: 'Manage',
+        icon:  (AntDesign.setting),
+        num: "",
+      ),
     ];
   }
 

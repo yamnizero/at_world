@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'groups_member.dart';
 import 'includ_setting_group/Discussion/discussions_screen.dart';
+import 'includ_setting_group/Manage/screen_manage.dart';
 import 'includ_setting_group/SendInvites/screen_send_invites.dart';
 import 'includ_setting_group/SendMessages/screen_send_messages.dart';
 import 'includ_setting_group/document/screen_documents.dart';
@@ -268,12 +269,12 @@ class _DetailsGroupState extends State<DetailsGroup> {
                         builder: (context) => ScreenSendMessages(),
                       ),
                     );break;}
-                    // switch(index){case 8: Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) => ScreenDocument(),
-                    //   ),
-                    // );break;}
+                    switch(index){case 8: Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ScreenManage(),
+                      ),
+                    );break;}
 
                   },
                   ),
