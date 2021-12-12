@@ -94,7 +94,7 @@ class _GroupsMemberState extends State<GroupsMember> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                     builder: (BuildContext context) => DetailsGroup(groupsMembersModel,viewModel.detailsGroup![index]),
+                     builder: (BuildContext context) => DetailsGroup(groupsMembersModel,viewModel.detailsGroup[index]),
                     ),
                   );
                 },

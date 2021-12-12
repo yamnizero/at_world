@@ -1,5 +1,4 @@
 
-import 'package:at_world/Models/Home_models/Members/Groups/includ_setting_group/Discussion/widget_screen_discussion.dart';
 import 'package:at_world/Models/Home_models/Members/Groups/widget_groups.dart';
 import 'package:at_world/ViewModel/home_screen_viewModel.dart';
 import 'package:flutter/material.dart';

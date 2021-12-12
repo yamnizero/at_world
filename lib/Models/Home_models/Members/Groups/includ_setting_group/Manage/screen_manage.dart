@@ -1,5 +1,11 @@
+import 'package:at_world/ViewModel/home_screen_viewModel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'Nav_push_manage/Discussions/screen_discusions_nav.dart';
+import 'Nav_push_manage/details/details.dart';
+import 'Nav_push_manage/settings/screen_setting_nav.dart';
+import 'widget_list_botton_manage.dart';
 
 class ScreenManage extends StatefulWidget {
   const ScreenManage({Key? key}) : super(key: key);
@@ -9,6 +15,13 @@ class ScreenManage extends StatefulWidget {
 }
 
 class _ScreenManageState extends State<ScreenManage> {
+  late HomeScreenViewModel viewModel;
+  void initState() {
+    viewModel = HomeScreenViewModel();
+    // TODO: implement initState
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,84 +37,81 @@ class _ScreenManageState extends State<ScreenManage> {
         child: Container(
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                // child: ListView.separated(
-                //   physics: NeverScrollableScrollPhysics(),
-                //   shrinkWrap: true,
-                //   separatorBuilder: (context,index) => Divider(height: 10,thickness: 1,),
-                //   itemCount: viewModel.listButtonPage.length,
-                //   itemBuilder: (context,index) => ListButtonPageGroups(
-                //     viewModel.listButtonPage[index],onTap: ()
-                //   {
-                //     switch(index){case 0:
-                //       Navigator.push(
-                //         context,
-                //         MaterialPageRoute(
-                //           builder: (context) => FeedSettingGroups(),
-                //         ),
-                //       );
-                //       break;}
-                //     switch(index){case 1:
-                //       Navigator.push(
-                //         context,
-                //         MaterialPageRoute(
-                //           builder: (context) =>
-                //               ScreenMemberDGroup(),
-                //         ),
-                //       );
-                //       break;}
-                //     switch(index){case 2:
-                //       Navigator.push(
-                //         context,
-                //         MaterialPageRoute(
-                //           builder: (context) =>  ScreenPhotosGroups(),
-                //         ),
-                //       );break;}
-                //     switch(index){case 3:
-                //       Navigator.push(
-                //         context,
-                //         MaterialPageRoute(
-                //           builder: (context) =>  ScreenVideosGroups(),
-                //         ),
-                //       );break;}
-                //     switch(index){case 4:
-                //       Navigator.push(
-                //         context,
-                //         MaterialPageRoute(
-                //           builder: (context) => ScreenDocument(),
-                //         ),
-                //       );break;}
-                //     switch(index){case 5:
-                //       Navigator.push(
-                //         context,
-                //         MaterialPageRoute(
-                //           builder: (context) => DiscussionsScreen(),
-                //         ),
-                //       );break;}
-                //     switch(index){case 6: Navigator.push(
-                //       context,
-                //       MaterialPageRoute(
-                //         builder: (context) => SendInvitesScreen(),
-                //       ),
-                //     );break;}
-                //     switch(index){case 7: Navigator.push(
-                //       context,
-                //       MaterialPageRoute(
-                //         builder: (context) => ScreenSendMessages(),
-                //       ),
-                //     );break;}
-                //     switch(index){case 8: Navigator.push(
-                //       context,
-                //       MaterialPageRoute(
-                //         builder: (context) => ScreenManage(),
-                //       ),
-                //     );break;}
-                //
-                //   },
-                //   ),
-                //
-                // ),
+              SizedBox(height: 20,),
+              Container(
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: ListView.separated(
+                    physics: NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    separatorBuilder: (context,index) => SizedBox(),
+                    itemCount: viewModel.listBottomManage.length,
+                    itemBuilder: (context,index) => WidgetListBottomManage(
+                      viewModel.listBottomManage[index],onTap: ()
+                    {
+                      switch(index){case 0:
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Details(),
+                          ),
+                        );
+                        break;}
+                      switch(index){case 1:
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                ScreenSettingNav(),
+                          ),
+                        );
+                        break;}
+                      switch(index){case 2:
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>  ScreenDiscussionsNav(),
+                          ),
+                        );
+                        break;}
+                      switch(index){case 3:
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(
+                        //     builder: (context) =>  ScreenVideosGroups(),
+                        //   ),
+                        // );
+                        break;}
+                      switch(index){case 4:
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(
+                        //     builder: (context) => ScreenDocument(),
+                        //   ),
+                        // );
+                        break;}
+                      switch(index){case 5:
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(
+                        //     builder: (context) => DiscussionsScreen(),
+                        //   ),
+                        // );
+                        break;}
+                      switch(index){case 6:
+                      //   Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //     builder: (context) => SendInvitesScreen(),
+                      //   ),
+                      // );
+                      break;}
+
+                    },
+                    ),
+
+                  ),
+                ),
               )
             ],
           ),

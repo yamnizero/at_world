@@ -20,7 +20,7 @@ class _ScreenPhotosGroupsState extends State<ScreenPhotosGroups> {
       child: Scaffold(
         appBar:AppBar(
           backgroundColor: Colors.grey.shade100,
-          // elevation: 0.0,
+           elevation: 0.0,
           leading:  InkWell(
               onTap: ()
               {

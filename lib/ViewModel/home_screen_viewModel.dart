@@ -5,6 +5,8 @@ import 'package:at_world/Models/Home_models/Forums/UserFormForums.dart';
 import 'package:at_world/Models/Home_models/Members/Groups/details_group.dart';
 import 'package:at_world/Models/Home_models/Members/Groups/groups_member.dart';
 import 'package:at_world/Models/Home_models/Members/Groups/includ_setting_group/Discussion/widget_screen_discussion.dart';
+import 'package:at_world/Models/Home_models/Members/Groups/includ_setting_group/Manage/Nav_push_manage/settings/list_bottom_settingNav.dart';
+import 'package:at_world/Models/Home_models/Members/Groups/includ_setting_group/Manage/widget_list_botton_manage.dart';
 import 'package:at_world/Models/Home_models/Members/Groups/listBurronPageGroups.dart';
 import 'package:at_world/Models/Home_models/Members/UserFormMembers.dart';
 import 'package:at_world/Models/Home_models/Notification/UserFormNotification.dart';
@@ -28,6 +30,8 @@ class HomeScreenViewModel {
   late List<DetailsGroupModel> detailsGroup;
   late List<ListButtonPageGroupsModel> listButtonPage;
   late List<WidgetScreenDiscussionModel> listDiscussion;
+  late List<ListBottomManageModel> listBottomManage;
+  late List<ListBottomSettingNaveModel> listBottomSettingNav;
 
 
    HomeScreenViewModel() {
@@ -44,6 +48,8 @@ class HomeScreenViewModel {
     setDetailsGroupModel();
     setListButtonPageGroupsModel();
     setWidgetScreenDiscussionModel();
+    setListBottomManageModel();
+    setListBottomSettingNaveModel();
   }
 
    void setUserFormModel() {
@@ -409,6 +415,82 @@ class HomeScreenViewModel {
          numReplies: '2',
          time: '2',
          imageDis: 'assets/images/me3.png',
+       ),
+     ];
+  }
+
+  void setListBottomManageModel() {
+     listBottomManage = [
+       ListBottomManageModel(
+         title: 'Details',
+         icon:  (MaterialIcons.details),
+
+       ),
+       ListBottomManageModel(
+         title: 'Settings',
+         icon:  (MaterialIcons.settings),
+
+       ),
+       ListBottomManageModel(
+         title: 'Discussions',
+         icon:  (AntDesign.wechat),
+
+       ),
+       ListBottomManageModel(
+         title: 'Photo',
+         icon:  (AntDesign.picture),
+
+       ),
+       ListBottomManageModel(
+         title: 'Cover Photo',
+         icon:  (AntDesign.picture),
+
+       ),
+       ListBottomManageModel(
+         title: 'Members',
+         icon:  (MaterialIcons.account_circle),
+
+       ),
+       ListBottomManageModel(
+         title: 'Delete',
+         icon:  (AntDesign.delete),
+
+       ),
+
+     ];
+  }
+
+  void setListBottomSettingNaveModel() {
+     listBottomSettingNav = [
+       ListBottomSettingNaveModel(
+           title: 'Privacy Option',
+       ),
+       ListBottomSettingNaveModel(
+         title: 'Group Invitations',
+       ),
+       ListBottomSettingNaveModel(
+         title: 'Activity Feeds',
+       ),
+       ListBottomSettingNaveModel(
+         title: 'Group Photos',
+       ),
+       ListBottomSettingNaveModel(
+         title: 'Group Albums',
+       ),
+       ListBottomSettingNaveModel(
+         title: 'Group Documents',
+       ),
+       ListBottomSettingNaveModel(
+         title: 'Group Videos',
+       ),
+       ListBottomSettingNaveModel(
+         title: 'Group Messages',
+       ),
+       ListBottomSettingNaveModel(
+         title: 'Group Type',
+       ),
+       ListBottomSettingNaveModel(
+         title: 'Group parent',
        ),
      ];
   }
