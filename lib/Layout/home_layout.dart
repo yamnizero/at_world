@@ -31,30 +31,15 @@ class _HomeLayoutState extends State<HomeLayout> {
   List<String> titles =
   [
     'Home',
-    'Courses',
-    'Categories',
-    'My Library',
+    'News Feed',
+    'Members',
+    'Groups',
     'More',
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        shadowColor: Colors.black,
-        elevation: .0,
-        title: Center(
-          child: Image.asset(
-            'assets/images/atworld.png',
-            height: 32,
-          ),
-        ),
-      ),
-
-
-
       body: screen[currentIndex],
       // CustomScrollView(
       //   slivers: [
@@ -98,19 +83,19 @@ class _HomeLayoutState extends State<HomeLayout> {
                 Ionicons.ios_logo_electron
 
             ),
-            label: 'Courses'
+            label: 'News Feed'
         ),
         BottomNavigationBarItem(
             icon: Icon(
               MaterialIcons.category,
             ),
-            label: 'Categories'
+            label: 'Members'
         ),
         BottomNavigationBarItem(
             icon: Icon(
                 Ionicons.ios_library_outline
             ),
-            label: 'My Library'
+            label: 'Groups'
         ),
         BottomNavigationBarItem(
             icon: Icon(

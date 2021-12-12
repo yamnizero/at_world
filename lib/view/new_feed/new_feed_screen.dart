@@ -1,3 +1,4 @@
+import 'package:at_world/Models/News_Feed/page_news_feeds.dart';
 import 'package:flutter/material.dart';
 
 class NewFeedScreen extends StatelessWidget {
@@ -5,6 +6,7 @@ class NewFeedScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('New Feeds'));
+    return PageNewsFeed();
+
   }
 }

@@ -2,6 +2,7 @@ import 'package:at_world/ViewModel/home_screen_viewModel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'Nav_push_manage/Delete/screen_delete_nav.dart';
 import 'Nav_push_manage/Discussions/screen_discusions_nav.dart';
 import 'Nav_push_manage/details/details.dart';
 import 'Nav_push_manage/settings/screen_setting_nav.dart';
@@ -99,12 +100,12 @@ class _ScreenManageState extends State<ScreenManage> {
                         // );
                         break;}
                       switch(index){case 6:
-                      //   Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //     builder: (context) => SendInvitesScreen(),
-                      //   ),
-                      // );
+                        Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ScreenDeleteNav(),
+                        ),
+                      );
                       break;}
 
                     },

@@ -1,8 +1,6 @@
 import 'package:at_world/Models/Home_models/Members/Groups/includ_setting_group/feed/widget_feed_setting_group.dart';
-import 'package:at_world/ViewModel/home_screen_viewModel.dart';
-import 'package:flutter/material.dart';
 
-import '../../../UserFormMembers.dart';
+import 'package:flutter/material.dart';
 import 'create_post_group.dart';
 
 class FeedSettingGroups extends StatefulWidget {

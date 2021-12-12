@@ -103,80 +103,82 @@ class _ScreenDiscussionsNavState extends State<ScreenDiscussionsNav> {
           ),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('Group Forum Settings ',style:TextStyle(color: Colors.black,fontSize:20,fontWeight: FontWeight.w700),),
-            SizedBox(height: 5,),
-            Text('Saying no will not delete existing forum content',
-            style: TextStyle(color: Colors.grey,fontSize:17,),
-            overflow: TextOverflow.clip,
-            ),
-            SizedBox(height: 5,),
-            Container(
-              width: double.infinity,
-              height: 100,
-              decoration: BoxDecoration(
-                color: Colors.grey.shade200,
-                borderRadius: BorderRadius.circular(15)
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('Group Forum Settings ',style:TextStyle(color: Colors.black,fontSize:20,fontWeight: FontWeight.w700),),
+              SizedBox(height: 5,),
+              Text('Saying no will not delete existing forum content',
+              style: TextStyle(color: Colors.grey,fontSize:17,),
+              overflow: TextOverflow.clip,
               ),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Expanded(
-                      child: Text('Yes, I want this group to have a discussion forum.',
-                        style: TextStyle(color: Colors.black,fontSize:17,),
-                        overflow: TextOverflow.clip,
-                      ),
-                    ),
-                    Checkbox(
-                  value: isChecked,
-                  onChanged: (bool? value) { // This is where we update the state when the checkbox is tapped
-                    setState(() {
-                      isChecked = value!;
-                    });
-                  },
+              SizedBox(height: 5,),
+              Container(
+                width: double.infinity,
+                height: 100,
+                decoration: BoxDecoration(
+                  color: Colors.grey.shade200,
+                  borderRadius: BorderRadius.circular(15)
                 ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: Text('Yes, I want this group to have a discussion forum.',
+                          style: TextStyle(color: Colors.black,fontSize:17,),
+                          overflow: TextOverflow.clip,
+                        ),
+                      ),
+                      Checkbox(
+                        shape: CircleBorder(),
+                    value: isChecked,
+                    onChanged: (bool? value) { // This is where we update the state when the checkbox is tapped
+                      setState(() {
+                        isChecked = value!;
+                      });
+                    },
+                  ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 30,),
+              Text('Only site administrators can reconfigure which forum belongs'
+                  'to this group.',
+                style: TextStyle(color: Colors.black,fontSize:17,),
+                overflow: TextOverflow.clip,
+              ),
+              SizedBox(height: 35,),
+              Container(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text('Group Forum:',style:TextStyle(color: Colors.black,fontSize:18,fontWeight: FontWeight.w700),),
+                    ),
+                    Container(
+
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: DropdownButton(
+                          value: _selectedDropDownListModel,
+                          items: _dropdownMenuItems,
+                          onChanged: OnChangeDropdownItem,
+                        ),
+                      ),
+
+                    )
                   ],
                 ),
               ),
-            ),
-            SizedBox(height: 30,),
-            Text('Only site administrators can reconfigure which forum belongs'
-                'to this group.',
-              style: TextStyle(color: Colors.black,fontSize:17,),
-              overflow: TextOverflow.clip,
-            ),
-            SizedBox(height: 35,),
-            Container(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text('Group Forum:',style:TextStyle(color: Colors.black,fontSize:18,fontWeight: FontWeight.w700),),
-                  ),
-                  Container(
-
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: DropdownButton(
-                        value: _selectedDropDownListModel,
-                        items: _dropdownMenuItems,
-                        onChanged: OnChangeDropdownItem,
-
-                      ),
-                    ),
-
-                  )
-                ],
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

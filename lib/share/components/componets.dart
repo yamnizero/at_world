@@ -7,8 +7,8 @@ Widget defaultButton({
   double width = double.infinity,
   Color background = kClub,
   double radius = 10.0,
-  @required Function()? function,
-  @required String? text,
+  required Function()? function,
+  required String? text,
 }) =>
     Container(
       width: width,
