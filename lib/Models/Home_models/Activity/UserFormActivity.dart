@@ -11,9 +11,9 @@ import 'package:flutter/material.dart';
    String? imageUrl;
 
    UserFormActivityModel({
-    @required this.title,
-     @required this.time,
-     @required this.imageUrl,
+    required this.title,
+     required this.time,
+     required this.imageUrl,
   });
 }
 
