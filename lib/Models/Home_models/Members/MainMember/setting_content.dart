@@ -16,10 +16,10 @@ import '../UserFormMembers.dart';
 class SettingContentModel{
   String? title;
   IconData? icon;
-  String? num;
+  int? num;
 
 
-  SettingContentModel({required this.title,required this.icon,required this.num});
+  SettingContentModel({required this.title,required this.icon, this.num});
 }
 
 class SettingContent extends StatelessWidget {
@@ -57,11 +57,13 @@ class SettingContent extends StatelessWidget {
                         ),
                         Row(
                           children: [
-                            CircleAvatar(
-                              radius: 13,
-                              backgroundColor: Colors.lightBlue.withOpacity(0.4),
-                              child: Center(child: Text(settingContentModel.num!,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 12),)),
-                            ),
+                            (settingContentModel.num! > 0) ? CircleAvatar(
+                              radius: 12.0,
+                              backgroundColor: Colors.blue.shade100,
+                              child: Text(
+                                settingContentModel.num!.toString(),
+                              ),
+                            ) : Text('',),
                             SizedBox(width: 5,),
                             Icon(
                               Icons.arrow_forward_ios,

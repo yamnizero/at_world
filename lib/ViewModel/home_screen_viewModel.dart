@@ -246,37 +246,37 @@ class HomeScreenViewModel {
       SettingContentModel(
         title: 'Profile',
         icon:  (AntDesign.user),
-        num: "1",
+        num: 0,
       ),
       SettingContentModel(
         title: 'TimeLine',
         icon: AntDesign.linechart,
-        num: "11",
+        num: 8,
       ),
       SettingContentModel(
         title: 'Connection',
         icon:  AntDesign.adduser,
-        num: "1",
+        num: 1,
       ),
       SettingContentModel(
         title: 'Groups',
         icon: AntDesign.addusergroup,
-        num: "9",
+        num: 0,
       ),
       SettingContentModel(
         title: 'Photos',
         icon:  AntDesign.picture,
-        num: "1",
+        num: 0,
       ),
       SettingContentModel(
         title: 'Documents',
         icon: AntDesign.paperclip,
-        num: "5",
+        num: 0,
       ),
       SettingContentModel(
         title: 'Videos',
         icon: AntDesign.videocamera,
-        num: "1",
+        num: 0,
       ),
 
 
