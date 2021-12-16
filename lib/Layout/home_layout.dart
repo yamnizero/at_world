@@ -1,5 +1,6 @@
 
 
+import 'package:at_world/Models/More_models/widget_screen_moreModels.dart';
 import 'package:at_world/view/groups/groups_screen.dart';
 import 'package:at_world/view/home/home_screen.dart';
 import 'package:at_world/view/members/members_screen.dart';
@@ -7,8 +8,10 @@ import 'package:at_world/view/more/more_screen.dart';
 import 'package:at_world/view/new_feed/new_feed_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeLayout extends StatefulWidget {
+
   const HomeLayout({Key? key}) : super(key: key);
 
   @override
@@ -61,6 +64,9 @@ class _HomeLayoutState extends State<HomeLayout> {
       //
       // ),
       bottomNavigationBar: BottomNavigationBar(
+
+        selectedItemColor: Colors.deepOrange,
+      iconSize: 20.0,
       type: BottomNavigationBarType.fixed,
       currentIndex: currentIndex,
       onTap: (index)
@@ -86,20 +92,21 @@ class _HomeLayoutState extends State<HomeLayout> {
             label: 'News Feed'
         ),
         BottomNavigationBarItem(
-            icon: Icon(
-              MaterialIcons.category,
+            icon: FaIcon(
+                FontAwesomeIcons.userFriends
             ),
             label: 'Members'
         ),
+
         BottomNavigationBarItem(
-            icon: Icon(
-                Ionicons.ios_library_outline
+            icon: FaIcon(
+                FontAwesomeIcons.users
             ),
             label: 'Groups'
         ),
         BottomNavigationBarItem(
-            icon: Icon(
-                MaterialIcons.more
+            icon: FaIcon(
+                FontAwesomeIcons.bars
             ),
             label: 'more'
         ),
