@@ -5,10 +5,10 @@ import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
 
 Widget buttonOrganizer({
-  @required Function()? function,
-  @required String? text,
-  @required double? width,
-  @required double? height,
+  required Function()? function,
+  required String? text,
+  required double? width,
+  required double? height,
 }) =>
     GestureDetector(
       onTap: function,
