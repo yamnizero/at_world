@@ -9,6 +9,7 @@ import 'package:at_world/Models/Home_models/Members/Groups/includ_setting_group/
 import 'package:at_world/Models/Home_models/Members/Groups/includ_setting_group/Manage/widget_list_botton_manage.dart';
 import 'package:at_world/Models/Home_models/Members/Groups/listBurronPageGroups.dart';
 import 'package:at_world/Models/Home_models/Members/UserFormMembers.dart';
+import 'package:at_world/Models/Home_models/Members/photos/photos_page_member.dart';
 import 'package:at_world/Models/Home_models/Notification/UserFormNotification.dart';
 import 'package:at_world/Models/Home_models/Members/MainMember/setting_content.dart';
 import 'package:at_world/Models/Home_models/Members/profi_member/widget_profile_det.dart';
@@ -34,6 +35,7 @@ class HomeScreenViewModel {
   late List<ListBottomSettingNaveModel> listBottomSettingNav;
 
 
+
    HomeScreenViewModel() {
     setUserFormModel();
     setUserFormMembersModel();
@@ -50,6 +52,7 @@ class HomeScreenViewModel {
     setWidgetScreenDiscussionModel();
     setListBottomManageModel();
     setListBottomSettingNaveModel();
+
   }
 
    void setUserFormModel() {
@@ -494,6 +497,8 @@ class HomeScreenViewModel {
        ),
      ];
   }
+
+
 
 
 

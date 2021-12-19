@@ -25,7 +25,7 @@ class MyProgress extends StatelessWidget {
     return  GestureDetector(
       onTap: onTap,
       child: Card(
-        elevation: 16,
+        elevation: 5.0,
         shadowColor: Colors.black,
         child: Padding(
           padding: const EdgeInsets.all(8.0),

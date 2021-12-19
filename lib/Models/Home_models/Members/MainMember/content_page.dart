@@ -1,7 +1,10 @@
 import 'package:at_world/Models/Home_models/Members/Connection/connection_member.dart';
 import 'package:at_world/Models/Home_models/Members/Groups/groups_member.dart';
+import 'package:at_world/Models/Home_models/Members/Groups/includ_setting_group/document/screen_documents.dart';
+import 'package:at_world/Models/Home_models/Members/Groups/includ_setting_group/video/screen_videos_groups.dart';
 import 'package:at_world/Models/Home_models/Members/MainMember/setting_content.dart';
 import 'package:at_world/Models/Home_models/Members/Timeline/timeline.dart';
+import 'package:at_world/Models/Home_models/Members/photos/photos_page_member.dart';
 import 'package:at_world/Models/Home_models/Members/profi_member/profile_screen.dart';
 
 import 'package:at_world/ViewModel/home_screen_viewModel.dart';
@@ -22,18 +25,22 @@ class ContentPage extends StatefulWidget {
    final UserFormMembersModel userFormMembersModel;
    final SettingContentModel settingContentModel;
 
+
+
+
   const ContentPage(this.userFormMembersModel,this.settingContentModel,{Key? key}) : super(key: key);
   @override
   State<ContentPage> createState() => _ContentPageState();
 }
 
 class _ContentPageState extends State<ContentPage> {
- late UserFormMembersModel userFormMembersModel;
+   late UserFormMembersModel userFormMembersModel;
+
    late HomeScreenViewModel viewModel;
-  GroupsMembersModel? groupsMembersModel;
-  late SettingContentModel settingContentModel;
-  bool connection = true;
-  bool follow = false;
+   GroupsMembersModel? groupsMembersModel;
+   late SettingContentModel settingContentModel;
+   bool connection = true;
+   bool follow = false;
 
 
   void initState() {
@@ -355,19 +362,19 @@ class _ContentPageState extends State<ContentPage> {
                           switch(index){case 4: Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => ProfileScreen(userFormMembersModel),
+                              builder: (context) => ShowPhotosPageMembers(),
                             ),
                           );break;}
                           switch(index){case 5: Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => ProfileScreen(userFormMembersModel),
+                              builder: (context) => ScreenDocument(),
                             ),
                           );break;}
                           switch(index){case 6: Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => ProfileScreen(userFormMembersModel),
+                              builder: (context) => ScreenVideosGroups(),
                             ),
                           );break;}
                         }
