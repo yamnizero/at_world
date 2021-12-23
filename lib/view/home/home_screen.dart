@@ -317,15 +317,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 Text('My Progress',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    child: ListView.separated(
-                      physics: NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      itemBuilder: (context,index) => MyProgress(viewModel.myprogress[index],onTap: (){},),
-                      separatorBuilder: (context,index) => SizedBox(height: 15,),
-                      itemCount: viewModel.myprogress.length,
+                  child: ListView.separated(
+                    physics: NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    itemBuilder: (context,index) => MyProgress(viewModel.myprogress[index],onTap: (){},),
+                    separatorBuilder: (context,index) => SizedBox(height: 15,),
+                    itemCount: viewModel.myprogress.length,
 
-                    ),
                   ),
                 ),
               ],

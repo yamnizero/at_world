@@ -15,6 +15,7 @@ import 'package:at_world/Models/Home_models/Members/MainMember/setting_content.d
 import 'package:at_world/Models/Home_models/Members/profi_member/widget_profile_det.dart';
 import 'package:at_world/Models/Home_models/My_Progress/my_progress.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 
 class HomeScreenViewModel {
@@ -238,9 +239,19 @@ class HomeScreenViewModel {
 
   void setMyProgressModel() {
     myprogress = [
-      MyProgressModel(title: 'Courses'),
-      MyProgressModel(title: 'Achievements'),
-      MyProgressModel(title: 'Certificates'),
+      MyProgressModel(
+          title: 'Courses',
+        icon: FontAwesomeIcons.fileAlt,
+
+      ),
+      MyProgressModel(
+          title: 'Achievements',
+        icon: FontAwesomeIcons.tasks,
+      ),
+      MyProgressModel(
+        title: 'Certificates',
+        icon: FontAwesomeIcons.certificate,
+      ),
     ];
   }
 
@@ -347,51 +358,51 @@ class HomeScreenViewModel {
       ListButtonPageGroupsModel(
         title: 'feed',
         icon:  (MaterialIcons.timeline),
-        num: "0",
+        num: 0,
 
       ),
       ListButtonPageGroupsModel(
         title: 'Members',
         icon:  (MaterialIcons.card_membership),
-        num: "1",
+        num: 1,
 
       ),
       ListButtonPageGroupsModel(
         title: 'Photos',
         icon:  (AntDesign.adduser),
-        num: "1",
+        num: 8,
 
       ),
       ListButtonPageGroupsModel(
         title: 'Videos',
         icon:  (AntDesign.videocamera),
-        num: "1",
+        num: 0,
 
       ),
       ListButtonPageGroupsModel(
         title: 'Documents',
         icon:  (AntDesign.paperclip),
-        num: "1",
+        num: 0,
       ),
       ListButtonPageGroupsModel(
         title: 'Discussions',
         icon:  (AntDesign.wechat),
-        num: "1",
+        num: 0,
       ),
       ListButtonPageGroupsModel(
         title: 'Send Invites',
         icon:  (AntDesign.adduser),
-        num: "1",
+        num: 0,
       ),
       ListButtonPageGroupsModel(
         title: 'Send Messages',
         icon:  (AntDesign.inbox),
-        num: "1",
+        num: 2,
       ),
       ListButtonPageGroupsModel(
         title: 'Manage',
         icon:  (AntDesign.setting),
-        num: "",
+        num: 0,
       ),
     ];
   }

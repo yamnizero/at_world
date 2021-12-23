@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class ListButtonPageGroupsModel{
   String? title;
   IconData? icon;
-  String? num;
+  int? num;
 
 
   ListButtonPageGroupsModel({required this.title,required this.icon,required this.num});
@@ -45,11 +45,13 @@ class ListButtonPageGroups extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        CircleAvatar(
-                          radius: 13,
-                          backgroundColor: Colors.lightBlue.withOpacity(0.4),
-                          child: Center(child: Text(listButtonPageGroupsModel.num!,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 12),)),
-                        ),
+                        listButtonPageGroupsModel.num! > 0 ? CircleAvatar(
+                          radius: 12.0,
+                          backgroundColor: Colors.blue.shade100,
+                          child: Text(
+                            listButtonPageGroupsModel.num!.toString(),
+                          ),
+                        ) : Text('',),
                         SizedBox(width: 5,),
                         Icon(
                           Icons.arrow_forward_ios,

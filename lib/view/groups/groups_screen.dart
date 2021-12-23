@@ -94,7 +94,7 @@ class _GroupScreenState extends State<GroupScreen> {
                             borderRadius: BorderRadius.circular(15),
                           ),
                           child: Image.asset(
-                            viewModel.memebergroups[index].image,
+                            viewModel.memebergroups[index].image!,
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -109,7 +109,7 @@ class _GroupScreenState extends State<GroupScreen> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(viewModel.memebergroups[index].title,
+                                  Text(viewModel.memebergroups[index].title!,
                                       style: TextStyle(
                                           color: Colors.black,
                                           fontSize: 20,
