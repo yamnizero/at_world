@@ -1,4 +1,3 @@
-import 'package:at_world/Models/Home_models/Members/Groups/includ_setting_group/Discussion/widget_screen_discussion.dart';
 import 'package:at_world/Models/Home_models/Members/Groups/widget_groups.dart';
 import 'package:at_world/ViewModel/home_screen_viewModel.dart';
 import 'package:at_world/share/styles/theme.dart';
@@ -7,11 +6,11 @@ import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'details_group.dart';
 
 class GroupsMembersModel {
-  String? image;
-  String? title;
-  String? publicType;
-  String? mange;
-  String? numMem;
+  String image;
+  String title;
+  String publicType;
+  String mange;
+  String numMem;
 
   GroupsMembersModel(
       {required this.image,
@@ -112,7 +111,7 @@ class _GroupsMemberState extends State<GroupsMember> {
                               borderRadius: BorderRadius.circular(15),
                             ),
                             child: Image.asset(
-                              viewModel.memebergroups[index].image!,
+                              viewModel.memebergroups[index].image,
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -127,7 +126,7 @@ class _GroupsMemberState extends State<GroupsMember> {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text(viewModel.memebergroups[index].title!,
+                                    Text(viewModel.memebergroups[index].title,
                                         style: TextStyle(
                                             color: Colors.black,
                                             fontSize: 20,

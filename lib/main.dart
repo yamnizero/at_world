@@ -1,13 +1,16 @@
-
 import 'package:at_world/Layout/home_layout.dart';
-import 'package:at_world/share/components/constants.dart';
-import 'package:flutter/material.dart';
 
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
-  runApp(MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitDown,
+    DeviceOrientation.portraitUp,
+  ]);
+  runApp(const MyApp());
 }
-
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -21,8 +24,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
 // plan tow
 // null safety and clean code
 // and start again
-

@@ -36,12 +36,11 @@ class DetailsGroup extends StatefulWidget {
 
 class _DetailsGroupState extends State<DetailsGroup> {
 
-    GroupsMembersModel? groupsMembersModel;
+  late  GroupsMembersModel groupsMembersModel;
    DetailsGroupModel? detailsGroupModel;
  late HomeScreenViewModel viewModel;
   void initState() {
     viewModel = HomeScreenViewModel();
-
     detailsGroupModel = DetailsGroupModel(
       background: 'assets/images/me.png',
     );
@@ -118,14 +117,14 @@ class _DetailsGroupState extends State<DetailsGroup> {
                             borderRadius: BorderRadius.circular(15),
                           ),
                           child: Image.asset(
-                            widget.groupsMembersModel.image!,
+                            widget.groupsMembersModel.image,
                             fit: BoxFit.cover,
                           ),
                         ),
                         SizedBox(
                           height: 10,
                         ),
-                        Text(widget.groupsMembersModel.title!,
+                        Text(widget.groupsMembersModel.title,
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 20,
