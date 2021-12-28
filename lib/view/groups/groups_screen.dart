@@ -78,7 +78,7 @@ class _GroupScreenState extends State<GroupScreen> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (BuildContext context) => DetailsGroup(groupsMembersModel,viewModel.detailsGroup[index]),
+                        builder: (BuildContext context) => DetailsGroup(viewModel.memebergroups[index],viewModel.detailsGroup[index]),
                       ),
                     );
                   },

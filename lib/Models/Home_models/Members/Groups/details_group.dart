@@ -36,7 +36,7 @@ class DetailsGroup extends StatefulWidget {
 
 class _DetailsGroupState extends State<DetailsGroup> {
 
-  late  GroupsMembersModel groupsMembersModel;
+  // late  GroupsMembersModel groupsMembersModel;
    DetailsGroupModel? detailsGroupModel;
  late HomeScreenViewModel viewModel;
   void initState() {
